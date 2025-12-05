@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
-title: ADA Template Website
-description: A template website for ADA
+title: ADAcore website
+description: Website built using the ADA template
 show_downloads: True
 navigation:
   - title: Home
