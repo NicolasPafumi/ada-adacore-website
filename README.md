@@ -1,9 +1,34 @@
-# ADA Template Website
-## Usage
-1. Fork (copy) this repository by clicking the "Fork" button on the top right corner.
-2. Go to "Settings" -> "Pages" in your forked repository. Under "Branch" change "None" to "master" and click "Save".
-3. Edit the `_config.yml` file in your forked repository to change the site title (after `title:`) and description (after `description:`).
-4. Build your own page by editing this `README.md` (home page) and creating new `.md` files (other pages), formatting is done with standard [GitHub Markdown syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax), we provide an example file `example.md` in the repository.
-**Important**: Please include ```--- layout: default ---``` (the first three line in `example.md`) at the beginning of your every newly created `.md` file.
-5. Add your new `.md` files to the site by editing the `_config.yml` file in your forked repository. Under `navigation:` add a new pair of `- title:` and `url:`, and fill their value with your page name and `.md` file name. Remember to remove the `- title:` and `url:` pair for the example page.
-6. Go back to "Settings" -> "Pages" to find your website link.
+# King of White House, Wolf of Wall Street: How US presidential election impact companies' performance on the stock market
+
+### Brought to you by Team Adacore: Abboud Ghassan, Braha Eliota, Pafumi Nicolas, Pedroia Asia, Sánchez Fernández Elsa
+
+
+TODO article de crise financière liée politique ?
+
+## Abstract
+It is an established fact that presidential elections have a significant impact on the stock market. Investors react to the uncertainty and potential policy changes that come with a new administration. Understanding these dynamics can help investors anticipate these movements and hedge their portfolios around election cycles. These insights also provide a window into the market's perceptions of different candidates and their proposed policies.
+
+In this project, we explore how presidential elections influence company performance and investor sentiment over time. Using historical stock market data, election results, and prediction market trends, we look at how markets move as the likelihood of one candidate winning changes. We focus especially on how different sectors for example like technology, energy, healthcare, and finance,  respond to the uncertainty and outcomes of election cycles.
+
+Our goal is to show how politics and markets move together in a clear, data-driven way. By analyzing past elections and the upcoming 2024 race, we hope to uncover patterns that explain when, why, and how the market reacts.
+
+## What is NASDAQ
+
+## What is a sector 
+
+TODO mettre graph Elsa correlation avec cumulative returns
+
+
+## What is volatility
+-> talk about the math and abnormal volatility
+
+## What's an event study methodology: how to define abnormal returns
+
+## Event studies
+
+TODO card graph from flourish with presidents heads and on click display the volatility before and after elections like in the graph Elsa made
+
+## Impact of elections on volatility
+
+TODO : graph Elsa  election mais changer cumulative abnormal returns en volatility
+
