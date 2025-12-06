@@ -17,7 +17,6 @@ Our goal is to show how politics and markets move together in a clear, data-driv
 ## What is a sector 
 
 TODO mettre graph Elsa correlation avec cumulative returns
-![Correlation graph by sector with interraction](pictures/graph_sectors.png)
 
 <iframe src="graphs/interactive_dashboard.html" width="100%" height="1300px" style="border:none;"></iframe>
 
