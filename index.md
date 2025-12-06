@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ADAcore
+title: Home
 ---
 
 # King of White House, Wolf of Wall Street: How US presidential election impact companies' performance on the stock market
