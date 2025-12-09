@@ -1,6 +1,6 @@
 # King of White House, Wolf of Wall Street: How US presidential election impact companies' performance on the stock market
 
-### Brought to you by Team Adacore: Abboud Ghassan, Braha Eliota, Pafumi Nicolas, Pedroia Asia, Sánchez Fernández Elsa
+### Brought to you by Team Adacore: Ghassan ABBOUD, Eliota BRAHA, Nicolas PAFUMI, Asia PEDROIA, Elsa SÁNCHEZ FERNÁNdez
 
 
 TODO article de crise financière liée politique ?
