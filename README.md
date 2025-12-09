@@ -13,10 +13,10 @@ In this project, we explore how presidential elections influence company perform
 Our goal is to show how politics and markets move together in a clear, data-driven way. By analyzing past elections and the upcoming 2024 race, we hope to uncover patterns that explain when, why, and how the market reacts.
 
 ## What is NASDAQ
-<iframe src="Nasdaq.html" width="100%" height="1300px" style="border:none;"></iframe>
+<iframe src="Nasdaq.html" width="100%" height="900px" style="border:none;"></iframe>
 
 ## What is a sector 
-
+<iframe src="sectors.html" width="100%" height="900px" style="border:none;"></iframe>
 TODO mettre graph Elsa correlation avec cumulative returns
 
 <iframe src="graphs/interactive_dashboard.html" width="100%" height="1300px" style="border:none;"></iframe>
