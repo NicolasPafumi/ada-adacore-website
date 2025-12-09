@@ -29,7 +29,8 @@ TODO mettre graph Elsa correlation avec cumulative returns
 ## Event studies
 
 ##### Timeline des elections :
-![Timeline of presidences](pictures/timeline_flourish.jpg)
+<div class="flourish-embed flourish-timeline" data-src="visualisation/26692490"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/26692490/thumbnail" width="100%" alt="timeline visualization" /></noscript></div>
+
 
 ##### Presidential Impact
 
