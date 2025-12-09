@@ -82,7 +82,7 @@
     </style>
 </head>
 <body>
-    <h1>Interactive Questionnaire</h1>
+    <h1>Interactive Questionnaire!</h1>
     <p>Answer the following questions</p>
 
     <div class="container">
@@ -111,7 +111,7 @@
         <div class="question">
             <h3>3. How can NASDAQ impact our everyday lifestyle?</h3>
             <button onclick="checkAnswer(this, 'A', 3)">A) Influences product prices</button>
-            <button onclick="checkAnswer(this, 'B', 3)">B) Affects employment opportunities</button>
+            <button onclick="checkAnswer(this, 'B', 3)">B) Makes shopping easier</button>
             <button onclick="checkAnswer(this, 'C', 3)">C) Determines the weather</button>
             <button onclick="checkAnswer(this, 'D', 3)">D) It doesn't impact us</button>
             <div class="feedback" id="feedback3"></div>
@@ -146,7 +146,7 @@
             if (
                 (questionNum === 1 && choice === 'A') ||
                 (questionNum === 2 && choice === 'B') ||
-                (questionNum === 3 && (choice === 'A' || choice === 'B')) ||
+                (questionNum === 3 && choice === 'A') ||
                 (questionNum === 4 && choice === 'A') ||
                 (questionNum === 5 && choice === 'B')
             ) {
