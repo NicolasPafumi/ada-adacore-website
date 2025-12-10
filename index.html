@@ -6,6 +6,8 @@ layout: default
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
+<body>
+
 <h1> King of White House, Wolf of Wall Street: How US presidential election impact companies' performance on the stock market </h1>
 
 <h3> Brought to you by Team Adacore: Ghassan ABBOUD, Eliota BRAHA, Nicolas PAFUMI, Asia PEDROIA, Elsa SÁNCHEZ FERNÁNDEZ </h3>
@@ -65,3 +67,25 @@ Our goal is to show how politics and markets move together in a clear, data-driv
 
 <h2> Regression on volatility </h2>
 
+
+  <script>// To make multiple image appear
+  document.addEventListener("DOMContentLoaded", function() {
+  const images = document.querySelectorAll('.scroll-fade');
+
+  function revealImages() {
+    const triggerBottom = window.innerHeight * 0.9;
+
+    images.forEach(img => {
+      const rect = img.getBoundingClientRect();
+      if (rect.top < triggerBottom) {
+        img.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealImages);
+  revealImages(); // initial check
+  });
+  </script>
+
+</body>
