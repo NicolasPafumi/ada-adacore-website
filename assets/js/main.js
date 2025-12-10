@@ -1,4 +1,4 @@
-
+console.log("Found images:", document.querySelectorAll('.stack-img').length);
 // IMAGES OVERLAPPING
 // Fade between stacked images
 const images = document.querySelectorAll('.stack-img');
