@@ -57,3 +57,21 @@ window.addEventListener('scroll', revealStack);
 revealStack();
 
 }); 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll(".slideshow-image");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); // each image triggers only once
+      }
+    });
+  }, {
+    threshold: 0.3 // triggers when 30% of image is in view
+  });
+
+  images.forEach(img => observer.observe(img));
+});
+
