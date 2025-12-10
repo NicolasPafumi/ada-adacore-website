@@ -80,25 +80,6 @@ Our goal is to show how politics and markets move together in a clear, data-driv
     </div>
   </section>
 
-
-  <script>// To make multiple image appear
-  document.addEventListener("DOMContentLoaded", function() {
-  const images = document.querySelectorAll('.scroll-fade');
-
-  function revealImages() {
-    const triggerBottom = window.innerHeight * 0.9;
-
-    images.forEach(img => {
-      const rect = img.getBoundingClientRect();
-      if (rect.top < triggerBottom) {
-        img.classList.add('visible');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', revealImages);
-  revealImages(); // initial check
-  });
-  </script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
 </body>
