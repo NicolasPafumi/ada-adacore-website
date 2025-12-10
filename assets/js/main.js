@@ -1,25 +1,24 @@
-//////////////////////////////
-// images overlapping
-//////////////////////////////
 document.addEventListener("DOMContentLoaded", function() {
 
-  // IMAGES OVERLAPPING
-  const images = document.querySelectorAll('.stack-img');
-  let index = 0;
+  //////////////////////////////
+  // 1) Slideshow (overlapping)
+  //////////////////////////////
+  const overlapImages = document.querySelectorAll('.stack-img');
+  let overlapIndex = 0;
 
-  function showNextImage() {
-    images.forEach(img => img.classList.remove('active'));
-    images[index].classList.add('active');
-    index = (index + 1) % images.length;
+  function showNextOverlapImage() {
+    overlapImages.forEach(img => img.classList.remove('active'));
+    overlapImages[overlapIndex].classList.add('active');
+    overlapIndex = (overlapIndex + 1) % overlapImages.length;
   }
 
-  if (images.length > 0) {
-    showNextImage();
-    setInterval(showNextImage, 3000);
+  if (overlapImages.length > 0) {
+    showNextOverlapImage();
+    setInterval(showNextOverlapImage, 3000);
   }
 
   ////////////////////////////////////////////////
-  // To make multiple image appear on the same line
+  // 2) Simple fade-in elements on scroll
   ////////////////////////////////////////////////
   const scrollImages = document.querySelectorAll('.scroll-fade');
 
@@ -35,43 +34,45 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   window.addEventListener('scroll', revealImages);
-  revealImages(); // initial check
+  revealImages();
+
 
   ///////////////////////////////////////////////
-  // Reveal the overlapping image stack on scroll
+  // 3) Reveal the overlapping stack on scroll
   ///////////////////////////////////////////////
-const stack = document.querySelector('.scroll-reveal');
+  const stack = document.querySelector('.scroll-reveal');
 
-function revealStack() {
-  if (!stack) return;
-  const rect = stack.getBoundingClientRect();
-  const triggerBottom = window.innerHeight * 0.85;
+  function revealStack() {
+    if (!stack) return;
+    const rect = stack.getBoundingClientRect();
+    const triggerBottom = window.innerHeight * 0.85;
 
-  if (rect.top < triggerBottom) {
-    stack.classList.add('visible');
-    window.removeEventListener('scroll', revealStack); // reveal only once
+    if (rect.top < triggerBottom) {
+      stack.classList.add('visible');
+      window.removeEventListener('scroll', revealStack);
+    }
   }
-}
 
-window.addEventListener('scroll', revealStack);
-revealStack();
+  window.addEventListener('scroll', revealStack);
+  revealStack();
 
-}); 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll(".slideshow-image");
+  ///////////////////////////////////////////////
+  // 4) NEW: Scroll-triggered slideshow-image reveals
+  ///////////////////////////////////////////////
+  const slideshowImages = document.querySelectorAll(".slideshow-image");
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target); // each image triggers only once
+        observer.unobserve(entry.target); // trigger once
       }
     });
   }, {
-    threshold: 0.3 // triggers when 30% of image is in view
+    threshold: 0.3
   });
 
-  images.forEach(img => observer.observe(img));
-});
+  slideshowImages.forEach(img => observer.observe(img));
 
+});
