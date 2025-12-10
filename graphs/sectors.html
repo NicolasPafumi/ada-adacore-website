@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Sector Explanation</title>
+    <style>
+        body {
+            background-color: #111111;
+            color: #E0E0E0;
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 { text-align: center; margin-bottom: 5px; }
+        p { text-align: center; color: #888; font-size: 14px; margin-top: 0; }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .explanation {
+            background-color: #222;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .instruction {
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #00FFFF;
+            text-align: center;
+        }
+
+        .sector-card {
+            background-color: #333;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            width: 100%;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .sector-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .sector-info {
+            display: none;
+            background-color: #444;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            color: #00FFFF;
+            font-weight: bold;
+        }
+        .sector-card.show .sector-info {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>What is a Sector?</h1>
+    <p>Hover over each card to learn more</p>
+
+    <div class="container">
+        <div class="instruction">
+            <b>Instructions:</b> Hover over each sector card to see an explanation.
+        </div>
+
+        <div class="explanation">
+            <p>A <strong>sector</strong> is a group of companies or industries that share similar business activities. Sectors help organize and analyze the economy.</p>
+            <p>Explore some examples below:</p>
+
+            <div class="sector-card" onmouseenter="this.classList.add('show')" onmouseleave="this.classList.remove('show')">
+                <h3>Technology</h3>
+                <div class="sector-info">Companies like Apple, Microsoft, and Google belong to the technology sector. They focus on developing and selling tech products and services.</div>
+            </div>
+
+            <div class="sector-card" onmouseenter="this.classList.add('show')" onmouseleave="this.classList.remove('show')">
+                <h3>Finance</h3>
+                <div class="sector-info">Banks, insurance companies, and investment firms are part of the finance sector. They manage money and financial assets.</div>
+            </div>
+
+            <div class="sector-card" onmouseenter="this.classList.add('show')" onmouseleave="this.classList.remove('show')">
+                <h3>Healthcare</h3>
+                <div class="sector-info">Hospitals, pharmaceutical companies, and medical device manufacturers make up the healthcare sector. They provide health services and products.</div>
+            </div>
+
+            <div class="sector-card" onmouseenter="this.classList.add('show')" onmouseleave="this.classList.remove('show')">
+                <h3>Energy</h3>
+                <div class="sector-info">Oil, gas, and renewable energy companies are in the energy sector. They produce and distribute energy resources.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
