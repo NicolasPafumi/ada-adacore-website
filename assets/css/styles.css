@@ -2,13 +2,33 @@
 /* Our code section          */
 /*---------------------------*/
 
-/*To make TODO paragraphs in RED*/
+/*------------------------------*/
+/* Make overlap appear on scoll */
+/*------------------------------*/
+/* start invisible */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* becomes visible when scrolled into view */
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*--------------------------------*/
+/* To make TODO paragraphs in RED */
+/*--------------------------------*/
 .TODO {
   color: red;
   font-weight: bold;
 }
 
-/* Scoll effect with multiple pictures*/
+/*-------------------------------------*/
+/* Scoll effect with multiple pictures */
+/*-------------------------------------*/
 .scroll-gallery {
   max-width: 1000px;
   margin: 4rem auto;
