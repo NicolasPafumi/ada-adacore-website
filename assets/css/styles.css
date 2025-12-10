@@ -5,6 +5,17 @@
 /*------------------------------*/
 /* Make overlap appear on scoll */
 /*------------------------------*/
+.slideshow-image {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slideshow-image.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* start invisible */
 .scroll-reveal {
   opacity: 0;
