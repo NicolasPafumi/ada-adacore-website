@@ -1,20 +1,25 @@
-console.log("Found images:", document.querySelectorAll('.stack-img').length);
-// IMAGES OVERLAPPING
-// Fade between stacked images
-const images = document.querySelectorAll('.stack-img');
-let index = 0;
+//////////////////////////////
+// images overlapping
+//////////////////////////////
+document.addEventListener("DOMContentLoaded", function() {
 
-function showNextImage() {
-  images.forEach(img => img.classList.remove('active'));
-  images[index].classList.add('active');
-  index = (index + 1) % images.length;
-}
+  // IMAGES OVERLAPPING
+  const images = document.querySelectorAll('.stack-img');
+  let index = 0;
 
-showNextImage();                    // show first
-setInterval(showNextImage, 3000);   // change every 3 seconds
+  function showNextImage() {
+    images.forEach(img => img.classList.remove('active'));
+    images[index].classList.add('active');
+    index = (index + 1) % images.length;
+  }
+
+  if (images.length > 0) {
+    showNextImage();
+    setInterval(showNextImage, 3000);
+  }
 
 
-
+////////////////////////////////////////////////
 // To make multiple image appear on the same line
 document.addEventListener("DOMContentLoaded", function() {
   const scrollImages = document.querySelectorAll('.scroll-fade');
