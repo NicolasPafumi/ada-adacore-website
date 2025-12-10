@@ -1,3 +1,18 @@
+/*---------------------------*/
+/* Our code section          */
+/*---------------------------*/
+
+/*To make TODO paragraphs in RED*/
+.TODO {
+  color: red;
+  font-weight: bold;
+}
+
+
+/*---------------------------*/
+/* BELOW WAS WAS IN THE FORK */
+/*---------------------------*/
+
 body {
   background-color: #fff;
   padding:50px;
