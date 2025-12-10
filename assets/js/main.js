@@ -18,10 +18,9 @@ document.addEventListener("DOMContentLoaded", function() {
     setInterval(showNextImage, 3000);
   }
 
-
-////////////////////////////////////////////////
-// To make multiple image appear on the same line
-document.addEventListener("DOMContentLoaded", function() {
+  ////////////////////////////////////////////////
+  // To make multiple image appear on the same line
+  ////////////////////////////////////////////////
   const scrollImages = document.querySelectorAll('.scroll-fade');
 
   function revealImages() {
@@ -37,4 +36,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
   window.addEventListener('scroll', revealImages);
   revealImages(); // initial check
-});
+
+}); 
