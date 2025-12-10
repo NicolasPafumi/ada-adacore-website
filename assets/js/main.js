@@ -37,4 +37,23 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener('scroll', revealImages);
   revealImages(); // initial check
 
+  ///////////////////////////////////////////////
+  // Reveal the overlapping image stack on scroll
+  ///////////////////////////////////////////////
+const stack = document.querySelector('.scroll-reveal');
+
+function revealStack() {
+  if (!stack) return;
+  const rect = stack.getBoundingClientRect();
+  const triggerBottom = window.innerHeight * 0.85;
+
+  if (rect.top < triggerBottom) {
+    stack.classList.add('visible');
+    window.removeEventListener('scroll', revealStack); // reveal only once
+  }
+}
+
+window.addEventListener('scroll', revealStack);
+revealStack();
+
 }); 
