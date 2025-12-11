@@ -1,20 +1,22 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-  
+  ///////////////////////////////////////////////
+  // 1) Scroll-triggered reveal for stack images
+  ///////////////////////////////////////////////
   const stackImages = document.querySelectorAll('.stack-img');
 
-  const observer = new IntersectionObserver(entries => {
+  const stackObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // each image triggers only once
+        stackObserver.unobserve(entry.target); // each image triggers only once
       }
     });
   }, {
-    threshold: 0.3 // trigger when 30% of image is visible
+    threshold: 0.3
   });
 
-  stackImages.forEach(img => observer.observe(img));
+  stackImages.forEach(img => stackObserver.observe(img));
 
 
   ////////////////////////////////////////////////
@@ -22,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
   ////////////////////////////////////////////////
   const scrollImages = document.querySelectorAll('.scroll-fade');
 
-  function revealImages() {
+  function revealScrollImages() {
     const triggerBottom = window.innerHeight * 0.9;
 
     scrollImages.forEach(img => {
@@ -33,46 +35,46 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  window.addEventListener('scroll', revealImages);
-  revealImages();
+  window.addEventListener('scroll', revealScrollImages);
+  revealScrollImages();
 
 
   ///////////////////////////////////////////////
-  // 3) Reveal the overlapping stack on scroll
+  // 3) Reveal the overlapping stack section on scroll
   ///////////////////////////////////////////////
-  const stack = document.querySelector('.scroll-reveal');
+  const stackSection = document.querySelector('.scroll-reveal');
 
-  function revealStack() {
-    if (!stack) return;
-    const rect = stack.getBoundingClientRect();
+  function revealStackSection() {
+    if (!stackSection) return;
+    const rect = stackSection.getBoundingClientRect();
     const triggerBottom = window.innerHeight * 0.85;
 
     if (rect.top < triggerBottom) {
-      stack.classList.add('visible');
-      window.removeEventListener('scroll', revealStack);
+      stackSection.classList.add('visible');
+      window.removeEventListener('scroll', revealStackSection);
     }
   }
 
-  window.addEventListener('scroll', revealStack);
-  revealStack();
+  window.addEventListener('scroll', revealStackSection);
+  revealStackSection();
 
 
   ///////////////////////////////////////////////
-  // 4) NEW: Scroll-triggered slideshow-image reveals
+  // 4) Scroll-triggered reveal for slideshow images
   ///////////////////////////////////////////////
   const slideshowImages = document.querySelectorAll(".slideshow-image");
 
-  const observer = new IntersectionObserver(entries => {
+  const slideshowObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target); // trigger once
+        slideshowObserver.unobserve(entry.target); // trigger once
       }
     });
   }, {
     threshold: 0.3
   });
 
-  slideshowImages.forEach(img => observer.observe(img));
+  slideshowImages.forEach(img => slideshowObserver.observe(img));
 
 });
