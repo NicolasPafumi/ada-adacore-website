@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ///////////////////////////////////////////////
   // 3) Reveal the overlapping stack section on scroll
   ///////////////////////////////////////////////
+  /*
   const stackSection = document.querySelector('.scroll-reveal');
 
   function revealStackSection() {
@@ -62,11 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener('scroll', revealStackSection);
   revealStackSection();
-
+  */
 
   ///////////////////////////////////////////////
   // 4) Scroll-triggered reveal for slideshow images
   ///////////////////////////////////////////////
+  /*
   const slideshowImages = document.querySelectorAll(".slideshow-image");
 
   const slideshowObserver = new IntersectionObserver(entries => {
@@ -79,5 +81,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.3 });
 
   slideshowImages.forEach(img => slideshowObserver.observe(img));
-
+  */
 });
