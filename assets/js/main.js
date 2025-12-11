@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   ///////////////////////////////////////////////
-  // 1) Scroll-triggered reveal for stack images in order
+  // 1) Scroll-triggered reveal for stack images in order (cinematic)
   ///////////////////////////////////////////////
   const stackImages = document.querySelectorAll('.stack-img');
 
@@ -10,15 +10,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const windowH = window.innerHeight;
 
     stackImages.forEach((img, i) => {
-      const triggerPoint = i * windowH * 0.5;
-      if (scrollY > triggerPoint) {
-        img.classList.add('visible');
+      const triggerPoint = i * windowH * 0.5; // adjust distance between reveals
+      if (scrollY > triggerPoint && !img.classList.contains('visible')) {
+        // staggered delay for cinematic effect
+        setTimeout(() => {
+          img.classList.add('visible');
+        }, i * 300); // 300ms delay between images
       }
     });
   }
 
   window.addEventListener('scroll', revealStackOnScroll);
-  revealStackOnScroll();
+  revealStackOnScroll(); // initial check
 
 
   ////////////////////////////////////////////////
@@ -77,4 +80,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   slideshowImages.forEach(img => slideshowObserver.observe(img));
 
-}); // <- THIS CLOSES DOMContentLoaded
+});
