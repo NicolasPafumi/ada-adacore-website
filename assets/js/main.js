@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   ///////////////////////////////////////////////
-  // 1) Scroll-triggered reveal for stack images in order (cinematic)
+  // 1) Articles on top of each others
   ///////////////////////////////////////////////
   const stackImages = document.querySelectorAll('.stack-img');
 
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const windowH = window.innerHeight;
 
     stackImages.forEach((img, i) => {
-      const triggerPoint = i * windowH * 0.3; // adjust distance between reveals
+      const triggerPoint = i * windowH * 0.2; // adjust distance between reveals
       if (scrollY > triggerPoint && !img.classList.contains('visible')) {
         // staggered delay for cinematic effect
         setTimeout(() => {
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   ////////////////////////////////////////////////
-  // 2) Simple fade-in elements on scroll
+  // 2) five elements from left to right
   ////////////////////////////////////////////////
   const scrollImages = document.querySelectorAll('.scroll-fade');
 
@@ -43,43 +43,4 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('scroll', revealScrollImages);
   revealScrollImages();
 
-
-  ///////////////////////////////////////////////
-  // 3) Reveal the overlapping stack section on scroll
-  ///////////////////////////////////////////////
-  /*
-  const stackSection = document.querySelector('.scroll-reveal');
-
-  function revealStackSection() {
-    if (!stackSection) return;
-    const rect = stackSection.getBoundingClientRect();
-    const triggerBottom = window.innerHeight * 0.85;
-
-    if (rect.top < triggerBottom) {
-      stackSection.classList.add('visible');
-      window.removeEventListener('scroll', revealStackSection);
-    }
-  }
-
-  window.addEventListener('scroll', revealStackSection);
-  revealStackSection();
-  */
-
-  ///////////////////////////////////////////////
-  // 4) Scroll-triggered reveal for slideshow images
-  ///////////////////////////////////////////////
-  /*
-  const slideshowImages = document.querySelectorAll(".slideshow-image");
-
-  const slideshowObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        slideshowObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  slideshowImages.forEach(img => slideshowObserver.observe(img));
-  */
 });
