@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const windowH = window.innerHeight;
 
     stackImages.forEach((img, i) => {
-      // Each image appears after scrolling i * 50% of viewport
       const triggerPoint = i * windowH * 0.5;
       if (scrollY > triggerPoint) {
         img.classList.add('visible');
@@ -19,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.addEventListener('scroll', revealStackOnScroll);
-  revealStackOnScroll(); // initial check
+  revealStackOnScroll();
 
 
   ////////////////////////////////////////////////
@@ -70,4 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const slideshowObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        ent
+        entry.target.classList.add("visible");
+        slideshowObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  slideshowImages.forEach(img => slideshowObserver.observe(img));
+
+}); // <- THIS CLOSES DOMContentLoaded
