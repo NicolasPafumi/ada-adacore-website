@@ -1,21 +1,21 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-  //////////////////////////////
-  // 1) Slideshow (overlapping)
-  //////////////////////////////
-  const overlapImages = document.querySelectorAll('.stack-img');
-  let overlapIndex = 0;
+  
+  const stackImages = document.querySelectorAll('.stack-img');
 
-  function showNextOverlapImage() {
-    overlapImages.forEach(img => img.classList.remove('active'));
-    overlapImages[overlapIndex].classList.add('active');
-    overlapIndex = (overlapIndex + 1) % overlapImages.length;
-  }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // each image triggers only once
+      }
+    });
+  }, {
+    threshold: 0.3 // trigger when 30% of image is visible
+  });
 
-  if (overlapImages.length > 0) {
-    showNextOverlapImage();
-    setInterval(showNextOverlapImage, 3000);
-  }
+  stackImages.forEach(img => observer.observe(img));
+
 
   ////////////////////////////////////////////////
   // 2) Simple fade-in elements on scroll
