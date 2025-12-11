@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const windowH = window.innerHeight;
 
     stackImages.forEach((img, i) => {
-      const triggerPoint = i * windowH * 0.5; // adjust distance between reveals
+      const triggerPoint = i * windowH * 0.1; // adjust distance between reveals
       if (scrollY > triggerPoint && !img.classList.contains('visible')) {
         // staggered delay for cinematic effect
         setTimeout(() => {
