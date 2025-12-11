@@ -8,7 +8,8 @@
 .image-stack {
   position: relative;
   width: 100%;
-  height: 100vh; /* full viewport height */
+  height: 100vh;
+  overflow: hidden;
 }
 
 .stack-img {
@@ -19,9 +20,26 @@
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transform: translateY(40px); /* optional for sliding effect */
+  transform: translateY(50px); /* start slightly below */
   transition: opacity 1s ease, transform 1s ease;
+  z-index: 0;
 }
+
+/* Ensure proper stacking order */
+.stack-img:nth-child(1) { z-index: 1; }
+.stack-img:nth-child(2) { z-index: 2; }
+.stack-img:nth-child(3) { z-index: 3; }
+.stack-img:nth-child(4) { z-index: 4; }
+.stack-img:nth-child(5) { z-index: 5; }
+.stack-img:nth-child(5) { z-index: 6; }
+.stack-img:nth-child(5) { z-index: 7; }
+
+/* When revealed */
+.stack-img.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* Ensure proper stacking: first image at bottom */
 .stack-img:nth-child(1) { z-index: 1; }
