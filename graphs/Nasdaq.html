@@ -110,10 +110,10 @@
 
         <div class="question">
             <h3>3. How can NASDAQ impact our everyday lifestyle?</h3>
-            <button onclick="checkAnswer(this, 'A', 3)">A) Influences product prices</button>
+            <button onclick="checkAnswer(this, 'A', 3)">A) It doesn't impact us</button>
             <button onclick="checkAnswer(this, 'B', 3)">B) Makes shopping easier</button>
             <button onclick="checkAnswer(this, 'C', 3)">C) Determines the weather</button>
-            <button onclick="checkAnswer(this, 'D', 3)">D) It doesn't impact us</button>
+            <button onclick="checkAnswer(this, 'D', 3)">D) Influences product prices</button>
             <div class="feedback" id="feedback3"></div>
         </div>
 
@@ -128,10 +128,10 @@
 
         <div class="question">
             <h3>5. What is the number of listing of Nasdaq in February 2025?</h3>
-            <button onclick="checkAnswer(this, 'A', 5)">A) 2100</button>
-            <button onclick="checkAnswer(this, 'B', 5)">B) 3900</button>
-            <button onclick="checkAnswer(this, 'C', 5)">C) 5055</button>
-            <button onclick="checkAnswer(this, 'D', 5)">D) 101</button>
+            <button onclick="checkAnswer(this, 'A', 5)">A) 100</button>
+            <button onclick="checkAnswer(this, 'B', 5)">B) 2100</button>
+            <button onclick="checkAnswer(this, 'C', 5)">C) 3900</button>
+            <button onclick="checkAnswer(this, 'D', 5)">D) 5400</button>
             <div class="feedback" id="feedback5"></div>
         </div>
     </div>
@@ -146,9 +146,9 @@
             if (
                 (questionNum === 1 && choice === 'A') ||
                 (questionNum === 2 && choice === 'B') ||
-                (questionNum === 3 && choice === 'A') ||
+                (questionNum === 3 && choice === 'D') ||
                 (questionNum === 4 && choice === 'A') ||
-                (questionNum === 5 && choice === 'B')
+                (questionNum === 5 && choice === 'C')
             ) {
                 button.classList.add('correct');
                 feedback.textContent = "Correct! Well done.";
