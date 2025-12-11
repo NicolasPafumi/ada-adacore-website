@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const windowH = window.innerHeight;
 
     stackImages.forEach((img, i) => {
-      const triggerPoint = i * windowH * 0.1; // adjust distance between reveals
+      const triggerPoint = i * windowH * 0.3; // adjust distance between reveals
       if (scrollY > triggerPoint && !img.classList.contains('visible')) {
         // staggered delay for cinematic effect
         setTimeout(() => {
           img.classList.add('visible');
-        }, i * 300); // 300ms delay between images
+        }, i * 0); // 300ms delay between images
       }
     });
   }
