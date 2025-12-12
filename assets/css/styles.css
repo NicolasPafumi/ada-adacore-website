@@ -6,6 +6,12 @@ img {
   max-width: 100%;
 }
 
+/* Justify text for paragraph-like elements inside .content */
+.content p,
+.content li,
+.content .text {
+  text-align: justify;
+}
 
 /*----------------------------*/
 /* Section newspaper and black*/
@@ -31,14 +37,15 @@ body {
   padding: 60px 0;
 }
 
+/*
 .container {
   width: 90%;
   max-width: 850px;
   margin: 0 auto;
-}
+}*/
 
 .content {
-  max-width: 80%; /* your page width */
+  max-width: 60%; /* your page width */
   margin: 0 auto; /* centres it */
   padding: 40px 20px; /* breathing space */
 }
