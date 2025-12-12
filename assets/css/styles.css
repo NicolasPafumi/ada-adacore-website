@@ -2,6 +2,60 @@
 /* Our code section          */
 /*---------------------------*/
 
+
+/*----------------------------*/
+/* Section newspaper and black*/
+/*----------------------------*/
+/* Base layout */
+:root {
+  --newspaper-bg: #f7f3e8;
+  --black-bg: #000000;
+  --margin-white: #ffffff;
+  --margin-black: #000000;
+}
+
+body {
+  margin: 0;
+  background: white;
+  color: black;
+  font-family: sans-serif;
+}
+
+.section {
+  width: 100%;
+  padding: 60px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.content {
+  max-width: 80%; /* your page width */
+  margin: 0 auto; /* centres it */
+  padding: 40px 20px; /* breathing space */
+}
+
+/* Newspaper section */
+.section.newspaper {
+  background: var(--newspaper-bg); /* newspaper beige */
+}
+
+/* Black section */
+.section.black {
+  background: var(--black-bg);
+  color: white;
+}
+
+/* Transition section (white → black on full width) */
+.section.transition {
+  height: 100px; /* you can change this */
+  background: linear-gradient(to bottom, var(--newspaper-bg), var(--black-bg));
+  padding: 0;
+}
+
 /*------------------------------*/
 /* Make overlap appear on scoll */
 /*------------------------------*/
@@ -20,7 +74,6 @@
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  /*transform: translateY(50px); */   /* start slightly below */
   transition: opacity 1s ease, transform 1s ease;
   z-index: 0;
 }
@@ -43,16 +96,17 @@
 
 
 /* Ensure proper stacking: first image at bottom */
+/*
 .stack-img:nth-child(1) { z-index: 1; }
 .stack-img:nth-child(2) { z-index: 2; }
 .stack-img:nth-child(3) { z-index: 3; }
 .stack-img:nth-child(4) { z-index: 4; }
-.stack-img:nth-child(5) { z-index: 5; }
-
+.stack-img:nth-child(5) { z-index: 5; }*/
+/*
 .stack-img.visible {
   opacity: 1;
   transform: translateY(0);
-}
+} */
 
 
 /*--------------------------------*/
@@ -63,9 +117,9 @@
   font-weight: bold;
 }
 
-/*-------------------------------------*/
-/* Scoll effect with multiple pictures */
-/*-------------------------------------*/
+/*----------------------------------------------------------------------------------*/
+/* Scoll effect with multiple pictures (the fives appearing starting from the left) */
+/*----------------------------------------------------------------------------------*/
 .scroll-gallery {
   max-width: 1000px;
   margin: 4rem auto;
@@ -102,6 +156,7 @@
 
 
 /*From Elsa's graphs*/
+/*
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -132,12 +187,13 @@ footer {
     text-align: center;
     margin-top: 20px;
 }
-
+*/
 
 /*---------------------------*/
 /* BELOW WAS WAS IN THE FORK */
 /*---------------------------*/
 
+/*
 body {
   background-color: #fff;
   padding:50px;
@@ -397,3 +453,5 @@ hr {
     color:#444;
   }
 }
+
+*/
