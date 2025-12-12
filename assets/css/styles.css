@@ -2,6 +2,10 @@
 /* Our code section          */
 /*---------------------------*/
 
+img {
+  max-width: 100%;
+}
+
 
 /*----------------------------*/
 /* Section newspaper and black*/
