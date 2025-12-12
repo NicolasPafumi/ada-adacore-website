@@ -54,7 +54,8 @@ body {
 .section.newspaper {
   background-color: var(--paper);
   transition: background-color 0.6s ease;
-  font-family: "Merriweather", serif;
+  /*font-family: "Merriweather", serif;*/
+  font-family: "Times New Roman", Times, serif;
 }
 
 body.scrolling-to-black .section.newspaper {
@@ -66,7 +67,8 @@ body.scrolling-to-black .section.newspaper {
 .section.black {
   background: var(--black-bg);
   color: white;
-  font-family: "Inter", sans-serif;
+  /*font-family: "Inter", sans-serif;*/
+  font-family: "Arial", sans-serif;
 }
 
 /* Transition section (white → black on full width) */
