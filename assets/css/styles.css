@@ -163,7 +163,6 @@ body.scrolling-to-black .section.newspaper {
 .scroll-gallery .images img:nth-child(2) { transition-delay: 0.3s; }
 .scroll-gallery .images img:nth-child(3) { transition-delay: 0.5s; }
 .scroll-gallery .images img:nth-child(4) { transition-delay: 0.7s; }
-.scroll-gallery .images img:nth-child(5) { transition-delay: 0.9s; }
 
 .scroll-gallery .images img.visible {
   opacity: 1;
@@ -171,39 +170,6 @@ body.scrolling-to-black .section.newspaper {
 }
 
 
-/*From Elsa's graphs*/
-/*
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 20px;
-}
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-}
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-nav a {
-    color: #fff;
-    text-decoration: none;
-}
-section {
-    margin: 20px 0;
-}
-footer {
-    text-align: center;
-    margin-top: 20px;
-}
-*/
 
 /*---------------------------*/
 /* BELOW WAS WAS IN THE FORK */
