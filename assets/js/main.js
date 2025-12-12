@@ -63,3 +63,19 @@ const observer = new IntersectionObserver(entries => {
 });
 
 blackSections.forEach(section => observer.observe(section));
+
+///////////////////////////////////////////////////////////////
+// adapt size of nasdaq question graph
+/////////////////////////////////////////////////////////////
+function resizeIframe() {
+  const iframe = document.getElementById('nasdaq-iframe');
+  if (iframe && iframe.contentWindow) {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  }
+}
+
+// Resize once after load
+document.getElementById('nasdaq-iframe').addEventListener('load', resizeIframe);
+
+// Optional: resize periodically if content changes dynamically
+setInterval(resizeIframe, 500);
