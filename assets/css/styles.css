@@ -2,6 +2,49 @@
 /* Our code section          */
 /*---------------------------*/
 
+
+/*----------------------------*/
+/* Section newspaper and black*/
+/*----------------------------*/
+/* Base layout */
+body {
+  margin: 0;
+  background: white;
+  color: black;
+  font-family: sans-serif;
+}
+
+.section {
+  width: 100%;
+  padding: 60px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Newspaper section */
+.section.newspaper {
+  background: #f4f1e9;
+  /* newspaper beige */
+}
+
+/* Black section */
+.section.black {
+  background: #000;
+  color: white;
+}
+
+/* Transition section (white → black on full width) */
+.section.transition {
+  height: 100px;
+  /* you can change this */
+  background: linear-gradient(to bottom, white, black);
+  padding: 0;
+}
+
 /*------------------------------*/
 /* Make overlap appear on scoll */
 /*------------------------------*/
@@ -137,7 +180,6 @@ footer {
 /*---------------------------*/
 /* BELOW WAS WAS IN THE FORK */
 /*---------------------------*/
-
 body {
   background-color: #fff;
   padding:50px;
