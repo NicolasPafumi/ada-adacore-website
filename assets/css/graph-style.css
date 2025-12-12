@@ -1,0 +1,21 @@
+/*TO LINK THE FONTS IN GRAPH'S HEAD : <link rel="stylesheet" href="assets/graph-style.css">*/
+
+body {
+    background-color: #111111;
+    color: #E0E0E0;
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+p {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin-top: 0;
+}
