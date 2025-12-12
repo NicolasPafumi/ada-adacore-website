@@ -228,6 +228,9 @@ layout: default
         let i = 0;
 
         function typeWriter() {
+            if (i==0){
+                element.innerHTML = "";
+            }
             if (i < text.length) {
                 element.innerHTML += text.charAt(i);
                 i++;
@@ -235,7 +238,6 @@ layout: default
             }
             else{
                 setTimeout(typeWriter, 5000);
-                element.innerHTML = "";
                 i=0;
             }
         }
