@@ -221,7 +221,27 @@ layout: default
         </section>
 
 
-    <p id="typewriter">To be continued...        :)       </p>
+    <p id="typewriter"></p>
+    <script>
+        const text = "To be continued...";
+        const element = document.getElementById("typewriter");
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100); // adjust speed (ms) here
+            }
+            else{
+                setTimeout(typeWriter, 5000);
+                element.innerHTML = "";
+            }
+        }
+
+        typeWriter(); // start the effect
+    </script>
+
 
         <p>fsdgdfgdfgd</p><br>
         <p>fsdgdfgdfgd</p><br>

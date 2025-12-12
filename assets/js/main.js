@@ -105,21 +105,3 @@ document.getElementById('nasdaq-iframe').addEventListener('load', resizeIframe);
 // Optional: resize periodically if content changes dynamically
 setInterval(resizeIframe, 500);
 
-
-
-////////////////////////////////////////////
-// Typwriter effect : char by char p
-///////////////////////////////////////////
-const text = "To be continued...";
-const element = document.getElementById("typewriter");
-let i = 0;
-
-function typeWriter() {
-  if (i < text.length) {
-    element.innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, 100); // adjust speed (ms) here
-  }
-}
-
-typeWriter(); // start the effect
