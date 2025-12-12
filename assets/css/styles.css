@@ -90,7 +90,9 @@ body.scrolling-to-black .section.newspaper {
 .image-stack {
   position: relative;
   width: 100%;
-  height: 100vh;
+  /*height: 100vh;*/
+  aspect-ratio: 16/9;
+    /* keeps proportion */
   overflow: hidden;
 }
 
