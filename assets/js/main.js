@@ -70,7 +70,7 @@ blackSections.forEach(section => observer.observe(section));
 function resizeIframe() {
   const iframe = document.getElementById('nasdaq-iframe');
   if (iframe && iframe.contentWindow) {
-    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 4 + 'px';
   }
 }
 
