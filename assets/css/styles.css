@@ -33,6 +33,7 @@
 .stack-img:nth-child(5) { z-index: 5; }
 .stack-img:nth-child(6) { z-index: 6; }
 .stack-img:nth-child(7) { z-index: 7; }
+.stack-img:nth-child(7) { z-index: 7; }
 
 /* When revealed */
 .stack-img.visible {
