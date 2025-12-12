@@ -7,6 +7,13 @@
 /* Section newspaper and black*/
 /*----------------------------*/
 /* Base layout */
+:root {
+  --newspaper-bg: #f7f3e8;
+  --black-bg: #000000;
+  --margin-white: #ffffff;
+  --margin-black: #000000;
+}
+
 body {
   margin: 0;
   background: white;
@@ -25,23 +32,27 @@ body {
   margin: 0 auto;
 }
 
+.content {
+  max-width: 80%; /* your page width */
+  margin: 0 auto; /* centres it */
+  padding: 40px 20px; /* breathing space */
+}
+
 /* Newspaper section */
 .section.newspaper {
-  background: #f4f1e9;
-  /* newspaper beige */
+  background: var(--newspaper-bg); /* newspaper beige */
 }
 
 /* Black section */
 .section.black {
-  background: #000;
+  background: var(--black-bg);
   color: white;
 }
 
 /* Transition section (white → black on full width) */
 .section.transition {
-  height: 100px;
-  /* you can change this */
-  background: linear-gradient(to bottom, white, black);
+  height: 100px; /* you can change this */
+  background: linear-gradient(to bottom, var(--newspaper-bg), var(--black-bg));
   padding: 0;
 }
 
