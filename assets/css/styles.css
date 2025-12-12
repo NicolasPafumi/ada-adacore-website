@@ -125,20 +125,6 @@ body.scrolling-to-black .section.newspaper {
 }
 
 
-/* Ensure proper stacking: first image at bottom */
-/*
-.stack-img:nth-child(1) { z-index: 1; }
-.stack-img:nth-child(2) { z-index: 2; }
-.stack-img:nth-child(3) { z-index: 3; }
-.stack-img:nth-child(4) { z-index: 4; }
-.stack-img:nth-child(5) { z-index: 5; }*/
-/*
-.stack-img.visible {
-  opacity: 1;
-  transform: translateY(0);
-} */
-
-
 /*--------------------------------*/
 /* To make TODO paragraphs in RED */
 /*--------------------------------*/
