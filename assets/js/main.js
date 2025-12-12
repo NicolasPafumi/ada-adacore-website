@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Articles on top of each others
   ///////////////////////////////////////////////
 
-  /*
+  
   const stackImages = document.querySelectorAll('.stack-img');
 
   function revealStackOnScroll() {
@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener('scroll', revealStackOnScroll);
   revealStackOnScroll(); // initial check
-  */
+  
+  /*
   const stackImages = document.querySelectorAll('.stack-img');
 
   function revealStackOnScroll() {
@@ -46,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('scroll', revealStackOnScroll);
   window.addEventListener('resize', revealStackOnScroll);
   revealStackOnScroll(); // initial check in case some images are visible on load
-
+  */
 
   ////////////////////////////////////////////////
   // five elements from left to right
