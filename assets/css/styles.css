@@ -16,6 +16,7 @@ img {
   --black-bg: #000000;
   --margin-white: #ffffff;
   --margin-black: #000000;
+  --paper: #f0ece2;
 }
 
 body {
@@ -44,8 +45,14 @@ body {
 
 /* Newspaper section */
 .section.newspaper {
-  background: var(--newspaper-bg); /* newspaper beige */
+  background-color: var(--paper);
+  transition: background-color 0.6s ease;
 }
+
+body.scrolling-to-black .section.newspaper {
+  background-color: black;
+}
+
 
 /* Black section */
 .section.black {

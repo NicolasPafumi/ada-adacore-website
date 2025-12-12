@@ -44,3 +44,22 @@ document.addEventListener("DOMContentLoaded", () => {
   revealScrollImages();
 
 });
+
+///////////////////////////////////////////
+// background newpaper transition to black as black section appears
+//////////////////////////////////////////////
+const blackSections = document.querySelectorAll('.section.black');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      document.body.classList.add('scrolling-to-black');
+    } else {
+      document.body.classList.remove('scrolling-to-black');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+blackSections.forEach(section => observer.observe(section));
