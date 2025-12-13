@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* start ribbon hidden scroll down */
+  /*
   let lastScrollY = window.scrollY;
 
   window.addEventListener("scroll", () => {
@@ -92,7 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
     updateProgress(); // for progress bar
 
 
-  }); /* end ribbon hidden scroll down */
+  });
+  */
+  /* end ribbon hidden scroll down */
 
   /* start progress bar */
   const progressFill = document.querySelector(".progress-fill");
@@ -159,6 +162,6 @@ function resizeIframe() {
 // Resize once after load
 document.getElementById('nasdaq-iframe').addEventListener('load', resizeIframe);
 
-// Optional: resize periodically if content changes dynamically
+// resize periodically if content changes dynamically
 setInterval(resizeIframe, 500);
 
