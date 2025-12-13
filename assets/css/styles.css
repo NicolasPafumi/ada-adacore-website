@@ -267,6 +267,7 @@ body.scrolling-to-black .section.newspaper {
 .details-content {
   overflow: hidden;
   border-left: 4px solid var(--news-accent);
+  padding-left: var(--box-padding);
   max-height: 0;
   opacity: 0;
   transition:
