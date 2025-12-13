@@ -54,28 +54,30 @@ layout: default
         <p>You find yourself very slick, now that you bought a stock but you don't know how muck you're winning ? No worries, we got you covered : you can just take the returns.</p>
 
         <!-- RETURNS -->
-        <div class="info-box">
-            What is a return ?
-        </div>
+        <details class="collapsible info-dropdown">
+            <summary class="info-box">
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span>Returns</span>
+            </summary>
         
-        <div class="details-box">
-            <details class="collapsible">
-                <summary><b>Returns</b></summary>
-        
+            <div class="details-content">
                 <p>
                     To compute how much a stock earns we take the difference in value to the next period divided by value at the
                     start of the period.
                 </p>
-        
+                
                 <p class="math-block">
                     $$R = \frac{V_f - V_i}{V_i}$$
                 </p>
-        
+                
                 <p>
                     Typically the period used is days and the value used is the adjusted close price.
                 </p>
-            </details>
-        </div>
+            </div>
+        </details>
 
 
         <h2>Will the elections affect my returns ?</h2>
@@ -115,19 +117,22 @@ layout: default
 
         <h2>Just to check color scheme on black sections</h2>
         <!-- Dropdown_menu_template -->
-        <div class="info-box returns intro">
-            INTRODUCE THE THING TO EXPALIN
-        </div>
-        <div class="details-box">
-            <details class="collapsible">
-                <summary><b>TITLE</b></summary>
+        <details class="collapsible info-dropdown">
+            <summary class="info-box">
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span>INTRODUCE THE THING TO EXPALIN</span>
+            </summary>
         
+            <div class="details-content">
                 <p>
                     Here we explain in much more details
                 </p>
-        
+                
                 <p>With a nice formula:</p>
-        
+                
                 <p class="math-block">
                     <!-- MathJax formula -->
                     $$1+ 1 \text{ is two}$$
@@ -136,8 +141,8 @@ layout: default
                     With
                     \(x_1, x_2, \dots, x_n\) inline equation.
                 </p>
-            </details>
-        </div>
+            </div>
+        </details>
 
 
     </div>
@@ -163,65 +168,67 @@ layout: default
             which one we choose.
         </p>
 
-
         <!-- historical volatility -->
-        <div class="info-box returns intro">
-            What is historical volatility ?
-        </div>
+        <details class="collapsible info-dropdown">
+            <summary class="info-box">
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span>Historical volatility</span>
+            </summary>
         
-        <div class="details-box">
-            <details class="collapsible">
-
-                <summary><b>Historical volatility</b></summary>
-
+            <div class="details-content">
                 <p>
-                    Volatility is the finance term for the standard deviation. It can be computed using usual unbiased standard deviation formula with a rolling window.
+                    Volatility is the finance term for the standard deviation. It can be computed using usual unbiased standard
+                    deviation formula with a rolling window.
                 </p>
-
+                
                 <p>Formula:</p>
-        
+                
                 <p class="math-block">
                     $$\sigma_H = \sqrt{ \frac{1}{N-1} \sum_{t=1}^{N} (\bar{V}^2 - V_t^2) } $$
                 </p>
                 <p>
                     With
-                    \(N\) the selected window, e.g. \(t\) representing a day, \( \bar{V} \) the average price for the given window and \(V_t\) the price on a given \(t\) (e.g. a day).
+                    \(N\) the selected window, e.g. \(t\) representing a day, \( \bar{V} \) the average price for the given window and
+                    \(V_t\) the price on a given \(t\) (e.g. a day).
                 </p>
-            </details>
-        </div>
+            </div>
+        </details>
 
         <!-- Parkinson Volatility -->
-        <div class="info-box">
-            Parkinson's volatility to leverage highest and lowest intraday prices.
-        </div>
-        <div class="details-box">
-            <details class="collapsible">
-                <span class="icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <polyline points="3 17 9 11 13 15 21 7" />
-                    </svg>
-                </span>
-                <summary><b>Parkinson volatility</b></summary>
+        <details class="collapsible info-dropdown">
+            <summary class="info-box">
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span>Parkinson volatility</span>
+            </summary>
         
+            <div class="details-content">
                 <p>
-                    Parkinson's volatility needs to be computed over a time window and yields
-                    accurate estimates with smaller values of \(N\), allowing to 
+                    Parkinson's volatility uses the highest and lowest price reached in a given time (e.g. a day) to compute volatility.
+                    It needs to be computed over a time window (e.g. a month) and yields
+                    accurate estimates with smaller values of \(N\), allowing to
                     capture short-term variation without sacrificing reliability.
                 </p>
-        
+                
                 <p>Formula :</p>
-        
+                
                 <p class="math-block">
                     <!-- MathJax formula -->
                     $$\sigma_P = \sqrt{\frac{1}{4 \ln(2)} \cdot \frac{1}{N} \sum_{t=1}^{N} \left( \ln\left(\frac{H_t}{L_t}\right)
                     \right)^2}$$
                 </p>
                 <p>
-                    where $H_t$ and \(L_t\) are the high and low prices on day \(t\). The factor \( \frac{1}{4 \ln(2)} \) is derived from modeling
+                    where $H_t$ and \(L_t\) are the high and low prices on day \(t\). The factor \( \frac{1}{4 \ln(2)} \) is derived
+                    from modeling
                     returns as a geometric Brownian motion.
                 </p>
-            </details>
-        </div>
+            </div>
+        </details>
 
         <p>-> talk about the math and abnormal volatility</p>
 
@@ -315,34 +322,6 @@ layout: default
                 <img src="assets/img/image4.jpg" class="scroll-fade" alt="Project 4">
             </div>
         </section>
-
-    <!-- Dropdown_menu_template -->
-    <div class="info-box">
-        INTRODUCE THE THING TO EXPALIN
-    </div>
-    <div class="details-box">
-        <details class="collapsible">
-            </span>
-            <summary><svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
-            </svg> <b>TITLE</b></summary>
-    
-            <p>
-                Here we explain in much more details
-            </p>
-
-            <p>With a nice formula:</p>
-    
-            <p class="math-block">
-                <!-- MathJax formula -->
-                $$1+ 1 \text{ is two}$$
-            </p>
-            <p>
-                With
-                \(x_1, x_2, \dots, x_n\) inline equation.
-            </p>
-        </details>
-    </div>
 
     <!--IDEA : ads with this-->
     <h2>Idea : make fake ads</h2>
