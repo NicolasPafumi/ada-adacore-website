@@ -289,15 +289,20 @@ details {
 }
 
 /* Control spacing inside dropdown */
+/*
 details p {
   margin: 0.75em 0;
 }
+*/
+
 
 /* Remove extra gap after summary */
+/*
 details summary {
   margin: 0;
   padding: 0;
 }
+  */
 
 /*--------------------------------------------------*/
 /* add "chevron" : thing to indicate it's a dropdown*/
@@ -332,9 +337,11 @@ summary::marker {
   outline-offset: 3px;
 }
 
+/*
 .info-dropdown {
   margin: 0;
 }
+*/
 
 .info-dropdown summary {
   display: flex;
