@@ -241,15 +241,7 @@ body.scrolling-to-black .section.newspaper {
   border-left: 4px solid currentColor;
   font-size: 1.05em;
   background: rgba(0, 0, 0, 0.03);
-}
-
-.info-box.intro {
-  background-color: var(--news-bg);
-  color: var(--news-accent);
-}
-
-.info-box.returns {
-  color: var(--news-accent);
+  color: var(--news-text);
 }
 
 .details-box {
@@ -309,7 +301,7 @@ details[open] .details-content {
 }
 
 .section.newspaper .math-block {
-  color: var(--news-accent);
+  color: var(--news-text);
   background: var(--news-bg);
   border-left: 3px solid var(--news-accent);
 }
