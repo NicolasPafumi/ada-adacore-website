@@ -244,16 +244,16 @@ body.scrolling-to-black .section.newspaper {
 }
 
 .info-box.intro {
-  background-color: var(--returns-bg);
-  color: var(--returns-accent);
+  background-color: var(--news-bg);
+  color: var(--news-accent);
 }
 
 .info-box.returns {
-  color: var(--returns-accent);
+  color: var(--news-accent);
 }
 
 .details-box {
-  border-left: 4px solid var(--returns-accent);
+  border-left: 4px solid var(--news-accent);
   padding-left: var(--box-padding);
   font-size: var(--box-font-size);
 }
