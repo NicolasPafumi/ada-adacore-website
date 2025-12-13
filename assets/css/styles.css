@@ -336,6 +336,25 @@ details[open] .chevron {
   transform: translateY(1px);
 }
 
+/* the nudge*/
+@keyframes hint {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.collapsible:not([open]) .chevron {
+  animation: hint 1.6s ease-in-out infinite;
+}
+
 /*------------------*/
 /* Nicer math blocs */
 .math-block {
