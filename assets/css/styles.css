@@ -298,11 +298,23 @@ details summary {
 
 /*--------------------------------------------------*/
 /* add "chevron" : thing to indicate it's a dropdown*/
+
+/* Remove default disclosure triangle */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::marker {
+  content: "";
+}
+
+/* other stuff*/
 .collapsible summary {
   display: flex;
   align-items: center;
   cursor: pointer;
   user-select: none;
+  gap: 8px;
 }
 
 .summary-title {
