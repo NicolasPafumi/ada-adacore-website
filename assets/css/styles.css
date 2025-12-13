@@ -86,14 +86,28 @@ body.scrolling-to-black .section.newspaper {
 /*-------------------------------*/
 
 /**/
+
+/*
 .top-ribbon {
   position: sticky;
   top: 0;
   z-index: 1000;
   background: white;
   border-bottom: 1px solid #ddd;
+}*/
+.top-ribbon {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  transition: background 0.5s ease;
+
+  padding: 14px 0;
 }
 
+/*
 .ribbon-content {
   max-width: 1000px;
   margin: 0 auto;
@@ -101,6 +115,22 @@ body.scrolling-to-black .section.newspaper {
   display: flex;
   gap: 24px;
   justify-content: center;
+}*/
+.ribbon-content {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+}
+
+.ribbon-content a {
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  text-decoration: none;
+  position: relative;
+
+  color: rgba(0, 0, 0, 0.7);
+  transition: color 0.4s ease;
 }
 
 .top-ribbon a {
@@ -135,16 +165,43 @@ body.scrolling-to-black .section.newspaper {
 }
 
 /* Dark (black section) */
+/*
 .top-ribbon.dark {
   background: black;
   border-bottom: 1px solid #333;
+}*/
+.top-ribbon.dark {
+  background: rgba(0, 0, 0, 0.55);
 }
 
+/*
 .top-ribbon.dark a {
   color: white;
+}*/
+.top-ribbon.dark a {
+  color: rgba(255, 255, 255, 0.75);
 }
 .top-ribbon a:hover {
   text-decoration: underline;
+}
+
+/*active link styling*/
+.ribbon-content a.active {
+  color: black;
+}
+
+.top-ribbon.dark a.active {
+  color: white;
+}
+
+/*animated underline*/
+.ribbon-underline {
+  position: absolute;
+  bottom: 6px;
+  height: 2px;
+  width: 0;
+  background: currentColor;
+  transition: transform 0.4s ease, width 0.4s ease;
 }
 
 /*------------------------------*/

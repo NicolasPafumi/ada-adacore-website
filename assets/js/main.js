@@ -92,6 +92,50 @@ blackSections.forEach(section => observer.observe(section));
 ////////////////////////////////////////////////////////////
 // Make top ribbon change color
 //////////////////////////////////////////////////////////
+document.addEventListener("DOMContentLoaded", () => {
+  const ribbon = document.querySelector(".top-ribbon");
+  const links = document.querySelectorAll(".ribbon-content a");
+  const sections = document.querySelectorAll(".section");
+  const underline = document.querySelector(".ribbon-underline");
+
+  function updateRibbon() {
+    let currentSection = null;
+    let darkMode = false;
+
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+
+      if (rect.top <= 80 && rect.bottom > 80) {
+        currentSection = section.id;
+        darkMode = section.classList.contains("black");
+      }
+    });
+
+    // Theme fade
+    ribbon.classList.toggle("dark", darkMode);
+
+    // Active link + underline
+    links.forEach(link => {
+      const isActive = link.dataset.section === currentSection;
+      link.classList.toggle("active", isActive);
+
+      if (isActive) {
+        const rect = link.getBoundingClientRect();
+        const parentRect = link.parentElement.getBoundingClientRect();
+
+        underline.style.width = `${rect.width}px`;
+        underline.style.transform =
+          `translateX(${rect.left - parentRect.left}px)`;
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateRibbon);
+  window.addEventListener("resize", updateRibbon);
+  updateRibbon();
+});
+
+/*
 document.addEventListener("scroll", () => {
   const ribbon = document.querySelector(".top-ribbon");
   const sections = document.querySelectorAll(".section");
@@ -111,7 +155,7 @@ document.addEventListener("scroll", () => {
 
   ribbon.classList.toggle("dark", isDark);
   ribbon.classList.toggle("light", !isDark);
-});
+});*/
 
 
 ///////////////////////////////////////////////////////////////
