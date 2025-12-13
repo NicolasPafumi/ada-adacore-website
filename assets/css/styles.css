@@ -212,11 +212,6 @@ body.scrolling-to-black .section.newspaper {
   --box-padding: 20px;
   --box-font-size: 18px;
 
-  /* Finance / returns */
-  /*
-  --returns-accent: #ffd84d;
-  --returns-bg: rgba(255, 216, 77, 0.623);
-  */
 
   /* Newspaper */
   --news-accent: #d4ae2f;
@@ -287,6 +282,61 @@ details[open] .details-content {
   opacity: 1;
 }
 
+/*----------------------*/
+/* removes margin spaces*/
+
+/* Remove default spacing from details */
+details {
+  margin: 0;
+  padding: 0;
+}
+
+/* Control spacing inside dropdown */
+details p {
+  margin: 0.75em 0;
+}
+
+/* Remove extra gap after summary */
+details summary {
+  margin: 0;
+  padding: 0;
+}
+
+/*--------------------------------------------------*/
+/* add "chevron" : thing to indicate it's a dropdown*/
+.collapsible summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.summary-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Chevron icon */
+.chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+  opacity: 0.7;
+}
+
+/* Rotate on open */
+details[open] .chevron {
+  transform: rotate(180deg);
+}
+
+/* Hover affordance */
+.collapsible summary:hover .chevron {
+  opacity: 1;
+  transform: translateY(1px);
+}
+
+/*------------------*/
 /* Nicer math blocs */
 .math-block {
   text-align: center;
