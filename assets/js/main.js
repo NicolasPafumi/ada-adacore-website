@@ -98,6 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".section");
   const underline = document.querySelector(".ribbon-underline");
 
+
+  /* start ribbon hidden scroll down */
   let lastScrollY = window.scrollY;
 
   window.addEventListener("scroll", () => {
@@ -110,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     lastScrollY = currentScroll;
-  });
+  }); /* end ribbon hidden scroll down */
 
 
   function updateRibbon() {

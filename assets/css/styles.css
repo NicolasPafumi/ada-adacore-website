@@ -88,7 +88,7 @@ body.scrolling-to-black .section.newspaper {
 /*hide ribbon when scrolling down*/
 .top-ribbon.hidden {
   transform: translateY(-100%);
-}
+}/* end ribbon hidden scroll down */
 
 .top-ribbon {
   position: sticky;
