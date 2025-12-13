@@ -224,19 +224,13 @@ body.scrolling-to-black .section.newspaper {
   --dark-text: #f4f4f4;
 }
 
-/*
-.section.black {
-  --returns-accent: #ffd84d;
-  --returns-bg: rgba(255, 216, 77, 0.15);
-}*/
-
 .info-box {
-  margin: 1.5em 0;
+  margin: 0;
   padding: 1em 1.5em;
   border-left: 4px solid currentColor;
   font-size: 1.05em;
   background: rgba(0, 0, 0, 0.03);
-  color: var(--news-text);
+  color: var(--news-accent);
 }
 
 .details-box {
