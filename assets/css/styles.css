@@ -266,6 +266,7 @@ body.scrolling-to-black .section.newspaper {
 
 .details-content {
   overflow: hidden;
+  border-left: 4px solid var(--news-accent);
   max-height: 0;
   opacity: 0;
   transition:
@@ -346,7 +347,7 @@ summary::marker {
   padding: 1em 1.5em;
   font-size: 1.05em;
 
-  border-left: 4px solid currentColor;
+  border-left: 4px solid var(--news-accent);
   background: var(--news-bg);
   color: var(--news-text);
 }
