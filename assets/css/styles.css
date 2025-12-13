@@ -213,12 +213,14 @@ body.scrolling-to-black .section.newspaper {
   --box-font-size: 18px;
 
   /* Finance / returns */
+  /*
   --returns-accent: #ffd84d;
   --returns-bg: rgba(255, 216, 77, 0.623);
+  */
 
   /* Newspaper */
-  --news-accent: #b89b3c;
-  --news-bg: rgba(255, 216, 77, 0.623);
+  --news-accent: #d4ae2f;
+  --news-bg: rgba(255, 216, 77, 0.243);
   --news-text: #000000;
 
   /* Black section */
