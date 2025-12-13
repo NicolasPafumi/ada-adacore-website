@@ -225,9 +225,9 @@ body.scrolling-to-black .section.newspaper {
 }
 
 .info-box {
-  /*margin: 0;*/
+  margin: 0;
   padding: 1em 1.5em;
-  border-left: 4px solid var(--news-text);
+  border-left: 4px solid var(--news-accent);
   font-size: 1.05em;
   background: rgba(0, 0, 0, 0.03);
   color: var(--news-text);
