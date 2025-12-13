@@ -224,6 +224,7 @@ body.scrolling-to-black .section.newspaper {
   --dark-text: #f4f4f4;
 }
 
+/*
 .info-box {
   margin: 0;
   padding: 1em 1.5em;
@@ -231,7 +232,7 @@ body.scrolling-to-black .section.newspaper {
   font-size: 1.05em;
   background: rgba(0, 0, 0, 0.03);
   color: var(--news-text);
-}
+}*/
 
 .details-box {
   border-left: 4px solid var(--news-accent);
@@ -324,23 +325,78 @@ summary::marker {
   gap: 8px;
 }
 
-/* Chevron icon */
-.chevron {
+/* keyboard accessibility */
+.info-dropdown summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.info-dropdown {
+  margin: 0;
+}
+
+.info-dropdown summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  cursor: pointer;
+  user-select: none;
+
+  padding: 1em 1.5em;
+  font-size: 1.05em;
+
+  border-left: 4px solid currentColor;
+  background: var(--news-bg);
+  color: var(--news-text);
+}
+
+.details-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.45s ease, opacity 0.3s ease;
+}
+
+details[open] .details-content {
+  max-height: 80vh;
+  opacity: 1;
+}
+
+/* Hover feedback */
+.info-dropdown summary:hover {
+  filter: brightness(1.05);
+}
+
+/* Chevron animation */
+.info-dropdown .chevron {
   width: 14px;
   height: 14px;
   transition: transform 0.3s ease;
   opacity: 0.7;
-  color: currentColor;
-    /* inherits text color */
-}
-
-.section.black .chevron {
-  color: var(--dark-accent);
 }
 
 /* Rotate on open */
 details[open] .chevron {
   transform: rotate(180deg);
+}
+
+/* Chevron icon */
+.chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  opacity: 0.7;
+  color: currentColor;
+    /* inherits text color */
+}
+
+/* Remove default marker */
+summary::-webkit-details-marker { display: none; }
+summary::marker { content: ""; }
+
+.section.black .chevron {
+  color: var(--dark-accent);
 }
 
 /* Hover affordance */
