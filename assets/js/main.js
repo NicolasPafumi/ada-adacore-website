@@ -24,30 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener('scroll', revealStackOnScroll);
   revealStackOnScroll(); // initial check
-  
-  /*
-  const stackImages = document.querySelectorAll('.stack-img');
-
-  function revealStackOnScroll() {
-    const windowBottom = window.scrollY + window.innerHeight;
-
-    stackImages.forEach((img, i) => {
-      const imgTop = img.offsetTop + img.parentElement.offsetTop; // relative to document
-
-      // reveal if in view and not yet visible
-      if (windowBottom > imgTop + 50 && !img.classList.contains('visible')) {
-        // optional staggered delay for cinematic effect
-        setTimeout(() => {
-          img.classList.add('visible');
-        }, i * 100); // 100ms between images
-      }
-    });
-  }
-
-  window.addEventListener('scroll', revealStackOnScroll);
-  window.addEventListener('resize', revealStackOnScroll);
-  revealStackOnScroll(); // initial check in case some images are visible on load
-  */
 
   ////////////////////////////////////////////////
   // five elements from left to right
