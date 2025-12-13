@@ -158,6 +158,31 @@ layout: default
             </details>
         </div>
 
+        <!-- historical volatility -->
+        <div class="info-box returns intro">
+            What is historical volatility ?
+        </div>
+        
+        <div class="details-box">
+            <details>
+                <summary><b>Historical volatility</b></summary>
+
+                <p>
+                    Volatility is the finance term for the standard deviation. It can be computed using usual unbiased standard deviation formula with a rolling window.
+                </p>
+
+                <p>Formula:</p>
+        
+                <p style="text-align:center;">
+                    $$\sigma = \sqrt{ \frac{1}{N-1} \sum_{t=1}^{N} (\bar{V}^2 - V_t^2) } $$
+                </p>
+                <p>
+                    With
+                    \(N\) the selected window, e.g. \(t\) representing a day, \( \bar{V} \) the average price for the given window and \(V_t\) the price on a given \(t\) (e.g. a day).
+                </p>
+            </details>
+        </div>
+
         <p>-> talk about the math and abnormal volatility</p>
 
         <h2> What's an event study methodology: how to define abnormal returns </h2>
