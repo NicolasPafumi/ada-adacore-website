@@ -252,6 +252,7 @@ body.scrolling-to-black .section.newspaper {
 .section.black .info-box {
   color: var(--dark-accent);
   background: var(--dark-bg);
+  border-left: 4px solid var(--dark-accent);
 }
 
 /*smooth animation*/
