@@ -283,10 +283,12 @@ details[open] .details-content {
 /* removes margin spaces*/
 
 /* Remove default spacing from details */
+/*
 details {
   margin: 0;
   padding: 0;
 }
+*/
 
 /* Control spacing inside dropdown */
 /*
