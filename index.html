@@ -171,7 +171,7 @@ layout: default
         
         <div class="details-box">
             <details class="collapsible">
-                <span class="icon">📈</span>
+
                 <summary><b>Historical volatility</b></summary>
 
                 <p>
@@ -181,7 +181,7 @@ layout: default
                 <p>Formula:</p>
         
                 <p class="math-block">
-                    $$\sigma = \sqrt{ \frac{1}{N-1} \sum_{t=1}^{N} (\bar{V}^2 - V_t^2) } $$
+                    $$\sigma_H = \sqrt{ \frac{1}{N-1} \sum_{t=1}^{N} (\bar{V}^2 - V_t^2) } $$
                 </p>
                 <p>
                     With
@@ -204,10 +204,12 @@ layout: default
                 <summary><b>Parkinson volatility</b></summary>
         
                 <p>
-                    Here we explain in much more details
+                    Parkinson's volatility needs to be computed over a time window and yields
+                    accurate estimates with smaller values of \(N\), allowing to 
+                    capture short-term variation without sacrificing reliability.
                 </p>
         
-                <p>With a nice formula:</p>
+                <p>Formula :</p>
         
                 <p class="math-block">
                     <!-- MathJax formula -->
@@ -215,10 +217,8 @@ layout: default
                     \right)^2}$$
                 </p>
                 <p>
-                    where $H_t$ and $L_t$ are the high and low prices on day $t$. The factor $\frac{1}{4 \ln(2)}$ is derived from modeling
-                    returns as a geometric Brownian motion. Parkinson's volatility still needs to be computed over a window, but it yields
-                    accurate estimates with smaller values of $N$, allowing us to better capture short-term variation without sacrificing
-                    reliability.
+                    where $H_t$ and \(L_t\) are the high and low prices on day \(t\). The factor \( \frac{1}{4 \ln(2)} \) is derived from modeling
+                    returns as a geometric Brownian motion.
                 </p>
             </details>
         </div>
