@@ -256,7 +256,7 @@ body.scrolling-to-black .section.newspaper {
 }
 
 .section.newspaper .info-box {
-  color: var(--news-accent);
+  color: var(--news-text);
   background: var(--news-bg);
 }
 
