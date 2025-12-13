@@ -218,8 +218,8 @@ body.scrolling-to-black .section.newspaper {
 
   /* Newspaper */
   --news-accent: #b89b3c;
-  --news-bg: rgba(184, 155, 60, 0.12);
-  --news-text: #2b2b2b;
+  --news-bg: rgba(255, 216, 77, 0.623);
+  --news-text: #000000;
 
   /* Black section */
   --dark-accent: #e6c46a;
@@ -227,10 +227,11 @@ body.scrolling-to-black .section.newspaper {
   --dark-text: #f4f4f4;
 }
 
+/*
 .section.black {
   --returns-accent: #ffd84d;
   --returns-bg: rgba(255, 216, 77, 0.15);
-}
+}*/
 
 .info-box {
   margin: 1.5em 0;
