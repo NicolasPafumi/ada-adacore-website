@@ -74,12 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".section");
   const underline = document.querySelector(".ribbon-underline");
 
-
-  /* start ribbon hidden scroll down */
-  /*
   let lastScrollY = window.scrollY;
 
   window.addEventListener("scroll", () => {
+
+    /* start ribbon hidden scroll down */
+    /*
     const currentScroll = window.scrollY;
 
     if (currentScroll > lastScrollY && currentScroll > 120) {
@@ -89,13 +89,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     lastScrollY = currentScroll;
+    */
+    /* end ribbon hidden scroll down */
 
     updateProgress(); // for progress bar
 
 
   });
-  */
-  /* end ribbon hidden scroll down */
+
+  
 
   /* start progress bar */
   const progressFill = document.querySelector(".progress-fill");
