@@ -112,7 +112,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     lastScrollY = currentScroll;
+
+    updateProgress(); // for progress bar
+
+
   }); /* end ribbon hidden scroll down */
+
+  /* start progress bar */
+  const progressFill = document.querySelector(".progress-fill");
+
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+
+    const progress = (scrollTop / docHeight) * 100;
+    progressFill.style.width = `${progress}%`;
+  }
+ /* end progress bar */
 
 
   function updateRibbon() {
@@ -151,28 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", updateRibbon);
   updateRibbon();
 });
-
-/*
-document.addEventListener("scroll", () => {
-  const ribbon = document.querySelector(".top-ribbon");
-  const sections = document.querySelectorAll(".section");
-
-  let isDark = false;
-
-  sections.forEach(section => {
-    const rect = section.getBoundingClientRect();
-
-    // Check if section is under the ribbon area
-    if (rect.top <= 60 && rect.bottom > 60) { // THE TWO NUMBER MUST BE THE SIZE OF THE RIBBON
-      if (section.classList.contains("black")) {
-        isDark = true;
-      }
-    }
-  });
-
-  ribbon.classList.toggle("dark", isDark);
-  ribbon.classList.toggle("light", !isDark);
-});*/
 
 
 ///////////////////////////////////////////////////////////////

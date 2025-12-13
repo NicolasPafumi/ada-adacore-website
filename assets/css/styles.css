@@ -181,6 +181,29 @@ body.scrolling-to-black .section.newspaper {
   transition: transform 0.4s ease, width 0.4s ease;
 }
 
+/*---------------------*/
+/* progress bar on top */
+/*---------------------*/
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.top-ribbon.dark .progress-bar {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: currentColor;
+  transition: width 0.2s linear;
+}
+
 /*------------------------------*/
 /* Make overlap appear on scoll */
 /*------------------------------*/
