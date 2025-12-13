@@ -209,12 +209,17 @@ body.scrolling-to-black .section.newspaper {
 /*---------------*/
 :root {
   /* Finance palette */
-  --returns-accent: #ffd102a1;
-  --returns-bg: rgba(255, 208, 0, 0.623);
+  --returns-accent: #ffd84d;
+  --returns-bg: rgba(255, 216, 77, 0.623);
 
   /* shared layout */
   --box-padding: 20px;
   --box-font-size: 18px;
+}
+
+.section.black {
+  --returns-accent: #ffd84d;
+  --returns-bg: rgba(255, 216, 77, 0.15);
 }
 
 .info-box {
