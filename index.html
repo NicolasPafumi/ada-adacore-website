@@ -190,6 +190,39 @@ layout: default
             </details>
         </div>
 
+        <!-- Parkinson Volatility -->
+        <div class="info-box">
+            Parkinson's volatility to leverage highest and lowest intraday prices.
+        </div>
+        <div class="details-box">
+            <details class="collapsible">
+                <span class="icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <polyline points="3 17 9 11 13 15 21 7" />
+                    </svg>
+                </span>
+                <summary><b>Parkinson volatility</b></summary>
+        
+                <p>
+                    Here we explain in much more details
+                </p>
+        
+                <p>With a nice formula:</p>
+        
+                <p class="math-block">
+                    <!-- MathJax formula -->
+                    $$\sigma_P = \sqrt{\frac{1}{4 \ln(2)} \cdot \frac{1}{N} \sum_{t=1}^{N} \left( \ln\left(\frac{H_t}{L_t}\right)
+                    \right)^2}$$
+                </p>
+                <p>
+                    where $H_t$ and $L_t$ are the high and low prices on day $t$. The factor $\frac{1}{4 \ln(2)}$ is derived from modeling
+                    returns as a geometric Brownian motion. Parkinson's volatility still needs to be computed over a window, but it yields
+                    accurate estimates with smaller values of $N$, allowing us to better capture short-term variation without sacrificing
+                    reliability.
+                </p>
+            </details>
+        </div>
+
         <p>-> talk about the math and abnormal volatility</p>
 
         <h2> What's an event study methodology: how to define abnormal returns </h2>
@@ -350,6 +383,23 @@ layout: default
 
         typeWriter(); // start the effect
     </script>
+
+    <p>$$R_t=\frac{P_{t+1}-P_t}{P_t}$$
+    
+    where $P_i$ denotes closing price at time $i$. Expected returns are then computed using either a simple model:
+    
+    $$R_{t,i}^{expected} = R_{reference}$$
+    
+    where $R_{reference}$ is the return of a reference index (e.g., S&P 500) at time $t$, or a market model:
+    
+    $$R_{t,i}^{expected} = \alpha_i + \beta_i \cdot R_{reference}$$
+    
+    where $\alpha_i$ and $\beta_i$ are parameters fitted using linear regression for stock $i$. Abnormal returns are then
+    computed as the difference between realized and expected returns.
+    
+    $$
+    R_{t,i}^{abnormal} = R_{t,i} - R_{t,i}^{expected}
+    $$</p>
 
     <h2>Random stuf to fill</h2>
         <p>fsdgdfgdfgd</p><br>
