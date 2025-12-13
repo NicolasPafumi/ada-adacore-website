@@ -329,6 +329,12 @@ summary::marker {
   height: 14px;
   transition: transform 0.3s ease;
   opacity: 0.7;
+  color: currentColor;
+    /* inherits text color */
+}
+
+.section.black .chevron {
+  color: var(--dark-accent);
 }
 
 /* Rotate on open */
