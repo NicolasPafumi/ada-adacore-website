@@ -37,13 +37,6 @@ body {
   padding: 60px 0;
 }
 
-/*
-.container {
-  width: 90%;
-  max-width: 850px;
-  margin: 0 auto;
-}*/
-
 .content {
   max-width: 60%; /* your page width */
   margin: 0 auto; /* centres it */
@@ -78,10 +71,43 @@ body.scrolling-to-black .section.newspaper {
 
 /* Transition section (white → black on full width) */
 .section.transition {
-  height: 100px; /* you can change this */
+  height: 100px;
   background: linear-gradient(to bottom, var(--newspaper-bg), var(--black-bg));
   padding: 0;
   font-family: "Inter", sans-serif;
+}
+
+/*-------------------------------*/
+/* Ribbon navigation top of page */
+/*-------------------------------*/
+
+.top-ribbon {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.ribbon-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.top-ribbon a {
+  text-decoration: none;
+  color: #222;
+  font-family: "Times New Roman", serif;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.top-ribbon a:hover {
+  text-decoration: underline;
 }
 
 /*------------------------------*/
