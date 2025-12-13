@@ -247,6 +247,27 @@ body.scrolling-to-black .section.newspaper {
   font-size: var(--box-font-size);
 }
 
+/*smooth animation*/
+.collapsible summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.details-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+details[open] .details-content {
+  max-height: 1000px;
+  /* large enough */
+  opacity: 1;
+}
+
 
 /*------------------------------*/
 /* Make overlap appear on scoll */
