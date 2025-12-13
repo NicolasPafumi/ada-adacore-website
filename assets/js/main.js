@@ -98,6 +98,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".section");
   const underline = document.querySelector(".ribbon-underline");
 
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastScrollY && currentScroll > 120) {
+      ribbon.classList.add("hidden");   // scrolling down
+    } else {
+      ribbon.classList.remove("hidden"); // scrolling up
+    }
+
+    lastScrollY = currentScroll;
+  });
+
+
   function updateRibbon() {
     let currentSection = null;
     let darkMode = false;

@@ -85,16 +85,11 @@ body.scrolling-to-black .section.newspaper {
 /* Ribbon navigation top of page */
 /*-------------------------------*/
 
-/**/
+/*hide ribbon when scrolling down*/
+.top-ribbon.hidden {
+  transform: translateY(-100%);
+}
 
-/*
-.top-ribbon {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: white;
-  border-bottom: 1px solid #ddd;
-}*/
 .top-ribbon {
   position: sticky;
   top: 0;
@@ -107,15 +102,6 @@ body.scrolling-to-black .section.newspaper {
   padding: 14px 0;
 }
 
-/*
-.ribbon-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 12px 20px;
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-}*/
 .ribbon-content {
   display: flex;
   justify-content: center;
@@ -165,19 +151,10 @@ body.scrolling-to-black .section.newspaper {
 }
 
 /* Dark (black section) */
-/*
-.top-ribbon.dark {
-  background: black;
-  border-bottom: 1px solid #333;
-}*/
 .top-ribbon.dark {
   background: rgba(0, 0, 0, 0.55);
 }
 
-/*
-.top-ribbon.dark a {
-  color: white;
-}*/
 .top-ribbon.dark a {
   color: rgba(255, 255, 255, 0.75);
 }
