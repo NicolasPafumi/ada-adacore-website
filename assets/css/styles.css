@@ -204,6 +204,45 @@ body.scrolling-to-black .section.newspaper {
   transition: width 0.2s linear;
 }
 
+/*---------------*/
+/* Dropdown menu */
+/*---------------*/
+:root {
+  /* Finance palette */
+  --returns-accent: #ffd102a1;
+  --returns-bg: rgba(255, 208, 0, 0.623);
+
+  /* shared layout */
+  --box-padding: 20px;
+  --box-font-size: 18px;
+}
+
+.info-box {
+  border-left: 4px solid;
+  padding-left: var(--box-padding);
+  font-size: var(--box-font-size);
+}
+
+.info-box.intro {
+  background-color: var(--returns-bg);
+}
+
+.info-box.returns {
+  border-color: var(--returns-accent);
+}
+
+.details-box {
+  border-left: 4px solid var(--returns-accent);
+  padding-left: var(--box-padding);
+  font-size: var(--box-font-size);
+}
+
+.details-box summary {
+  cursor: pointer;
+  font-size: var(--box-font-size);
+}
+
+
 /*------------------------------*/
 /* Make overlap appear on scoll */
 /*------------------------------*/
