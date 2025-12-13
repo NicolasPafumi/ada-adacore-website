@@ -89,13 +89,38 @@ const observer = new IntersectionObserver(entries => {
 
 blackSections.forEach(section => observer.observe(section));
 
+////////////////////////////////////////////////////////////
+// Make top ribbon change color
+//////////////////////////////////////////////////////////
+document.addEventListener("scroll", () => {
+  const ribbon = document.querySelector(".top-ribbon");
+  const sections = document.querySelectorAll(".section");
+
+  let isDark = false;
+
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+
+    // Check if section is under the ribbon area
+    if (rect.top <= 60 && rect.bottom > 60) { // THE TWO NUMBER MUST BE THE SIZE OF THE RIBBON
+      if (section.classList.contains("black")) {
+        isDark = true;
+      }
+    }
+  });
+
+  ribbon.classList.toggle("dark", isDark);
+  ribbon.classList.toggle("light", !isDark);
+});
+
+
 ///////////////////////////////////////////////////////////////
 // adapt size of nasdaq question graph
 /////////////////////////////////////////////////////////////
 function resizeIframe() {
   const iframe = document.getElementById('nasdaq-iframe');
   if (iframe && iframe.contentWindow) {
-    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 4 + 'px';
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight * 1.1 + 'px';
   }
 }
 
