@@ -208,13 +208,23 @@ body.scrolling-to-black .section.newspaper {
 /* Dropdown menu */
 /*---------------*/
 :root {
-  /* Finance palette */
+  /* Shared layout */
+  --box-padding: 20px;
+  --box-font-size: 18px;
+
+  /* Finance / returns */
   --returns-accent: #ffd84d;
   --returns-bg: rgba(255, 216, 77, 0.623);
 
-  /* shared layout */
-  --box-padding: 20px;
-  --box-font-size: 18px;
+  /* Newspaper */
+  --news-accent: #b89b3c;
+  --news-bg: rgba(184, 155, 60, 0.12);
+  --news-text: #2b2b2b;
+
+  /* Black section */
+  --dark-accent: #e6c46a;
+  --dark-bg: rgba(230, 196, 106, 0.10);
+  --dark-text: #f4f4f4;
 }
 
 .section.black {
@@ -223,17 +233,20 @@ body.scrolling-to-black .section.newspaper {
 }
 
 .info-box {
-  border-left: 4px solid;
-  padding-left: var(--box-padding);
-  font-size: var(--box-font-size);
+  margin: 1.5em 0;
+  padding: 1em 1.5em;
+  border-left: 4px solid currentColor;
+  font-size: 1.05em;
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .info-box.intro {
   background-color: var(--returns-bg);
+  color: var(--returns-accent);
 }
 
 .info-box.returns {
-  border-color: var(--returns-accent);
+  color: var(--returns-accent);
 }
 
 .details-box {
@@ -245,6 +258,16 @@ body.scrolling-to-black .section.newspaper {
 .details-box summary {
   cursor: pointer;
   font-size: var(--box-font-size);
+}
+
+.section.newspaper .info-box {
+  color: var(--news-accent);
+  background: var(--news-bg);
+}
+
+.section.black .info-box {
+  color: var(--dark-accent);
+  background: var(--dark-bg);
 }
 
 /*smooth animation*/
@@ -259,12 +282,13 @@ body.scrolling-to-black .section.newspaper {
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
+  transition:
+    max-height 0.45s ease,
+    opacity 0.3s ease;
 }
 
 details[open] .details-content {
-  max-height: 1000px;
-  /* large enough */
+  max-height: 80vh;
   opacity: 1;
 }
 
@@ -281,6 +305,17 @@ details[open] .details-content {
   font-family: "Times New Roman", serif;
 }
 
+.section.newspaper .math-block {
+  color: var(--news-accent);
+  background: var(--news-bg);
+  border-left: 3px solid var(--news-accent);
+}
+
+.section.black .math-block {
+  color: var(--dark-accent);
+  background: var(--dark-bg);
+  border-left: 3px solid var(--dark-accent);
+}
 
 /*------------------------------*/
 /* Make overlap appear on scoll */
