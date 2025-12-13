@@ -268,6 +268,19 @@ details[open] .details-content {
   opacity: 1;
 }
 
+/* Nicer math blocs */
+.math-block {
+  text-align: center;
+  margin: 2em auto;
+  padding: 1em 1.5em;
+
+  font-size: 1.05em;
+  background: rgba(0, 0, 0, 0.03);
+  border-left: 3px solid currentColor;
+
+  font-family: "Times New Roman", serif;
+}
+
 
 /*------------------------------*/
 /* Make overlap appear on scoll */
