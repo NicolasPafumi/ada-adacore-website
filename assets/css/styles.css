@@ -27,6 +27,18 @@ html {
   --margin-white: #ffffff;
   --margin-black: #000000;
   --paper: #f0ece2;
+  --margin-bg: #ffffff;
+    /* default */
+}
+
+/* Margin states */
+/*
+body.scrolling-to-black {
+  --margin-bg: var(--margin-black);
+}*/
+
+body.scrolling-to-news {
+  --margin-bg: var(--paper);
 }
 
 body {
@@ -34,6 +46,29 @@ body {
   background: white;
   color: black;
   font-family: sans-serif;
+}
+
+/* Page side margins */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  width: 6vw;
+  /* margin width */
+  height: 100vh;
+  background: var(--margin-bg);
+  transition: background 0.6s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::before {
+  left: 0;
+}
+
+body::after {
+  right: 0;
 }
 
 .section {

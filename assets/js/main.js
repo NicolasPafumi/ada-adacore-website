@@ -50,20 +50,34 @@ document.addEventListener("DOMContentLoaded", () => {
 // background newpaper transition to black as black section appears
 //////////////////////////////////////////////
 const blackSections = document.querySelectorAll('.section.black');
+const newsSections = document.querySelectorAll('.section.newspaper');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
+    if (!entry.isIntersecting) return;
+
+    // Clear previous states
+    document.body.classList.remove(
+      'scrolling-to-black',
+      'scrolling-to-news'
+    );
+
+    // Apply correct mode
+    if (entry.target.classList.contains('black')) {
       document.body.classList.add('scrolling-to-black');
-    } else {
-      document.body.classList.remove('scrolling-to-black');
+    }
+
+    if (entry.target.classList.contains('newspaper')) {
+      document.body.classList.add('scrolling-to-news');
     }
   });
 }, {
-  threshold: 0.1
+  threshold: 0.3   // smoother transition
 });
 
-blackSections.forEach(section => observer.observe(section));
+blackSections.forEach(s => observer.observe(s));
+newsSections.forEach(s => observer.observe(s));
+
 
 ////////////////////////////////////////////////////////////
 // Make top ribbon change color
