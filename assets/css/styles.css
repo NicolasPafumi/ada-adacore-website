@@ -36,14 +36,27 @@ html {
 body.scrolling-to-black {
   --margin-bg: var(--margin-black);
 }*/
-
+/**********************************/
+/*
 body.scrolling-to-news {
   background-color: var(--newspaper-bg);
 }
 
 body.scrolling-to-black .section.newspaper {
   background-color: var(--black-bg);
+}*/
+/***********************************/
+
+body.scrolling-to-news {
+  background-color: var(--newspaper-bg);
 }
+
+body.scrolling-to-black {
+  background-color: var(--black-bg);
+}
+
+/*****************************************/
+
 
 body {
   margin: 0;
