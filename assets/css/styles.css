@@ -118,8 +118,21 @@ body::after {
   transition: opacity 0.6s ease;
 }
 
-body.section.newspaper::after {
+/* Show paper grain when newspaper is active */
+body.scrolling-to-newspaper::after {
   opacity: 0.25;
+}
+
+/* Hide grain when black section is active */
+body.scrolling-to-black::after {
+  opacity: 0;
+}
+
+/* make it softer for large screens*/
+@media (min-width: 1200px) {
+  body.scrolling-to-newspaper::after {
+    opacity: 0.18;
+  }
 }
 
 /*-------------------------------*/
