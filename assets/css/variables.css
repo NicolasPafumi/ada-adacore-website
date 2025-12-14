@@ -1,0 +1,10 @@
+:root {
+    --newspaper-bg: #f7f3e8;
+    --black-bg: #000000;
+    --margin-white: #ffffff;
+    --margin-black: #000000;
+    --paper: #f0ece2;
+    /* the one used previously for newspaper bg */
+    --newspaper-color: black;
+    --black-color: white;
+}

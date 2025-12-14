@@ -1,4 +1,5 @@
 /*TO LINK THE FONTS IN GRAPH'S HEAD : <link rel="stylesheet" href="assets/css/graph-style.css">*/
+@import url("variables.css");
 
 body {
     background-color: #111111;

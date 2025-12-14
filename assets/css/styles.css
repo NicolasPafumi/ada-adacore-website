@@ -1,6 +1,7 @@
 /*---------------------------*/
 /* Our code section          */
 /*---------------------------*/
+@import url("variables.css");
 
 img {
     max-width: 100%;
@@ -22,18 +23,10 @@ html {
 /* Section newspaper and black*/
 /*----------------------------*/
 /* Base layout */
-:root {
-    --newspaper-bg: #f7f3e8;
-    --black-bg: #000000;
-    --margin-white: #ffffff;
-    --margin-black: #000000;
-    --paper: #f0ece2; /* the one used previously for newspaper bg */
-}
-
 body {
     margin: 0;
     background: white;
-    color: black;
+    color: var(--newspaper-color);
     font-family: sans-serif;
 }
 
@@ -56,7 +49,7 @@ body {
     background-color: var(--newspaper-bg);
     transition: background-color 0.6s ease;
     font-family: "Times New Roman", Times, serif;
-    color: black;
+    color: var(--newspaper-color);
 }
 
 /* Black section */
@@ -64,7 +57,7 @@ body {
   background: var(--black-bg);
   transition: background-color 0.6s ease;
   font-family: "Arial", sans-serif;
-  color: white;
+  color: var(--newspaper-color);
 }
 
 .section.newspaper .content {
