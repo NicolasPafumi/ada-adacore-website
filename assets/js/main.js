@@ -49,6 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
 ///////////////////////////////////////////
 // background newpaper transition to black as black section appears
 //////////////////////////////////////////////
+
+/**/
 const blackSections = document.querySelectorAll('.section.black');
 
 const observer = new IntersectionObserver(entries => {
