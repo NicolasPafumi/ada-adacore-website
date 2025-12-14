@@ -67,6 +67,7 @@ body {
   font-family: sans-serif;
 }*/
 
+/*
 body {
   margin: 0;
   background: var(--page-bg);
@@ -74,16 +75,83 @@ body {
   color: black;
   font-family: sans-serif;
   transition: background-color 0.6s ease;
+}*/
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Base background layers */
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+/* Cream paper background */
+.bg-layer.paper {
+  background: #f7f3e8;
+  opacity: 1;
+}
+
+/* Black background */
+.bg-layer.black {
+  background: #000;
+  opacity: 0;
+}
+
+body.bg-black .bg-layer.black {
+  opacity: 1;
+}
+
+body.bg-black .bg-layer.paper {
+  opacity: 0;
+}
+
+body.bg-news .bg-layer.paper {
+  opacity: 1;
+}
+
+body.bg-news .bg-layer.black {
+  opacity: 0;
+}
+
+.bg-layer.paper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 2px),
+    repeating-linear-gradient(90deg,
+      rgba(0, 0, 0, 0.02) 0px,
+      rgba(0, 0, 0, 0.02) 1px,
+      transparent 1px,
+      transparent 3px);
+  opacity: 0.25;
+  pointer-events: none;
 }
 
 /* Background state switches */
+/*
 body.bg-black {
   --page-bg: var(--black-bg);
 }
 
 body.bg-news {
   --page-bg: var(--newspaper-bg);
-}
+}*/
 
 /* Page side margins */
 /*
