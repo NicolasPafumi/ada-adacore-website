@@ -38,7 +38,11 @@ body.scrolling-to-black {
 }*/
 
 body.scrolling-to-news {
-  --margin-bg: var(--paper);
+  background-color: var(--paper);
+}
+
+body.scrolling-to-black .section.newspaper {
+  background-color: var(--margin-black);
 }
 
 body {
@@ -49,13 +53,13 @@ body {
 }
 
 /* Page side margins */
+/*
 body::before,
 body::after {
   content: "";
   position: fixed;
   top: 0;
   width: 6vw;
-  /* margin width */
   height: 100vh;
   background: var(--margin-bg);
   transition: background 0.6s ease;
@@ -69,7 +73,7 @@ body::before {
 
 body::after {
   right: 0;
-}
+}*/
 
 .section {
   width: 100%;
@@ -95,26 +99,24 @@ body::after {
   padding: 40px; /* adjust with respect to margin sizes */
 }
 
-body.scrolling-to-black .section.newspaper {
-  background-color: black;
-}
-
 
 /* Black section */
 .section.black {
   background: var(--black-bg);
+  transition: background-color 0.6s ease;
   color: white;
   /*font-family: "Inter", sans-serif;*/
   font-family: "Arial", sans-serif;
 }
 
 /* Transition section (white → black on full width) */
+/*
 .section.transition {
   height: 100px;
   background: linear-gradient(to bottom, var(--newspaper-bg), var(--black-bg));
   padding: 0;
   font-family: "Inter", sans-serif;
-}
+}*/
 
 /*-------------------------------*/
 /* Ribbon navigation top of page */
