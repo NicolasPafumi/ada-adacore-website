@@ -27,7 +27,7 @@ html {
     --black-bg: #000000;
     --margin-white: #ffffff;
     --margin-black: #000000;
-    --paper: #f0ece2;
+    --paper: #f0ece2; /* the one used previously for newspaper bg */
 }
 
 body {
@@ -53,7 +53,7 @@ body {
 
 /* Newspaper section */
 .section.newspaper {
-    background-color: var(--paper);
+    background-color: var(--newspaper-bg);
     transition: background-color 0.6s ease;
     font-family: "Times New Roman", Times, serif;
     color: black;
@@ -88,6 +88,38 @@ body.scrolling-to-newspaper .section.black {
     background: linear-gradient(to bottom, var(--newspaper-bg), var(--black-bg));
     padding: 0;
     font-family: "Inter", sans-serif;
+}
+
+
+/*-------------*/
+/* Paper grain */
+/*-------------*/
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  /* subtle grain using layered gradients */
+  background-image:
+    repeating-linear-gradient(0deg,
+      rgba(0, 0, 0, 0.025) 0px,
+      rgba(0, 0, 0, 0.025) 1px,
+      transparent 1px,
+      transparent 2px),
+    repeating-linear-gradient(90deg,
+      rgba(0, 0, 0, 0.02) 0px,
+      rgba(0, 0, 0, 0.02) 1px,
+      transparent 1px,
+      transparent 3px);
+
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+body.section.newspaper::after {
+  opacity: 0.25;
 }
 
 /*-------------------------------*/
