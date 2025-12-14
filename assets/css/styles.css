@@ -212,45 +212,26 @@ body.scrolling-to-newspaper .section.black {
 /*---------------*/
 /* Dropdown menu */
 /*---------------*/
-:root {
-    /* Shared layout */
-    --box-padding: 20px;
-    --box-font-size: 18px;
-
-
-    /* Newspaper */
-    --news-accent: #d4ae2f;
-    --news-bg: rgba(255, 216, 77, 0.243);
-    --news-text: #000000;
-
-    /* Black section */
-    --dark-accent: #e6c46a;
-    --dark-bg: rgba(230, 196, 106, 0.10);
-    --dark-text: #fcb900;
-}
-
 .details-box {
-    border-left: 4px solid var(--news-accent);
-    padding-left: var(--box-padding);
-    font-size: var(--box-font-size);
+    border-left: 4px solid var(--hintbox-news-accent);
+    padding-left: var(--hintbox-box-padding);
+    font-size: var(--hintbox-box-font-size);
 }
-
-
 
 .details-box summary {
     cursor: pointer;
-    font-size: var(--box-font-size);
+    font-size: var(--hintbox-box-font-size);
 }
 
 .section.newspaper .info-box {
-    color: var(--news-text);
-    background: var(--news-bg);
+    color: var(--hintbox-news-text);
+    background: var(--hintbox-news-bg);
 }
 
 .section.black .info-box {
-    color: var(--dark-accent);
-    background: var(--dark-bg);
-    border-left: 4px solid var(--dark-accent);
+    color: var(--hintbox-dark-accent);
+    background: var(--hintbox-dark-bg);
+    border-left: 4px solid var(--hintbox-dark-accent);
 }
 
 /*smooth animation*/
@@ -263,8 +244,8 @@ body.scrolling-to-newspaper .section.black {
 
 .details-content {
     overflow: hidden;
-    border-left: 4px solid var(--news-accent);
-    padding-left: var(--box-padding);
+    border-left: 4px solid var(--hintbox-news-accent);
+    padding-left: var(--hintbox-box-padding);
     max-height: 0;
     opacity: 0;
     transition:
@@ -273,7 +254,7 @@ body.scrolling-to-newspaper .section.black {
 }
 
 .section.black .details-content {
-  color: var(--dark-text);
+  color: var(--hintbox-dark-text);
 }
 
 details[open] .details-content {
@@ -325,9 +306,9 @@ summary::marker {
     padding: 1em 1.5em;
     font-size: 1.05em;
 
-    border-left: 4px solid var(--news-accent);
-    background: var(--news-bg);
-    color: var(--news-text);
+    border-left: 4px solid var(--hintbox-news-accent);
+    background: var(--hintbox-news-bg);
+    color: var(--hintbox-news-text);
 }
 
 .details-content {
@@ -380,7 +361,7 @@ summary::marker {
 }
 
 .section.black .chevron {
-    color: var(--dark-accent);
+    color: var(--hintbox-dark-accent);
 }
 
 /* Hover affordance */
@@ -423,15 +404,15 @@ summary::marker {
 }
 
 .section.newspaper .math-block {
-    color: var(--news-text);
-    background: var(--news-bg);
-    border-left: 3px solid var(--news-accent);
+    color: var(--hintbox-news-text);
+    background: var(--hintbox-news-bg);
+    border-left: 3px solid var(--hintbox-news-accent);
 }
 
 .section.black .math-block {
-    color: var(--dark-accent);
-    background: var(--dark-bg);
-    border-left: 3px solid var(--dark-accent);
+    color: var(--hintbox-dark-accent);
+    background: var(--hintbox-dark-bg);
+    border-left: 3px solid var(--hintbox-dark-accent);
 }
 
 /*------------------------------*/

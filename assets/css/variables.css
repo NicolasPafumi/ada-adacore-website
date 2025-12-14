@@ -12,4 +12,20 @@
     --newspaper-font:"Times New Roman",
         Times,
         serif;
+
+    /* FOR HINT BOXES*/
+    /* Shared layout */
+    --hintbox-box-padding: 20px;
+    --hintbox-box-font-size: 18px;
+
+    /* Newspaper */
+    --hintbox-news-accent: #d4ae2f;
+    --hintbox-news-bg: rgba(255, 216, 77, 0.243);
+    --hintbox-news-text: #000000;
+
+    /* Black section */
+    --hintbox-dark-accent: #e6c46a;
+    --hintbox-dark-bg: rgba(230, 196, 106, 0.10);
+    --hintbox-dark-text: #fcb900;
+
 }
