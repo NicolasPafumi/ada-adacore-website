@@ -73,6 +73,7 @@ body.scrolling-to-black .section.newspaper {
 
 body.scrolling-to-newspaper .section.black {
   background-color: var(--newspaper-bg);
+  color: var(--newspaper-bg); /* make white text diseappear when not on focus*/
 }
 
 /* Transition section (white → black on full width) */
