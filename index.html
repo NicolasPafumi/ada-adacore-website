@@ -20,31 +20,21 @@ layout: default
     </div>
 </nav>
 
-
+<!--news section-->
 <section id="intro" class="section newspaper">
     <div class="content">
 
         <h1> King of White House, Wolf of Wall Street: How US presidential election impact companies' performance on the
             stockmarket </h1>
-
+        
         <hr>
-
+        
         <h3> Brought to you by Team Adacore: Ghassan ABBOUD, Eliota BRAHA, Nicolas PAFUMI, Asia PEDROIA, Elsa SÁNCHEZ
             FERNÁNDEZ</h3>
-
+        
         <hr>
 
-        <h1>Money right !?!</h1>
-
-        <p>A game, a necessity, a goal, it is everything to some but nothing to none.</p>
-
-        <h2>Cool dataset but what's the difference between 'Close' and 'Adj Close' ?</h2>
-        <p>The close price is the stock valuation on the market, it's price. That price is corrected for 'splits' : an
-            operation that can divide existing shares into a larger number. The adjusted close proce (Adj Close) correct
-            for the splits too but additionaly for the dividends : the money received by each stockholder. The payment
-            of devidends create a sudden drop in price of the stock of exactly the cash value of the dividend because as
-            this money left the firm (to land in your pocket) it diminishes accordingly the share's price.</p>
-
+        <!-- collage of headlines-->
         <div class="image-stack">
             <img src="assets/img/pic_overlap/pic_overlap1.jpg" class="stack-img">
             <img src="assets/img/pic_overlap/pic_overlap2.jpg" class="stack-img">
@@ -55,41 +45,6 @@ layout: default
             <img src="assets/img/pic_overlap/pic_overlap7.jpg" class="stack-img">
             <img src="assets/img/pic_overlap/pic_overlap8.jpg" class="stack-img">
         </div>
-
-        <h2>Returns</h2>
-        <p>You find yourself very slick, now that you bought a stock but you don't know how muck you're winning ? No
-            worries, we got you covered : you can just take the returns.</p>
-
-        <!-- RETURNS -->
-        <details class="collapsible info-dropdown">
-            <summary class="info-box">
-                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-                <span>Returns</span>
-            </summary>
-
-            <div class="details-content">
-                <p>
-                    To compute how much a stock earns we take the difference in value to the next period divided by
-                    value at the
-                    start of the period.
-                </p>
-
-                <p class="math-block">
-                    $$R = \frac{V_f - V_i}{V_i}$$
-                </p>
-
-                <p>
-                    Typically the period used is days and the value used is the adjusted close price.
-                </p>
-            </div>
-        </details>
-
-
-        <h2>Will the elections affect my returns ?</h2>
-
 
         <h2> Abstract </h2>
         <p>It is an established fact that presidential elections have a significant impact on the stock market.
@@ -114,30 +69,76 @@ layout: default
             and the upcoming 2024 race, we hope to uncover patterns that explain when, why, and how the market reacts.
         </p>
 
-    </div>
+        <h3>Research questions</h3>
+        <p>
+            Can we describe an entire sector? Do sectors have any significance in terms of shared financial behaviour? are they
+            affected differently? Which sectors are most affected by presidential elections? What characteristics of elections lead
+            to increased volatility? Does the president's party differentiably impact certain sectors? To answer these questions, we
+            will use historical stock market data and publicly available election data. We will also use prediction market data as
+            proxy for the perceived probability of each candidate winning.
+        </p>
 
+        <h3>Nasdaq who?</h3>
+        <p>
+            [description: a ecrire, mention sectors and a description of what they are, mention stock vs ETF]
+            [questionnaire]
+            [petits graphes de visualization]
+        </p>
+
+    </div>
 </section>
 
 <section id="nasdaq" class="section black">
     <div class="content">
-        <iframe id="nasdaq-iframe" src="assets/graphs/Nasdaq.html" width="100%" style="border:none;"
-            height="110%"></iframe>
 
-        <h2> What is NASDAQ</h2>
-        <p>NASDAQ stands for National Association of Securities Dealers Automated Quotations. It is a marketplace for
-            stock shares (a type of securities), like the New York stock exchange. The NASDAQ is specialized in
-            technology and high-growth companies.</p>
         <iframe src="assets/graphs/sectors.html" width="100%" height="900px" style="border:none;"></iframe>
-        <h2> What is a sector </h2>
-        <p>A sector is a denomination for firms that shares area of exercise. Typically they have similar risk, returns
-            and exposition to external factors.</p>
 
-        <iframe src="assets/graphs/interactive_dashboard.html" width="100%" height="1300px"
-            style="border:none;"></iframe>
+        <img src="assets/img/placeholders/ph1">
 
+        <p>graph nb of stocks per sector over time + click on graph to get description of what sector is</p>
 
-        <h2>Just to check color scheme on black sections</h2>
-        <!-- Dropdown_menu_template -->
+        <img src="assets/img/placeholders/ph2">
+
+    </div>
+</section>
+
+<section id="financials" class="section newspaper">
+    <div class="content">
+
+        <h2>Financials</h2>
+
+        <h3>Returns and log-returns</h3>
+
+        <p>financial description of returns, when they are used, what they represent</p>
+
+        <!--Returns-->
+        <details class="collapsible info-dropdown">
+            <summary class="info-box">
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span>Returns</span>
+            </summary>
+            <div class="details-content">
+                <p>
+                    To compute how much a stock earns we take the difference in value to the next period
+                    divided by value at the start of the period.
+                </p>
+        
+                <div class="math-block">
+                    $$R = \frac{V_f - V_i}{V_i}$$
+                </div>
+        
+                <p>
+                    Typically the period used is days and the value used is the adjusted close price.
+                </p>
+            </div>
+        </details>
+
+        <p>financial description of log returns, how they mitigate data in the tails, used for statistical tests, blabla</p>
+
+        <!--Log returns-->
         <details class="collapsible info-dropdown">
             <summary class="info-box">
                 <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
@@ -146,14 +147,14 @@ layout: default
                 </svg>
                 <span>INTRODUCE THE THING TO EXPALIN</span>
             </summary>
-
+        
             <div class="details-content">
                 <p>
                     Here we explain in much more details
                 </p>
-
+        
                 <p>With a nice formula:</p>
-
+        
                 <p class="math-block">
                     <!-- MathJax formula -->
                     $$1+ 1 \text{ is two}$$
@@ -165,33 +166,61 @@ layout: default
             </div>
         </details>
 
+        <h3>Kurtosis</h3>
 
-    </div>
-</section>
-
-<section id="volatility" class="section newspaper">
-    <div class="content">
-
-        <h2> What is volatility</h2>
         <p>
-            again a very finance-oriented paragraph, maybe paf and eliota can write stuff about how volatility is used
-            in the world
-            of trading: paf's discussion of portfolios as a way to bring down volatility, etc. Say that there are two
-            ways of
-            measuring volatility: historical volatility (standard deviation of returns over a period) and Parkinson's
-            volatility
-            (based on high and low volatility). explain how Parkinson's volatility is more suited for our purpose
-            because it
-            captures investor panic that might get resolved within the day, as can be the case in election days.
+            description of kurtosis, what it measures + different can barely be seen in histograms because lies in outliers
+        </p>
 
-            Also can have a dropdown menu with the formulas
+        <img src="assets/img/placeholders/ph3">
 
-            Here we can show the graph of volatility over two decades, showing a rise in volatility around 2008 crisis.
+        <h3>Alpha and Beta</h3>
 
-            Then, I want to talk about how to define the volatility of a sector, show two approaches: (1) volatility of
-            sector-specific ETF, (2) average volatility of all stocks in the sector. Show if the two are correlated and
-            why and
-            which one we choose.
+        <p>
+            intro to what alpha_beta is: In reality, some companies are more sensitive to market movements than others, they have a
+            higher beta. For example, technology stocks tend to have a beta greater than 1, they amplify market movements, while
+            utilities, a very stable sector, tend to have a beta less than 1. Similarly, some companies provide returns that cannot
+            simply be explained by market movements, they consistently outperform the market, they are said to have a positive
+            alpha.
+        </p>
+
+        <!--Alpha and Beta-->
+        <details class="collapsible info-dropdown">
+            <summary class="info-box">
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span>INTRODUCE THE THING TO EXPALIN</span>
+            </summary>
+        
+            <div class="details-content">
+                <p>
+                    Here we explain in much more details
+                </p>
+        
+                <p>With a nice formula:</p>
+        
+                <p class="math-block">
+                    <!-- MathJax formula -->
+                    $$1+ 1 \text{ is two}$$
+                </p>
+                <p>
+                    With
+                    \(x_1, x_2, \dots, x_n\) inline equation.
+                </p>
+            </div>
+        </details>
+
+        <img src="assets/img/placeholders/ph4">
+
+        <h3>Estimators of Volatility</h3>
+
+        <p>
+            Returns tend to be centered around 0 as prices oscillate around a trend. During the 2008 crisis, we observe an increase
+            in volatility, with more pronounced fluctuations. This pattern of high volatility could be indicative of what we expect
+            around election dates as well, although less pronounced. We can quantify this volatility using standard deviation of
+            returns over a rolling window. This estimate of volatility is referred to as historical volatility
         </p>
 
         <!-- historical volatility -->
@@ -203,16 +232,15 @@ layout: default
                 </svg>
                 <span>Historical volatility</span>
             </summary>
-
             <div class="details-content">
                 <p>
                     Volatility is the finance term for the standard deviation. It can be computed using usual unbiased
                     standard
                     deviation formula with a rolling window.
                 </p>
-
+        
                 <p>Formula:</p>
-
+        
                 <p class="math-block">
                     $$\sigma_H = \sqrt{ \frac{1}{N-1} \sum_{t=1}^{N} (\bar{V}^2 - V_t^2) } $$
                 </p>
@@ -225,6 +253,33 @@ layout: default
             </div>
         </details>
 
+        <img src="assets/img/placeholders/ph5">
+
+        <p>
+            Sectors typically follow the overall market trend, with increased volatility during events affecting the entire economy,
+            such as the 2008 financial crisis or the August 2011 market fall. However, this simple visualization hints that sectors
+            can exhibit different levels of volatility, responding to events that preferentially impact them. A good example is the
+            energy sector that showed above-market volatility from 2005 to 2007, as conflicts in the Middle East and other factors
+            influenced oil prices. Other sectors were largely unaffected during that period. Similarly, the years 2001-2003 saw
+            increased volatility in the technology sector following the burst of the dot-com bubble, while other sectors remained
+            relatively stable.
+        </p>
+
+        <P>
+            This already supports our hypothesis that sector-specific analysis is important to capture the full impact of elections.
+            As candidates take different stances on issues like climate change, regulation of Big Tech or healthcare reform, sectors
+            will be differentially affected!
+        </P>
+
+        <p>
+            while historical volatility is easy to compute and is typically used for long-term analysis and risk management, it has
+            its limitations. It needs a sufficiently large window size to provide reliable estimates, which can smooth out the
+            day-to-day fluctuations we aim to capture around election dates. Additionally, since it is only based on close prices,
+            it ignores intraday price movements. In the context of elections, market reactions can be swift and get resolved within
+            the same trading day. For these reasons, we use Parkinson's volatility estimator, which leverages high and low prices
+            within the trading day to provide a more responsive measure
+        </p>
+
         <!-- Parkinson Volatility -->
         <details class="collapsible info-dropdown">
             <summary class="info-box">
@@ -234,7 +289,6 @@ layout: default
                 </svg>
                 <span>Parkinson volatility</span>
             </summary>
-
             <div class="details-content">
                 <p>
                     Parkinson's volatility uses the highest and lowest price reached in a given time (e.g. a day) to
@@ -243,9 +297,9 @@ layout: default
                     accurate estimates with smaller values of \(N\), allowing to
                     capture short-term variation without sacrificing reliability.
                 </p>
-
+        
                 <p>Formula :</p>
-
+        
                 <p class="math-block">
                     <!-- MathJax formula -->
                     $$\sigma_P = \sqrt{\frac{1}{4 \ln(2)} \cdot \frac{1}{N} \sum_{t=1}^{N} \left(
@@ -261,217 +315,303 @@ layout: default
             </div>
         </details>
 
-        <p>-> talk about the math and abnormal volatility</p>
+    </div>
+</section>
 
-        <h2> What's an event study methodology: how to define abnormal returns </h2>
+<section id="sectors" class="section newspaper">
+    <div class="content">
 
-        <h2> Event studies</h2>
+        <h2>How do you describe the performance of an entire sector? Does it make sense to talk of sector?</h2>
+
+        <h3>Does it make economic sense: correlations</h3>
+
         <p>
-            Introduction to event studies, how they are used in finance to measure the impact of specific events on
-            stock prices.
-            Describe the concept then have a dropdown menu with formulas with abnormal returns, cumulative abnormal
-            returns, etc.
-
-            I finish this text by mentioning how when using event studies, given that a US election is a rare event, we
-            need to look
-            at multiple elections over time to get statistically significant results. This will tie nicely into the next
-            section.
+            financial definition of a sector: sharing risks. yahoo finance provides 11 sector denominations? Is it just our tendency
+            to categorize or is there really an economic reality of similar reactions within a sector? Is the distinction
+            economically sound? we selected and visualized corr.
         </p>
 
-        <h5> Timeline des elections : </h5>
+        <p>
+            [graph: correlation matrix over 20 years, and other events]
+        </p>
 
-        <p>J'aime beaucoup ce graph flourish mais (1) j'ai pas l'impression qu'il est assez long pour faire un truc qui
-            scroll,
-            c'est un peu awkward comment ca scroll un peu puis ca s'arrete. genre je dirais ou les mettre tous d'un cote
-            (en haut)
-            et faire que ca scroll ou garder comme ca mais du croup rapetir un peu et les montrer tous sans scrolling.
-            (2) y'a pas
-            moyen de faire que la couleur de fond match le blanc. (3) je vois que y'a des bars rouges en haut de chaque
-            candidat,
-            l'idée c'etati de mettre des bars rougs pour les republicains et bleus pour les democrates? (4) peut etre
-            ecrire les
-            dates en mode "4 Novembre 2008"plutot que "4-11-2008" (5) vous voulez on fair un truc quand tu hover sur un
-            des cercles
-            ca montre un carre avec un petit texte sur l'élection (genre il était contre qui, anything memorable de
-            l'élection etc)
-            ?</p>
-        <div class="flourish-embed flourish-timeline" data-src="visualisation/26692490">
-            <script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img
-                    src="https://public.flourish.studio/visualisation/26692490/thumbnail" width="100%"
-                    alt="timeline visualization" /></noscript>
-        </div>
-
-
-        <h5> Presidential Impact </h5>
-
-
-
-        <h2> Impact of elections on volatility</h2>
+        <img src="assets/img/placeholders/ph6">
 
         <p>
-            Here I show the graphs I do taht are based on volatility:<br>
-            - Graph like the one elsa made but by volatility and you can pick the election you want to display the
-            results for it.
-            - show which companies and which sectors are most impacted by elections in terms of volatility, bubble
-            hierarchy graph
-            from flourish like the one in the youtube datastory<br>
-
-            I then talk about statistical significance, I do paired t-tests to show that the volatility after elections
-            is
-            significantly different from before elections. (calm before the storm)</p>
-
-        <h2> which characteristics of elections impact volatility the most </h2>
+            This analysis reveals that intra-sector correlations are consistently higher than inter-sector correlations as expected.
+            However, inter-sector correlations vary depending on the event. For example, during the 2008 financial Crisis, the
+            Consumer Defensive sector correlated strongly with Energy and Healthcare stocks. Events with broad economic impacts
+            introduce systemic risks that affect multiple sectors simultaneously, leading to higher correlations across the board.
+            The same holds true for the Covid-19 crash.
+        </p>
 
         <p>
-            we do a linear regression where the dependent variable is the change in Cumulative Abnormal Volatility
-            before and after
-            the election and the independent variables are characteristics of the elections, like democrat vs republican
-            win, margin
-            of victory, economic conditions at the time and sector. I let sector interact with the other variables so we
-            can see
-            which sectors are more impacted by which characteristics of elections.</p>
+            Most interestingly, we see that the 2016 election had the effect of lowering correlations across sectors, even when
+            compared to a 20-year correlation baseline. The election seems to "uncouple" sectors from each other. This further
+            supports our hypothesis that elections lead to idiosyncratic responses across sectors, as candidates propose policies
+            that differentially impact various industries.
+        </p>
 
-        <h2> fine-grained IEM analysis for one election</h2>
+        <h3>If it does, how do you represent entire sector</h3>
+
         <p>
-            I introduce what IEM is, how prediction markets work, how they reflect the beliefs of investors about the
-            likelihood of
-            a candidate winning.<br>
+            So far, we've used sector-specific ETFs as proxies for the performance and volatility of the entire sectors. This ETF
+            family, called Select Sector SPDRs, is a well-established way to track sector performance. [what they are used for, in
+            academia, to diversify portfolios] They each contain the companies of their respective sectors that appear in the S&P
+            500 index. Each company is weighted by its market capitalization, with around 50% of holding typically concentrated in
+            the top 10 companies. This is a better way to track sector volatility than averaging the volatility of all companies in
+            the sector for two reasons:
+        </p>
 
-            Then I show the analysis we did for one election (2020 or 2016), showing how as the IEM probabilities change
-            over time,
-            how does the volatility of different sectors change.<br>
+        <p>
+            1. Large companies affect sector performance more than small companies. A non-weighted average would give equal
+            importance to all companies.
+            2. Small companies have higher volatility than big companies. This volatility may not be due to sector sentiment but
+            rather to the fact that small companies are traded in lower volumes and can be thus be affected by modest day-to-day
+            trades. This would artificially inflate sector volatility.
+        </p>
 
-            If I have time I can do this for multiple elections.</p>
+        <p>
+            Let us verify this by calculating volatility as an average of individual stock volatilities within each sector and
+            comparing it to the ETF volatility.
+        </p>
+
+        <p>
+            [graph of parkinson’s estimated in 2 ways]
+        </p>
+
+        <img src="assets/img/placeholders/ph7">
+
+        <p>
+            The histograms on the left show that on any specific day, the distribution of volatilities for companies within the same
+            sector is right-skewed. Most companies have volatilities clustered around a central value, but a few outliers exhibit
+            very high volatilities. This confirms our earlier assumption that small companies, more sensitive to day-to-day trading,
+            will skew the average. In the healthcare sector, for example, the outlier is TLGT (Teligent Inc.) reaching a volatility
+            0f 0.36. At the time of measurement, Teligent was a small pharmaceutical company with a market capitalization of only
+            $10 million.
+        </p>
+
+        <p>
+            It is thus no surprise that our naive sector volatility calculation consistently overestimates sector volatility as
+            shown on the lineplots on the right. However, we are surprised to see that while the naive calculation is an
+            overestimation, it nonetheless reproduces closely historical patterns over two decades and is not as noisy as we
+            expected. Using the median instead of the mean to aggregate individual stock volatilities slightly improves the
+            estimate, but it still remains an overestimation.
+        </p>
+
+        <p>
+            From now on, we will use sector ETFs to study sector variations for computation efficiency.
+        </p>
 
     </div>
 </section>
 
+<section id="event-study" class="section newspaper">
+    <div class="content">
 
-<section id="event-study" class="section black">
+        <h2>Event study</h2>
+
+        <p>
+            How does one determine how a specific event impacted the performance or volatility of a stock? Tools from event study
+            methodology help us answer such questions. Our study will go as follows:
+        </p>
+
+        <p>
+            - Define an event window around Election Day, the event of interest: we consider both pre- and post-election windows as
+            the dates of elections are known and changes in the market could even happen before as investors try to anticipate the
+            outcome or hedge their positions.
+            - Calculate realized returns or volatility over that window.
+            - Compare these values to expected returns and volatility: event studies differ by how they define these expected, or
+            normal, values. We will demonstrate two approaches.
+            - Aggregate results across different sectors and election cycles and determine statistical significance.
+        </p>
+
+        <h3>Abnormal returns based event study</h3>
+
+        <p>
+            let us use abnormal returns to evaluate election impact. abnormal returns defined using alpha and beta, explain why:
+        </p>
+
+        <p>
+            By ignoring these factors, a naive model may misattribute as event-driven and abnormal returns that simply due to the
+            sector's historical characteristics. We thus account for the relationship between sector returns and market returns
+            using linear regression. The market model is defined as follows:
+        </p>
+
+        <p>
+            $$
+            R_{i,t} = \alpha_i + \beta_i R_{m,t} + \epsilon_{i,t}
+            $$
+        </p>
+
+        <p>
+            where \( \alpha_i \) is the stock's alpha, \( \beta_i \) is the stock's beta, and \( \epsilon_{i,t} \) is the return not
+            explained by the model, aka the abnormal return:
+        </p>
+
+        <p>
+            $$
+            AR_{i,t} = R_{i,t} - (\alpha_i + \beta_i R_{m,t})
+            $$
+        </p>
+
+        <p>
+            It is customary to estimate \( \alpha_i \) and \( \beta_i \) over a large window prior to the window of interest. In our
+            example, we will define a 252-day estimation window, corresponding to one trading year. We can then aggregate these
+            abnormal returns across our event window to obtain cumulative abnormal returns (CAR):
+        </p>
+
+        <p>
+            $$
+            CAR_{i,t} = \sum_{m \leq t} AR_{i,m}
+            $$
+        </p>
+
+        <p>
+            Let us use this method to analyze the impact of the 2016 presidential election on different sectors.
+        </p>
+
+        <p>
+            [graph qui ressemble à celui de elsa: choose one particular election, you get 2 graphs, left for abnormal return
+            lineplot, right for CAR barplot]
+        </p>
+
+        <img src="assets/img/placeholders/ph8">
+
+        <p>
+            Look at 2016 for example:<br>
+            Visualizing pre- and post-election cumulative abnormal returns shows the sector most impacted by results of the 2016
+            presidential election is the energy sector, with a significant cumulative abnormal return of 0.06 over 20 days, crushing
+            other sectors. This is consistent with the pro-fossil fuel of the elected Trump administration, as well as the
+            expectations of climate deregulation. The lineplot also illustrates a jump in abnormal returns the day of the election,
+            as the winner was announced.
+        </p>
+
+        <p>
+            Funnily enough, pre-election CAR was negative for the energy sector. Those of us who followed the 2016 election remember
+            that Hillary Clinton, the more environmentally conscious candidate, was initially predicted to win the election before
+            Trump's electoral victory surprised many. This headline from the Wall Street Journal perfectly captures the market
+            sentiment that led to the energy sector's soar.
+        </p>
+
+        <img src="assets/img/placeholders/ph9">
+
+        <p>
+            Statistical tests to show significance: little statistical tables, which sector is significant, dividing by Democrat-win
+            vs republican win or not.
+        </p>
+
+        <p>
+            Which companies and sectors are Democrat vs Republican focused
+        </p>
+
+    </div>
+</section>
+
+<section id="sector impact" class="section black">
     <div class="content">
 
         <iframe src="assets/graphs/party_impact_analysis" width="100%" height="750px" style="border:none;"></iframe>
 
-        <iframe src="assets/graphs/presidential_dashboard.html" width="100%" height="750px"
-            style="border:none;"></iframe>
+        <p>
+            commentaires: look at energy, always goes up after republican win
+        </p>
 
-        <iframe src="assets/graphs/party_impact_analysis_2.html" width="100%" height="750px"
-            style="border:none;"></iframe>
+        <p>
+            [bubble graph]
+        </p>
 
     </div>
 </section>
 
-<section id="regression" class="section newspaper">
+<section id="volatility-event-study" class="section newspaper">
     <div class="content">
 
-        <h2> Regression on volatility </h2>
+        <h3>Abnormal Volatility based event study</h3>
 
-        <section class="scroll-gallery">
-            <div class="images">
-                <img src="assets/img/image1.jpg" class="scroll-fade" alt="Project 1">
-                <img src="assets/img/image2.jpg" class="scroll-fade" alt="Project 2">
-                <img src="assets/img/image3.jpg" class="scroll-fade" alt="Project 3">
-                <img src="assets/img/image4.jpg" class="scroll-fade" alt="Project 4">
-            </div>
-        </section>
+        <p>
+            description maths
+        </p>
 
-        <!--IDEA : ads with this-->
-        <h2>Idea : make fake ads</h2>
-        <section class="scroll-gallery">
-            <div class="images">
-                <img src="assets/img/image1.jpg" class="scroll-fade" alt="Project 1">
-                <img src="assets/img/image2.jpg" class="scroll-fade" alt="Project 2">
-                <img src="assets/img/image3.jpg" class="scroll-fade" alt="Project 3">
-                <img src="assets/img/image4.jpg" class="scroll-fade" alt="Project 4">
-            </div>
-        </section>
+        <p>
+            meme graphe que presidential dashboard (tete des president) but with volatility
+            statistical tests
+        </p>
 
-        <!--Typewritter effect-->
-        <h2>nice effect I can implement :</h2>
-        <p id="typewriter"></p>
-        <script>
-        const text = "To be continued...";
-        const element = document.getElementById("typewriter");
-        let i = 0;
+        <iframe src="assets/graphs/party_impact_analysis" width="100%" height="750px" style="border:none;"></iframe>
 
-        function typeWriter() {
-            if (i==0){
-                element.innerHTML = "";
-            }
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100); // adjust speed (ms) here
-            }
-            else{
-                setTimeout(typeWriter, 3000);
-                i=0;
-            }
-        }
+    </div>
+</section>
 
-        typeWriter(); // start the effect
-        </script>
+<section id="linear-regression" class="section newspaper">
+    <div class="content">
 
-        <p>$$R_t=\frac{P_{t+1}-P_t}{P_t}$$
+        <h2>Linear Regression on Election Characteristics</h2>
 
-            where $P_i$ denotes closing price at time $i$. Expected returns are then computed using either a simple
-            model:
+        <p>
+            which election characteristics impact volatility
+        </p>
 
-            $$R_{t,i}^{expected} = R_{reference}$$
+    </div>
+</section>
 
-            where $R_{reference}$ is the return of a reference index (e.g., S&P 500) at time $t$, or a market model:
+<section id="relate-iem" class="section newspaper">
+    <div class="content">
 
-            $$R_{t,i}^{expected} = \alpha_i + \beta_i \cdot R_{reference}$$
-
-            where $\alpha_i$ and $\beta_i$ are parameters fitted using linear regression for stock $i$. Abnormal returns
-            are then
-            computed as the difference between realized and expected returns.
-
-            $$
-            R_{t,i}^{abnormal} = R_{t,i} - R_{t,i}^{expected}
-            $$</p>
-
-        <h2>TEST</h2>
-        <details class="collapsible info-dropdown">
-            <summary class="info-box">
-                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-                <span>Returns</span>
-            </summary>
-
-            <div class="details-content">
-                <p>
-                    To compute how much a stock earns we take the difference in value to the next period
-                    divided by value at the start of the period.
-                </p>
-
-                <div class="math-block">
-                    $$R = \frac{V_f - V_i}{V_i}$$
-                </div>
-
-                <p>
-                    Typically the period used is days and the value used is the adjusted close price.
-                </p>
-            </div>
-        </details>
-
-
-        <h2>Random stuf to fill</h2>
-        <p>fsdgdfgdfgd</p><br>
-        <p>fsdgdfgdfgd</p><br>
-        <p>fsdgdfgdfgd</p><br>
-        <p>fsdgdfgdfgd</p><br>
-        <p>fsdgdfgdfgd</p><br>
-        <p>fsdgdfgdfgd</p><br>
-        <p>fsdgdfgdfgd</p><br>
-        <p>fsdgdfgdfgd</p><br>
-        <p>fsdgdfgdfgd</p><br>
-        <p>fsdgdfgdfgd</p><br>
+        <h2>Relate to IEM data (optional)</h2>
 
     </div>
 </section>
 
 
-<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+<!--------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------->
+
+<!--news section-->
+<section id="aaaaaaaaaaa" class="section newspaper">
+    <div class="content">
+
+    </div>
+</section>
+
+<!--black section-->
+<section id="aaaaaaaaaaa" class="section black">
+    <div class="content">
+
+    </div>
+</section>
+
+<img src="assets/img/placeholders/ph1">
+
+<!--TEMPLATE_DROPDOWN_MENU-->
+<details class="collapsible info-dropdown">
+    <summary class="info-box">
+        <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+        <span>INTRODUCE THE THING TO EXPALIN</span>
+    </summary>
+
+    <div class="details-content">
+        <p>
+            Here we explain in much more details
+        </p>
+
+        <p>With a nice formula:</p>
+
+        <p class="math-block">
+            <!-- MathJax formula -->
+            $$1+ 1 \text{ is two}$$
+        </p>
+        <p>
+            With
+            \(x_1, x_2, \dots, x_n\) inline equation.
+        </p>
+    </div>
+</details>
+
