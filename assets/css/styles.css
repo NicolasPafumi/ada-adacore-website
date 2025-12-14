@@ -20,11 +20,11 @@ html {
 }
 
 .content h1 {
-  font-size: var(--font-size-base*11);
+  font-size: var(--font-size-base)*11;
 }
 
 .content h2 {
-  font-size: var(--font-size-base*10);
+  font-size: var(--font-size-base)*10;
 }
 
 .content h3 {
