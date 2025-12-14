@@ -15,10 +15,12 @@
         }
 
         .explanation {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /*center things inside*/
             background-color: #222;
             padding: 20px;
             margin: 20px 0;
-            align-items: center; /*center things inside*/
             border-radius: 5px;
             width: 100%;
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -40,7 +42,7 @@
             margin: 10px 0;
             border-radius: 5px;
             align-items: center; /*centers things inside*/
-            width: 100%;
+            width: 90%;
             box-shadow: 0 0 5px rgba(0,0,0,0.2);
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -51,7 +53,7 @@
         }
         .sector-info {
             display: none;
-            width: 100%;
+            width: 90%;
             background-color: #444;
             padding: 10px;
             margin-top: 10px;
