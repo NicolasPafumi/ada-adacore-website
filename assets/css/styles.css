@@ -57,7 +57,7 @@ body {
   background: var(--black-bg);
   transition: background-color 0.6s ease;
   font-family: "Arial", sans-serif;
-  color: var(--newspaper-color);
+  color: var(--black-color);
 }
 
 .section.newspaper .content {
