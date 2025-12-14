@@ -26,6 +26,6 @@
     /* Black section */
     --hintbox-dark-accent: #e6c46a;
     --hintbox-dark-bg: rgba(230, 196, 106, 0.10);
-    --hintbox-dark-text: #fcb900;
+    --hintbox-dark-text: var(--black-color);/*#fcb900*/
 
 }
