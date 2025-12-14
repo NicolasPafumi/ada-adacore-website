@@ -99,20 +99,24 @@ body::after {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 
-  /* subtle grain using layered gradients */
   background-image:
+    repeating-linear-gradient(23deg,
+      rgba(0, 0, 0, 0.018) 0px,
+      rgba(0, 0, 0, 0.018) 1px,
+      transparent 1px,
+      transparent 6px),
+    repeating-linear-gradient(97deg,
+      rgba(0, 0, 0, 0.014) 0px,
+      rgba(0, 0, 0, 0.014) 1px,
+      transparent 1px,
+      transparent 9px),
     repeating-linear-gradient(0deg,
-      rgba(0, 0, 0, 0.025) 0px,
-      rgba(0, 0, 0, 0.025) 1px,
+      rgba(255, 255, 255, 0.02) 0px,
+      rgba(255, 255, 255, 0.02) 1px,
       transparent 1px,
-      transparent 2px),
-    repeating-linear-gradient(90deg,
-      rgba(0, 0, 0, 0.02) 0px,
-      rgba(0, 0, 0, 0.02) 1px,
-      transparent 1px,
-      transparent 3px);
+      transparent 7px);
 
   opacity: 0;
   transition: opacity 0.6s ease;
@@ -133,11 +137,6 @@ body.scrolling-to-black::after {
   body.scrolling-to-newspaper::after {
     opacity: 0.18;
   }
-}
-
-body::after {
-  outline: 3px solid red !important;
-  opacity: 1 !important;
 }
 
 /*-------------------------------*/
