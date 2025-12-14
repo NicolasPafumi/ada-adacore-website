@@ -18,6 +18,9 @@ html {
 .content .text {
     text-align: justify;
 }
+.content p {
+  font-size: var(--font-size);
+}
 
 /*----------------------------*/
 /* Section newspaper and black*/
