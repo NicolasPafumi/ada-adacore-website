@@ -7,4 +7,9 @@
     /* the one used previously for newspaper bg */
     --newspaper-color: black;
     --black-color: white;
+    --black-font: "Arial",
+        sans-serif;;
+    --newspaper-font:"Times New Roman",
+        Times,
+        serif;
 }
