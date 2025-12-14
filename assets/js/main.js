@@ -49,34 +49,28 @@ document.addEventListener("DOMContentLoaded", () => {
 ///////////////////////////////////////////
 // background newpaper transition to black as black section appears
 //////////////////////////////////////////////
-const blackSections = document.querySelectorAll('.section.black');
-const newsSections = document.querySelectorAll('.section.newspaper');
+const sections = document.querySelectorAll('.section.black, .section.newspaper');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
 
-    // Clear previous states
-    document.body.classList.remove(
-      'scrolling-to-black',
-      'scrolling-to-news'
-    );
+    document.body.classList.remove('bg-black', 'bg-news');
 
-    // Apply correct mode
     if (entry.target.classList.contains('black')) {
-      document.body.classList.add('scrolling-to-black');
+      document.body.classList.add('bg-black');
     }
 
     if (entry.target.classList.contains('newspaper')) {
-      document.body.classList.add('scrolling-to-news');
+      document.body.classList.add('bg-news');
     }
   });
 }, {
-  threshold: 0.3   // smoother transition
+  threshold: 0.4
 });
 
-blackSections.forEach(s => observer.observe(s));
-newsSections.forEach(s => observer.observe(s));
+sections.forEach(section => observer.observe(section));
+
 
 
 ////////////////////////////////////////////////////////////
