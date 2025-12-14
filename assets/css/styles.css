@@ -18,8 +18,33 @@ html {
 .content .text {
     text-align: justify;
 }
+
+.content h1 {
+  font-size: var(--font-size-base*11);
+}
+
+.content h2 {
+  font-size: var(--font-size-base*10);
+}
+
+.content h3 {
+  font-size: var(--font-size-base*9);
+}
+
+.content h4 {
+  font-size: var(--font-size-base*8);
+}
+
+.content h5 {
+  font-size: var(--font-size-base*7);
+}
+
+.content h6 {
+  font-size: var(--font-size-base*6);
+}
+
 .content p {
-  font-size: var(--font-size);
+  font-size: var(--font-size-base*6);
 }
 
 /*----------------------------*/
