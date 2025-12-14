@@ -78,7 +78,7 @@ body.scrolling-to-black .section.newspaper {
     background-color: var(--black-bg);
 }
 
-body.scrolling-to-news .section.black {
+body.scrolling-to-newspaper .section.black {
   background-color: var(--newspaper-bg);
 }
 
