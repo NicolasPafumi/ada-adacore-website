@@ -135,6 +135,11 @@ body.scrolling-to-black::after {
   }
 }
 
+body::after {
+  outline: 3px solid red !important;
+  opacity: 1 !important;
+}
+
 /*-------------------------------*/
 /* Ribbon navigation top of page */
 /*-------------------------------*/
