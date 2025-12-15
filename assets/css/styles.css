@@ -268,7 +268,7 @@ body.scrolling-to-newspaper .section.black {
     cursor: pointer;
 }
 
-details::details-content {
+.details-content {
     overflow: hidden;
     border-left: 4px solid var(--hintbox-news-accent);
     padding-left: var(--hintbox-box-padding);
@@ -276,15 +276,25 @@ details::details-content {
     height: 0;
     opacity: 0;
 
-    block-size: 0; /*test*/
-
     transition:
         height 0.45s ease,
         opacity 0.3s ease;
-        block-size: 1s; /*test*/
-        content-visibility: 1s;/*test*/
 
-    transition-behavior: allow-discrete; /*test*/
+
+    
+}
+
+::details-content {
+    block-size: 0;
+        /*test*/
+
+    transition: 
+            block-size: 1s;
+                /*test*/
+            content-visibility: 1s;
+                /*test*/;
+    transition-behavior: allow-discrete;
+        /*test*/
 }
 
 .section.black .details-content {
