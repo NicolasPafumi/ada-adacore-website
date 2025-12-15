@@ -34,6 +34,6 @@
     --hintbox-dark-text: var(--black-color);/*#fcb900*/
 
     /* chevron */
-    --hintbox-shevron-size: calc(var(--hintbox-box-font-size)*0.9);
+    --hintbox-shevron-size: calc(var(--hintbox-box-font-size));
 
 }
