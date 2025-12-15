@@ -108,6 +108,11 @@ body.scrolling-to-newspaper .section.black {
 /* Ribbon navigation top of page */
 /*-------------------------------*/
 
+.top-ribbon .ribbon-content a {
+    font-size: var(--ribbon-font-size);
+    /* change to what you want */
+}
+
 /*hide ribbon when scrolling down*/
 .top-ribbon.hidden {
     transform: translateY(-100%);
