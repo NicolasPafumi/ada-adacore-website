@@ -275,30 +275,31 @@ body.scrolling-to-newspaper .section.black {
 
     height: 0;
     opacity: 0;
+    block-size: 0; /*test*/
 
-    /*
     transition:
         height 0.45s ease,
-        opacity 0.3s ease;
-    */ /*removed to test*/
+        opacity 0.3s ease,
+        block-size 1s ease; /* test */
 
 }
 
+/*
 details::details-content {
     block-size: 0;
-        /*test*/
+        
 
     transition: 
             block-size 1s,
-                /*test*/
+
             content-visibility 1s,
-                /*test*/;
+             
     transition-behavior: allow-discrete;
-        /*test*/
-}
+   
+
 details[open]::details-content {
-    block-size: auto; /*test*/
-}
+    block-size: auto; 
+} test*/
 
 .section.black .details-content {
   color: var(--hintbox-dark-text);
@@ -306,6 +307,7 @@ details[open]::details-content {
 
 details[open] .details-content {
     opacity: 1;
+    block-size: auto;
 }
 
 /*--------------------------------------------------*/
