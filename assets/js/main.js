@@ -162,6 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /////////////////////////////////////////////////////////
 // Change font size from ribbon
 //////////////////////////////////////////////////
+/*
 document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.querySelector(".font-menu-toggle");
     const menu = document.querySelector(".font-menu");
@@ -202,7 +203,45 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+});*/
+document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".font-menu-toggle");
+    const menu = document.querySelector(".font-menu");
+
+    // Toggle menu on click
+    toggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("open");
+    });
+
+    // Keep menu open while hovering
+    menu.addEventListener("mouseenter", () => {
+        menu.classList.add("open");
+    });
+
+    menu.addEventListener("mouseleave", () => {
+        menu.classList.remove("open");
+    });
+
+    // Click a font-size button
+    menu.querySelectorAll("button").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            document.documentElement.style.setProperty(
+                "--font-scale",
+                btn.dataset.scale
+            );
+        });
+    });
+
+    // Optional: close if click outside both toggle & menu
+    document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && e.target !== toggle) {
+            menu.classList.remove("open");
+        }
+    });
 });
+
 
 
 ///////////////////////////////////////////////////////////////
