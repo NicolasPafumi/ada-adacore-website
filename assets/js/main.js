@@ -71,6 +71,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.style.height = "0px";
                     content.style.opacity = "0";
                 });
+
+                // Allow natural height after animation
+                content.addEventListener("transitionend", function handler(e) {
+                    if (e.propertyName === "height") {
+                        content.style.height = "auto";
+                        content.removeEventListener("transitionend", handler);
+                    }
+                });
+
             }
         });
     });
@@ -221,88 +230,3 @@ document.getElementById('nasdaq-iframe').addEventListener('load', resizeIframe);
 
 // resize periodically if content changes dynamically
 setInterval(resizeIframe, 500);
-
-///////////////////////////////////////////////////////////
-// smooth drop boxes
-////////////////////////////////////////////////////////
-/*
-document.querySelectorAll('details').forEach(details => {
-    const content = details.querySelector('.details-content');
-
-    details.addEventListener('toggle', () => {
-        if (details.open) {
-            const h = content.scrollHeight;
-            content.style.height = h + 'px';
-            content.style.opacity = '1';
-        } else {
-            content.style.height = '0';
-            content.style.opacity = '0';
-        }
-    });
-});*/
-/*
-document.querySelectorAll("details.collapsible").forEach(details => {
-    const content = details.querySelector(".details-content");
-
-    details.addEventListener("toggle", () => {
-        if (details.open) {
-            // OPEN
-            content.style.height = content.scrollHeight + "px";
-            content.style.opacity = "1";
-
-            // Allow natural height after animation
-            content.addEventListener("transitionend", function handler(e) {
-                if (e.propertyName === "height") {
-                    content.style.height = "auto";
-                    content.removeEventListener("transitionend", handler);
-                }
-            });
-
-        } else {
-            // CLOSE
-            content.style.height = content.scrollHeight + "px";
-            requestAnimationFrame(() => {
-                content.style.height = "0px";
-                content.style.opacity = "0";
-            });
-        }
-    });
-});
-*/
-/*
-document.querySelectorAll("details.collapsible").forEach(details => {
-    const content = details.querySelector(".details-content");
-
-    // Safety check
-    if (!content) return;
-
-    details.addEventListener("toggle", () => {
-        if (details.open) {
-            // ----- OPEN -----
-            content.style.height = content.scrollHeight + "px";
-            content.style.opacity = "1";
-
-            // After animation, allow natural height
-            const onTransitionEnd = (e) => {
-                if (e.propertyName === "height") {
-                    content.style.height = "auto";
-                    content.removeEventListener("transitionend", onTransitionEnd);
-                }
-            };
-            content.addEventListener("transitionend", onTransitionEnd);
-
-        } else {
-            // ----- CLOSE -----
-            // Set current height explicitly
-            content.style.height = content.scrollHeight + "px";
-
-            // Force reflow so browser registers the height
-            content.offsetHeight;
-
-            // Then animate to zero
-            content.style.height = "0px";
-            content.style.opacity = "0";
-        }
-    });
-});
-*/
