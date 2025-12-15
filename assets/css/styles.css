@@ -268,28 +268,35 @@ body.scrolling-to-newspaper .section.black {
     cursor: pointer;
 }
 
-/*test*/
+:root {
+    interpolate-size: allow-keywords;
+}
+
 .details-content {
-    display: grid;
-    grid-template-rows: 0fr;
+    overflow: hidden;
+    border-left: 4px solid var(--hintbox-news-accent);
+    padding-left: var(--hintbox-box-padding);
+
+    /*height: 0; test*/
     opacity: 0;
-    overflow: hidden;
+    block-size: 0;
+    /*test*/
+
     transition:
-        grid-template-rows 0.45s ease,
-        opacity 0.3s ease;
+        /*height 0.45s ease, test*/
+        /*opacity 1s,*/
+        block-size 1s;
+    /* test */
+    content-visibility: 1s;
+    /*test*/
+
+    transition-behavior: allow-discrete;
 }
 
-/*test*/
-.details-content>* {
-    overflow: hidden;
-}
-
-/*test*/
 details[open] .details-content {
-    grid-template-rows: 1fr;
-    opacity: 1;
+    /*opacity: 1;*/
+    block-size: auto;
 }
-
 
 .section.black .details-content {
   color: var(--hintbox-dark-text);
