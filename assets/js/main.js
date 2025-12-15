@@ -51,11 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const content = details.querySelector(".details-content");
         if (!content) return;
 
-        let isTransitioning = false; // prevent double toggles
+        let isTransitioning = false;
 
         details.addEventListener("toggle", () => {
             if (isTransitioning) return;
-
             isTransitioning = true;
 
             if (details.open) {
@@ -71,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const onEnd = (e) => {
                     if (e.propertyName === "height") {
-                        content.style.height = "auto"; // allow growth
+                        content.style.height = "auto"; // allow natural growth
                         content.removeEventListener("transitionend", onEnd);
                         isTransitioning = false;
                     }
@@ -80,7 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             } else {
                 // CLOSE
-                const currentHeight = content.getBoundingClientRect().height;
+                // Capture current pixel height (from auto if needed)
+                const currentHeight = content.scrollHeight;
                 content.style.height = currentHeight + "px";
 
                 content.offsetHeight; // force reflow
@@ -100,7 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-
 
 
 
