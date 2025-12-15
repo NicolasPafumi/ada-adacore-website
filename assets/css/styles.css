@@ -276,10 +276,11 @@ body.scrolling-to-newspaper .section.black {
     height: 0;
     opacity: 0;
 
+    /*
     transition:
         height 0.45s ease,
         opacity 0.3s ease;
-
+    */ /*removed to test*/
 
 }
 
@@ -295,6 +296,9 @@ details::details-content {
     transition-behavior: allow-discrete;
         /*test*/
 }
+details[open]::details-content {
+    block-size: auto; /*test*/
+}
 
 .section.black .details-content {
   color: var(--hintbox-dark-text);
@@ -302,7 +306,6 @@ details::details-content {
 
 details[open] .details-content {
     opacity: 1;
-    block-size: auto; /*test*/
 }
 
 /*--------------------------------------------------*/
