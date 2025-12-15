@@ -284,7 +284,7 @@ body.scrolling-to-newspaper .section.black {
     
 }
 
-::details-content {
+details::details-content {
     block-size: 0;
         /*test*/
 
