@@ -51,55 +51,39 @@ document.addEventListener("DOMContentLoaded", () => {
         const content = details.querySelector(".details-content");
         if (!content) return;
 
-        let isTransitioning = false;
+        // Initially set explicit height 0
+        content.style.height = "0px";
+        content.style.opacity = "0";
+        content.style.transition = "height 0.45s ease, opacity 0.3s ease";
 
         details.addEventListener("toggle", () => {
-            if (isTransitioning) return;
-            isTransitioning = true;
-
             if (details.open) {
-                // OPEN
-                content.style.height = "0px";
-                content.style.opacity = "0";
-
-                requestAnimationFrame(() => {
-                    const targetHeight = content.scrollHeight;
-                    content.style.height = targetHeight + "px";
-                    content.style.opacity = "1";
-                });
+                // OPEN: from 0 -> scrollHeight
+                content.style.height = content.scrollHeight + "px";
+                content.style.opacity = "1";
 
                 const onEnd = (e) => {
                     if (e.propertyName === "height") {
                         content.style.height = "auto"; // allow natural growth
                         content.removeEventListener("transitionend", onEnd);
-                        isTransitioning = false;
                     }
                 };
                 content.addEventListener("transitionend", onEnd);
 
             } else {
-                // CLOSE
-                // Capture current pixel height (from auto if needed)
+                // CLOSE: from current height (may be auto) -> 0
                 const currentHeight = content.scrollHeight;
-                content.style.height = currentHeight + "px";
-
+                content.style.height = currentHeight + "px"; // start at current pixels
                 content.offsetHeight; // force reflow
 
                 requestAnimationFrame(() => {
                     content.style.height = "0px";
                     content.style.opacity = "0";
                 });
-
-                const onEnd = (e) => {
-                    if (e.propertyName === "height") {
-                        isTransitioning = false;
-                        content.removeEventListener("transitionend", onEnd);
-                    }
-                };
-                content.addEventListener("transitionend", onEnd);
             }
         });
     });
+
 
 
 
