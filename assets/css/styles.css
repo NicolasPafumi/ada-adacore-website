@@ -281,7 +281,6 @@ body.scrolling-to-newspaper .section.black {
         opacity 0.3s ease;
 
 
-    
 }
 
 details::details-content {
@@ -289,9 +288,9 @@ details::details-content {
         /*test*/
 
     transition: 
-            block-size: 1s;
+            block-size 1s,
                 /*test*/
-            content-visibility: 1s;
+            content-visibility 1s,
                 /*test*/;
     transition-behavior: allow-discrete;
         /*test*/
