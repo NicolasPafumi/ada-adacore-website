@@ -51,11 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const content = details.querySelector(".details-content");
         if (!content) return;
 
+        let isTransitioning = false; // prevent double toggles
+
         details.addEventListener("toggle", () => {
+            if (isTransitioning) return;
+
+            isTransitioning = true;
 
             if (details.open) {
-                // ---------- OPEN ----------
-                // Start from 0
+                // OPEN
                 content.style.height = "0px";
                 content.style.opacity = "0";
 
@@ -67,27 +71,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const onEnd = (e) => {
                     if (e.propertyName === "height") {
-                        content.style.height = "auto"; // allow content growth
+                        content.style.height = "auto"; // allow growth
                         content.removeEventListener("transitionend", onEnd);
+                        isTransitioning = false;
                     }
                 };
                 content.addEventListener("transitionend", onEnd);
 
             } else {
-                // ---------- CLOSE ----------
-                // Convert auto → px FIRST
+                // CLOSE
                 const currentHeight = content.getBoundingClientRect().height;
                 content.style.height = currentHeight + "px";
 
-                // Force reflow
-                content.offsetHeight;
+                content.offsetHeight; // force reflow
 
-                // Animate to zero
-                content.style.height = "0px";
-                content.style.opacity = "0";
+                requestAnimationFrame(() => {
+                    content.style.height = "0px";
+                    content.style.opacity = "0";
+                });
+
+                const onEnd = (e) => {
+                    if (e.propertyName === "height") {
+                        isTransitioning = false;
+                        content.removeEventListener("transitionend", onEnd);
+                    }
+                };
+                content.addEventListener("transitionend", onEnd);
             }
         });
     });
+
 
 
 
