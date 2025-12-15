@@ -49,32 +49,42 @@ document.addEventListener("DOMContentLoaded", () => {
     ////////////////////////////////////////////////
     document.querySelectorAll("details.collapsible").forEach(details => {
         const content = details.querySelector(".details-content");
+        if (!content) return;
 
         details.addEventListener("toggle", () => {
             if (details.open) {
-                // OPEN
-                content.style.height = content.scrollHeight + "px";
+                // ----- OPEN -----
+                const height = content.scrollHeight;
+
+                content.style.height = height + "px";
                 content.style.opacity = "1";
 
-                // Allow natural height after animation
-                content.addEventListener("transitionend", function handler(e) {
+                // After animation, allow natural height
+                const onEnd = (e) => {
                     if (e.propertyName === "height") {
                         content.style.height = "auto";
-                        content.removeEventListener("transitionend", handler);
+                        content.removeEventListener("transitionend", onEnd);
                     }
-                });
+                };
+                content.addEventListener("transitionend", onEnd);
 
             } else {
-                // CLOSE
-                content.style.height = content.scrollHeight + "px";
-                requestAnimationFrame(() => {
-                    content.style.height = "0px";
-                    content.style.opacity = "0";
-                });
+                // ----- CLOSE -----
 
+                // 1. Freeze current height
+                const height = content.scrollHeight;
+                content.style.height = height + "px";
+
+                // 2. Force reflow
+                content.offsetHeight;
+
+                // 3. Animate to zero
+                content.style.height = "0px";
+                content.style.opacity = "0";
             }
         });
     });
+
 
 });
 
