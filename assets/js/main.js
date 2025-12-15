@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /////////////////////////////////////////////////////////
 // Change font size from ribbon
 //////////////////////////////////////////////////
-/*
+
 document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.querySelector(".font-menu-toggle");
     const menu = document.querySelector(".font-menu");
@@ -203,7 +203,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-});*/
+});
+/*
 document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.querySelector(".font-menu-toggle");
     const menu = document.querySelector(".font-menu");
@@ -240,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
             menu.classList.remove("open");
         }
     });
-});
+});*/
 
 
 

@@ -5,7 +5,7 @@
     --margin-black: #000000;
     --paper: #f0ece2;
     /* the one used previously for newspaper bg */
-    --font-size-base:24px;
+    --font-size-base:calc(24px*var(--font-scale));
     --font-scale: 1;
     /*--font-size: 24px; *//*12px*/
     --newspaper-color: black;
