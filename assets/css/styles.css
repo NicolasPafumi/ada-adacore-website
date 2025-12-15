@@ -285,6 +285,9 @@ body.scrolling-to-newspaper .section.black {
         /*height 0.45s ease, test*/
         opacity 0.3s ease,
         block-size 1s ease; /* test */
+        content-visibility: 1s ease; /*test*/
+
+    transition-behavior: allow-discrete;
 
 }
 
