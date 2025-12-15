@@ -162,50 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
 /////////////////////////////////////////////////////////
 // Change font size from ribbon
 //////////////////////////////////////////////////
-/*
-document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.querySelector(".font-menu-toggle");
-    const menu = document.querySelector(".font-menu");
-
-    toggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        menu.classList.toggle("open");
-    });
-
-    document.addEventListener("click", () => {
-        menu.classList.remove("open");
-    });
-
-    menu.querySelectorAll("button").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const root = document.documentElement;
-
-            // Current scale (fallback to 1)
-            const current =
-                parseFloat(getComputedStyle(root).getPropertyValue("--font-scale")) || 1;
-
-            const step = parseFloat(btn.dataset.step);
-
-            let next;
-
-            if (step === 0) {
-                next = 1; // reset
-            } else {
-                next = current + step;
-            }
-
-            // Clamp to reasonable range
-            next = Math.min(Math.max(next, 0.8), 1.3);
-
-            root.style.setProperty("--font-scale", next.toFixed(2));
-
-            menu.classList.remove("open");
-        });
-    });
-
-});
-*/
-
 document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.querySelector(".font-menu-toggle");
     const menu = document.querySelector(".font-menu");
@@ -249,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             root.style.setProperty("--font-scale", next.toFixed(2));
 
-            menu.classList.remove("open");
+            //menu.classList.remove("open");
         });
     });
 
