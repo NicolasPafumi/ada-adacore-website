@@ -19,6 +19,10 @@
     /* ribbon on top*/
     --ribbon-font-size: calc(--font-size-base*0.65* var(--font-scale));
 
+    /* underline */
+    --underline-color-newspaper: #111;
+    --underline-color-black: #fff;
+
     /* FOR HINT BOXES*/
     /* Shared layout */
     --hintbox-box-padding: 20px;

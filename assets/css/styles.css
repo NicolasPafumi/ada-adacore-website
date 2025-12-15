@@ -124,6 +124,7 @@ z-index: 1000;
 
 background: rgba(255, 255, 255, 0.6);
 backdrop-filter: blur(8px);
+--underline-color: var(--underline-color-newspaper);
 
 padding: 14px 0;
 transition: background-color 0.4s ease, color 0.4s ease;
@@ -131,7 +132,7 @@ transition: background-color 0.4s ease, color 0.4s ease;
 
 .ribbon-content {
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
     gap: 40px;
     position: relative;
     align-items: center;
@@ -149,9 +150,9 @@ transition: background-color 0.4s ease, color 0.4s ease;
 
 .top-ribbon a {
     text-decoration: none;
-    color: #222;
-    font-family: "Times New Roman", serif;
-    font-size: 15px;
+    color: #222; /*TODO*/
+    font-family: "Times New Roman", serif; /*TODO*/
+    font-size: 15px; /*TODO*/
     letter-spacing: 0.5px;
 }
 
@@ -159,35 +160,26 @@ transition: background-color 0.4s ease, color 0.4s ease;
     text-decoration: underline;
 }
 
-/* Base ribbon */
-    /*sticky before the progress bar*/
-/*
-.top-ribbon {
-    position: fixed;
-    
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: background-color 0.4s ease, color 0.4s ease;
-}*/
-
 /* Light (newspaper) */
 .top-ribbon.light {
     background: white;
     border-bottom: 1px solid #ddd;
+    --underline-color: var(--underline-color-newspaper);
 }
 
 .top-ribbon.light a {
-    color: #222;
+    color: #222; /*TODO*/
 }
 
 /* Dark (black section) */
 .top-ribbon.dark {
     background: rgba(0, 0, 0, 0.55);
+    --underline-color: var(--underline-color-black);
 }
 
+
 .top-ribbon.dark a {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75); /*TODO*/
 }
 
 .top-ribbon a:hover {
@@ -196,11 +188,11 @@ transition: background-color 0.4s ease, color 0.4s ease;
 
 /*active link styling*/
 .ribbon-content a.active {
-    color: black;
+    color: black; /*TODO*/
 }
 
 .top-ribbon.dark a.active {
-    color: white;
+    color: white; /*TODO*/
 }
 
 .ribbon-links {
@@ -218,7 +210,7 @@ transition: background-color 0.4s ease, color 0.4s ease;
     position: absolute;
     bottom: -4px;
     height: 2px;
-    background: currentColor;
+    background: var(--underline-color);
 
     width: 0;
     left: 0;
@@ -226,15 +218,6 @@ transition: background-color 0.4s ease, color 0.4s ease;
 
     transition: transform 0.35s ease, width 0.35s ease;
 }
-/*
-.ribbon-underline {
-    position: absolute;
-    bottom: calc(var(--font-size-base)*0.1*var(--font-scale));
-    height: 2px;
-    width: 0;
-    background: currentColor;
-    transition: transform 0.4s ease, width 0.4s ease;
-}*/
 
 /*---------------------*/
 /* progress bar on top */

@@ -69,24 +69,9 @@ const observer_black = new IntersectionObserver(entries => {
     threshold: 0.1
 });
 
-/*
-const observer_newspaper = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            document.body.classList.add('scrolling-to-newspaper');
-        } else {
-            document.body.classList.remove('scrolling-to-newspaper');
-        }
-    });
-}, {
-    threshold: 0.1
-});
-*/
+
 blackSections.forEach(section => observer_black.observe(section));
 
-/*
-newsSections.forEach(section => observer_newspaper.observe(section));
-*/
 
 
 ////////////////////////////////////////////////////////////
