@@ -325,7 +325,7 @@ summary::marker {
     user-select: none;
 
     padding: 1em 1.5em;
-    font-size: 1.05em;
+    font-size: calc(var(--hintbox-box-font-size)*1.1);
 
     border-left: 4px solid var(--hintbox-news-accent);
     background: var(--hintbox-news-bg);
