@@ -202,6 +202,11 @@ body.scrolling-to-newspaper .section.black {
     color: white;
 }
 
+.ribbon-links {
+    display: flex;
+    gap: 20px;
+}
+
 /*animated underline*/
 .ribbon-underline {
     position: absolute;

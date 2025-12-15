@@ -94,7 +94,7 @@ newsSections.forEach(section => observer_newspaper.observe(section));
 //////////////////////////////////////////////////////////
 document.addEventListener("DOMContentLoaded", () => {
     const ribbon = document.querySelector(".top-ribbon");
-    const links = document.querySelectorAll(".ribbon-content a");
+    const links = document.querySelectorAll(".ribbon-links a");
     const sections = document.querySelectorAll(".section");
     const underline = document.querySelector(".ribbon-underline");
 
