@@ -194,7 +194,7 @@ setInterval(resizeIframe, 500);
 ///////////////////////////////////////////////////////////
 // smooth drop boxes
 ////////////////////////////////////////////////////////
-/*
+
 document.querySelectorAll('details').forEach(details => {
     const content = details.querySelector('.details-content');
 
@@ -208,7 +208,8 @@ document.querySelectorAll('details').forEach(details => {
             content.style.opacity = '0';
         }
     });
-});*/
+});
+/*
 document.querySelectorAll("details.collapsible").forEach(details => {
     const content = details.querySelector(".details-content");
 
@@ -236,5 +237,5 @@ document.querySelectorAll("details.collapsible").forEach(details => {
         }
     });
 });
-
+*/
 
