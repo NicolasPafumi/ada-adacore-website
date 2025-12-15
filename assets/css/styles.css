@@ -285,9 +285,9 @@ details::details-content {
     transition:
         /*height 0.45s ease, test*/
         /*opacity 1s,*/
-        block-size 1s;
+        block-size 1s ease,
     /* test */
-    content-visibility: 1s;
+        content-visibility 1s ease;
     /*test*/
 
     transition-behavior: allow-discrete;
