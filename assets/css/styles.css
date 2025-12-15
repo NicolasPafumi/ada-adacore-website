@@ -358,10 +358,10 @@ summary::marker {
     transition: max-height 0.45s ease, opacity 0.3s ease;
 }*/
 
+/*
 details[open] .details-content {
-    /*max-height: 80vh;*/
     opacity: 1;
-}
+}*/
 
 /* Hover feedback */
 .info-dropdown summary:hover {
