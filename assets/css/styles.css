@@ -133,7 +133,7 @@ transition: background-color 0.4s ease, color 0.4s ease;
 .ribbon-content {
     display: flex;
     /*justify-content: center;*/
-    gap: 40px;
+    gap: 30px;
     position: relative;
     align-items: center;
 }
@@ -152,7 +152,7 @@ transition: background-color 0.4s ease, color 0.4s ease;
     text-decoration: none;
     color: #222; /*TODO*/
     font-family: var(--newspaper-font);
-    font-size: 15px; /*TODO*/
+    font-size: 20px; /*TODO*/
     letter-spacing: 0.5px;
 }
 
