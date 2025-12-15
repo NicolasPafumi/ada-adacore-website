@@ -44,53 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('scroll', revealScrollImages);
     revealScrollImages();
 
-    ////////////////////////////////////////////////////
-    // dropdown animation
-    ////////////////////////////////////////////////
-    /*
-    document.querySelectorAll("details.collapsible").forEach(details => {
-        const content = details.querySelector(".details-content");
-        if (!content) return;
-
-        // Initially collapsed
-        content.style.height = "0px";
-        content.style.opacity = "0";
-        content.style.transition = "height 0.45s ease, opacity 0.3s ease";
-
-        details.addEventListener("toggle", () => {
-            if (details.open) {
-                // OPEN: from 0 -> scrollHeight
-                content.style.height = content.scrollHeight + "px";
-                content.style.opacity = "1";
-
-                const onEnd = (e) => {
-                    if (e.propertyName === "height") {
-                        content.style.height = "auto"; // allow natural growth
-                        content.removeEventListener("transitionend", onEnd);
-                    }
-                };
-                content.addEventListener("transitionend", onEnd);
-
-            } else {
-                // CLOSE: from current pixel height -> 0
-                // if height is auto, read scrollHeight
-                const currentHeight = content.scrollHeight;
-                content.style.height = currentHeight + "px"; // set explicit pixel height
-                content.offsetHeight; // force reflow
-
-                // Animate to 0
-                requestAnimationFrame(() => {
-                    content.style.height = "0px";
-                    content.style.opacity = "0";
-                });
-            }
-        });
-    });*/
-
-
-
-
-
 });
 
 ///////////////////////////////////////////
@@ -219,6 +172,33 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", updateRibbon);
     window.addEventListener("resize", updateRibbon);
     updateRibbon();
+});
+
+/////////////////////////////////////////////////////////
+// Change font size from ribbon
+//////////////////////////////////////////////////
+document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.querySelector(".font-menu-toggle");
+    const menu = document.querySelector(".font-menu");
+
+    toggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("open");
+    });
+
+    document.addEventListener("click", () => {
+        menu.classList.remove("open");
+    });
+
+    menu.querySelectorAll("button").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.documentElement.style.setProperty(
+                "--font-scale",
+                btn.dataset.scale
+            );
+            menu.classList.remove("open");
+        });
+    });
 });
 
 

@@ -6,6 +6,7 @@
     --paper: #f0ece2;
     /* the one used previously for newspaper bg */
     --font-size-base:24px;
+    --font-scale: 1;
     /*--font-size: 24px; *//*12px*/
     --newspaper-color: black;
     --black-color: white;
@@ -16,12 +17,12 @@
         serif;
 
     /* ribbon on top*/
-    --ribbon-font-size: calc(--font-size-base*0.65);
+    --ribbon-font-size: calc(--font-size-base*0.65* var(--font-scale));
 
     /* FOR HINT BOXES*/
     /* Shared layout */
     --hintbox-box-padding: 20px;
-    --hintbox-box-font-size: var(--font-size-base);
+    --hintbox-box-font-size: calc(var(--font-size-base)* var(--font-scale));
 
     /* Newspaper */
     --hintbox-news-accent: #d4ae2f;
@@ -34,6 +35,6 @@
     --hintbox-dark-text: var(--black-color);/*#fcb900*/
 
     /* chevron */
-    --hintbox-shevron-size: calc(var(--hintbox-box-font-size));
+    --hintbox-shevron-size: calc(var(--hintbox-box-font-size)* var(--font-scale));
 
 }
