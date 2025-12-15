@@ -18,7 +18,7 @@
     /* FOR HINT BOXES*/
     /* Shared layout */
     --hintbox-box-padding: 20px;
-    --hintbox-box-font-size: 18px;
+    --hintbox-box-font-size: var(--font-size-base);
 
     /* Newspaper */
     --hintbox-news-accent: #d4ae2f;
