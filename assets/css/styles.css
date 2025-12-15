@@ -272,7 +272,7 @@ body.scrolling-to-newspaper .section.black {
     interpolate-size: allow-keywords;
 }
 
-.details-content {
+details::details-content {
     overflow: hidden;
     border-left: 4px solid var(--hintbox-news-accent);
     padding-left: var(--hintbox-box-padding);
@@ -293,7 +293,7 @@ body.scrolling-to-newspaper .section.black {
     transition-behavior: allow-discrete;
 }
 
-details[open] .details-content {
+details[open]::details-content {
     opacity: 1;
     block-size: auto;
 }
