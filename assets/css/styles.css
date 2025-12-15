@@ -126,7 +126,7 @@ background: rgba(255, 255, 255, 0.6);
 backdrop-filter: blur(8px);
 --underline-color: var(--underline-color-newspaper);
 
-padding: 14px 0;
+padding: 10px 0;
 transition: background-color 0.4s ease, color 0.4s ease;
 }
 
@@ -152,7 +152,7 @@ transition: background-color 0.4s ease, color 0.4s ease;
     text-decoration: none;
     color: #222; /*TODO*/
     font-family: var(--newspaper-font);
-    font-size: 20px; /*TODO*/
+    font-size: calc(var(--font-size-base)*0.9*var(--font-scale)); 
     letter-spacing: 0.5px;
 }
 
