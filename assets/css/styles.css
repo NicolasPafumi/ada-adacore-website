@@ -165,6 +165,7 @@ transition: background-color 0.4s ease, color 0.4s ease;
     background: white;
     border-bottom: 1px solid #ddd;
     --underline-color: var(--underline-color-newspaper);
+    --underline-opacity: var(--underline-opacity-newspaper);
 }
 
 .top-ribbon.light a {
@@ -175,6 +176,7 @@ transition: background-color 0.4s ease, color 0.4s ease;
 .top-ribbon.dark {
     background: rgba(0, 0, 0, 0.55);
     --underline-color: var(--underline-color-black);
+    --underline-opacity: var(--underline-opacity-black);
 }
 
 
@@ -211,6 +213,7 @@ transition: background-color 0.4s ease, color 0.4s ease;
     bottom: -4px;
     height: 2px;
     background: var(--underline-color);
+    opacity: var(--underline-opacity);
 
     width: 0;
     left: 0;
