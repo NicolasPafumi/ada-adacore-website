@@ -276,9 +276,15 @@ body.scrolling-to-newspaper .section.black {
     height: 0;
     opacity: 0;
 
+    block-size: 0; /*test*/
+
     transition:
         height 0.45s ease,
         opacity 0.3s ease;
+        block-size: 1s; /*test*/
+        content-visibility: 1s;/*test*/
+
+    transition-behavior: allow-discrete; /*test*/
 }
 
 .section.black .details-content {
@@ -287,6 +293,7 @@ body.scrolling-to-newspaper .section.black {
 
 details[open] .details-content {
     opacity: 1;
+    block-size: auto; /*test*/
 }
 
 /*--------------------------------------------------*/

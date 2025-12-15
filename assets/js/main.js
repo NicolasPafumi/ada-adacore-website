@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ////////////////////////////////////////////////////
     // dropdown animation
     ////////////////////////////////////////////////
+    /*
     document.querySelectorAll("details.collapsible").forEach(details => {
         const content = details.querySelector(".details-content");
         if (!content) return;
@@ -84,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
         });
-    });
+    });*/
 
 
 
