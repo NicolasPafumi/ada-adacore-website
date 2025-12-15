@@ -52,38 +52,43 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!content) return;
 
         details.addEventListener("toggle", () => {
+
             if (details.open) {
-                // ----- OPEN -----
-                const height = content.scrollHeight;
+                // ---------- OPEN ----------
+                // Start from 0
+                content.style.height = "0px";
+                content.style.opacity = "0";
 
-                content.style.height = height + "px";
-                content.style.opacity = "1";
+                requestAnimationFrame(() => {
+                    const targetHeight = content.scrollHeight;
+                    content.style.height = targetHeight + "px";
+                    content.style.opacity = "1";
+                });
 
-                // After animation, allow natural height
                 const onEnd = (e) => {
                     if (e.propertyName === "height") {
-                        content.style.height = "auto";
+                        content.style.height = "auto"; // allow content growth
                         content.removeEventListener("transitionend", onEnd);
                     }
                 };
                 content.addEventListener("transitionend", onEnd);
 
             } else {
-                // ----- CLOSE -----
+                // ---------- CLOSE ----------
+                // Convert auto → px FIRST
+                const currentHeight = content.getBoundingClientRect().height;
+                content.style.height = currentHeight + "px";
 
-                // 1. Freeze current height
-                const height = content.scrollHeight;
-                content.style.height = height + "px";
-
-                // 2. Force reflow
+                // Force reflow
                 content.offsetHeight;
 
-                // 3. Animate to zero
+                // Animate to zero
                 content.style.height = "0px";
                 content.style.opacity = "0";
             }
         });
     });
+
 
 
 });
