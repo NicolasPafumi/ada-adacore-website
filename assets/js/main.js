@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-/*
+
 document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.querySelector(".font-menu-toggle");
     const menu = document.querySelector(".font-menu");
@@ -226,12 +226,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Click a font-size button
     menu.querySelectorAll("button").forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            document.documentElement.style.setProperty(
-                "--font-scale",
-                btn.dataset.scale
-            );
+        btn.addEventListener("click", () => {
+            const root = document.documentElement;
+
+            // Current scale (fallback to 1)
+            const current =
+                parseFloat(getComputedStyle(root).getPropertyValue("--font-scale")) || 1;
+
+            const step = parseFloat(btn.dataset.step);
+
+            let next;
+
+            if (step === 0) {
+                next = 1; // reset
+            } else {
+                next = current + step;
+            }
+
+            // Clamp to reasonable range
+            next = Math.min(Math.max(next, 0.8), 1.3);
+
+            root.style.setProperty("--font-scale", next.toFixed(2));
+
+            menu.classList.remove("open");
         });
     });
 
@@ -241,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
             menu.classList.remove("open");
         }
     });
-});*/
+});
 
 
 
