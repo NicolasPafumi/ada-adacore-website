@@ -72,14 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     content.style.opacity = "0";
                 });
 
-                // Allow natural height after animation
-                content.addEventListener("transitionend", function handler(e) {
-                    if (e.propertyName === "height") {
-                        content.style.height = "auto";
-                        content.removeEventListener("transitionend", handler);
-                    }
-                });
-
             }
         });
     });
