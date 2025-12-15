@@ -351,12 +351,12 @@ summary::marker {
     color: var(--hintbox-news-text);
 }
 
+/*
 .details-content {
     overflow: hidden;
-    /*max-height: 0;*/
     opacity: 0;
     transition: max-height 0.45s ease, opacity 0.3s ease;
-}
+}*/
 
 details[open] .details-content {
     /*max-height: 80vh;*/

@@ -194,7 +194,7 @@ setInterval(resizeIframe, 500);
 ///////////////////////////////////////////////////////////
 // smooth drop boxes
 ////////////////////////////////////////////////////////
-
+/*
 document.querySelectorAll('details').forEach(details => {
     const content = details.querySelector('.details-content');
 
@@ -208,7 +208,7 @@ document.querySelectorAll('details').forEach(details => {
             content.style.opacity = '0';
         }
     });
-});
+});*/
 /*
 document.querySelectorAll("details.collapsible").forEach(details => {
     const content = details.querySelector(".details-content");
@@ -238,4 +238,39 @@ document.querySelectorAll("details.collapsible").forEach(details => {
     });
 });
 */
+document.querySelectorAll("details.collapsible").forEach(details => {
+    const content = details.querySelector(".details-content");
+
+    // Safety check
+    if (!content) return;
+
+    details.addEventListener("toggle", () => {
+        if (details.open) {
+            // ----- OPEN -----
+            content.style.height = content.scrollHeight + "px";
+            content.style.opacity = "1";
+
+            // After animation, allow natural height
+            const onTransitionEnd = (e) => {
+                if (e.propertyName === "height") {
+                    content.style.height = "auto";
+                    content.removeEventListener("transitionend", onTransitionEnd);
+                }
+            };
+            content.addEventListener("transitionend", onTransitionEnd);
+
+        } else {
+            // ----- CLOSE -----
+            // Set current height explicitly
+            content.style.height = content.scrollHeight + "px";
+
+            // Force reflow so browser registers the height
+            content.offsetHeight;
+
+            // Then animate to zero
+            content.style.height = "0px";
+            content.style.opacity = "0";
+        }
+    });
+});
 
