@@ -294,7 +294,7 @@ body.scrolling-to-newspaper .section.black {
 }
 
 details[open] .details-content {
-    /*opacity: 1;*/
+    opacity: 1;
     block-size: auto;
 }
 
