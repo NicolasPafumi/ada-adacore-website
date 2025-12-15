@@ -268,36 +268,31 @@ body.scrolling-to-newspaper .section.black {
     cursor: pointer;
 }
 
-:root {
-    interpolate-size: allow-keywords;
-}
-
+/*test*/
 .details-content {
-    overflow: hidden;
-    border-left: 4px solid var(--hintbox-news-accent);
-    padding-left: var(--hintbox-box-padding);
-
-    /*height: 0; test*/
+    display: grid;
+    grid-template-rows: 0fr;
     opacity: 0;
-    block-size: 0; /*test*/
-
+    overflow: hidden;
     transition:
-        /*height 0.45s ease, test*/
-        opacity 0.3s ease,
-        block-size 1s ease; /* test */
-        content-visibility: 1s ease; /*test*/
-
-    transition-behavior: allow-discrete;
-
+        grid-template-rows 0.45s ease,
+        opacity 0.3s ease;
 }
+
+/*test*/
+.details-content>* {
+    overflow: hidden;
+}
+
+/*test*/
+details[open] .details-content {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
 
 .section.black .details-content {
   color: var(--hintbox-dark-text);
-}
-
-details[open] .details-content {
-    opacity: 1;
-    block-size: auto;
 }
 
 /*--------------------------------------------------*/
