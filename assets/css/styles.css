@@ -298,7 +298,7 @@ body.scrolling-to-newspaper .section.black {
 }
 
 details[open] .details-content {
-    max-height: 80vh;
+    /*max-height: 80vh;*/
     opacity: 1;
 }
 
