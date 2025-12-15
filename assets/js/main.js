@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const content = details.querySelector(".details-content");
         if (!content) return;
 
-        // Initially set explicit height 0
+        // Initially collapsed
         content.style.height = "0px";
         content.style.opacity = "0";
         content.style.transition = "height 0.45s ease, opacity 0.3s ease";
@@ -71,11 +71,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 content.addEventListener("transitionend", onEnd);
 
             } else {
-                // CLOSE: from current height (may be auto) -> 0
+                // CLOSE: from current pixel height -> 0
+                // if height is auto, read scrollHeight
                 const currentHeight = content.scrollHeight;
-                content.style.height = currentHeight + "px"; // start at current pixels
+                content.style.height = currentHeight + "px"; // set explicit pixel height
                 content.offsetHeight; // force reflow
 
+                // Animate to 0
                 requestAnimationFrame(() => {
                     content.style.height = "0px";
                     content.style.opacity = "0";
@@ -83,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
 
 
 
