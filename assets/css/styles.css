@@ -273,33 +273,16 @@ body.scrolling-to-newspaper .section.black {
     border-left: 4px solid var(--hintbox-news-accent);
     padding-left: var(--hintbox-box-padding);
 
-    height: 0;
+    /*height: 0; test*/
     opacity: 0;
     block-size: 0; /*test*/
 
     transition:
-        height 0.45s ease,
+        /*height 0.45s ease, test*/
         opacity 0.3s ease,
         block-size 1s ease; /* test */
 
 }
-
-/*
-details::details-content {
-    block-size: 0;
-        
-
-    transition: 
-            block-size 1s,
-
-            content-visibility 1s,
-             
-    transition-behavior: allow-discrete;
-   
-
-details[open]::details-content {
-    block-size: auto; 
-} test*/
 
 .section.black .details-content {
   color: var(--hintbox-dark-text);
