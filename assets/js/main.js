@@ -44,6 +44,37 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('scroll', revealScrollImages);
     revealScrollImages();
 
+    ////////////////////////////////////////////////////
+    // dropdown animation
+    ////////////////////////////////////////////////
+    document.querySelectorAll("details.collapsible").forEach(details => {
+        const content = details.querySelector(".details-content");
+
+        details.addEventListener("toggle", () => {
+            if (details.open) {
+                // OPEN
+                content.style.height = content.scrollHeight + "px";
+                content.style.opacity = "1";
+
+                // Allow natural height after animation
+                content.addEventListener("transitionend", function handler(e) {
+                    if (e.propertyName === "height") {
+                        content.style.height = "auto";
+                        content.removeEventListener("transitionend", handler);
+                    }
+                });
+
+            } else {
+                // CLOSE
+                content.style.height = content.scrollHeight + "px";
+                requestAnimationFrame(() => {
+                    content.style.height = "0px";
+                    content.style.opacity = "0";
+                });
+            }
+        });
+    });
+
 });
 
 ///////////////////////////////////////////
@@ -238,6 +269,7 @@ document.querySelectorAll("details.collapsible").forEach(details => {
     });
 });
 */
+/*
 document.querySelectorAll("details.collapsible").forEach(details => {
     const content = details.querySelector(".details-content");
 
@@ -273,4 +305,4 @@ document.querySelectorAll("details.collapsible").forEach(details => {
         }
     });
 });
-
+*/
