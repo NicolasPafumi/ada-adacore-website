@@ -263,6 +263,7 @@ body.scrolling-to-newspaper .section.black {
     cursor: pointer;
 }
 
+/*
 .details-content {
     overflow: hidden;
     border-left: 4px solid var(--hintbox-news-accent);
@@ -270,7 +271,20 @@ body.scrolling-to-newspaper .section.black {
     max-height: 0;
     opacity: 0;
     transition:
-        max-height 0.45s ease,/*0.45s initially*/
+        max-height 0.45s ease,
+        opacity 0.3s ease;
+}*/
+
+.details-content {
+    overflow: hidden;
+    border-left: 4px solid var(--hintbox-news-accent);
+    padding-left: var(--hintbox-box-padding);
+
+    height: 0;
+    opacity: 0;
+
+    transition:
+        height 0.45s ease,
         opacity 0.3s ease;
 }
 

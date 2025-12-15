@@ -190,3 +190,22 @@ document.getElementById('nasdaq-iframe').addEventListener('load', resizeIframe);
 
 // resize periodically if content changes dynamically
 setInterval(resizeIframe, 500);
+
+///////////////////////////////////////////////////////////
+// smooth drop boxes
+////////////////////////////////////////////////////////
+document.querySelectorAll('details').forEach(details => {
+    const content = details.querySelector('.details-content');
+
+    details.addEventListener('toggle', () => {
+        if (details.open) {
+            const h = content.scrollHeight;
+            content.style.height = h + 'px';
+            content.style.opacity = '1';
+        } else {
+            content.style.height = '0';
+            content.style.opacity = '0';
+        }
+    });
+});
+
