@@ -33,4 +33,7 @@
     --hintbox-dark-bg: rgba(230, 196, 106, 0.10);
     --hintbox-dark-text: var(--black-color);/*#fcb900*/
 
+    /* chevron */
+    --hintbox-shevron-size: calc(var(--hintbox-box-font-size)*0.9);
+
 }

@@ -268,18 +268,6 @@ body.scrolling-to-newspaper .section.black {
     cursor: pointer;
 }
 
-/*
-.details-content {
-    overflow: hidden;
-    border-left: 4px solid var(--hintbox-news-accent);
-    padding-left: var(--hintbox-box-padding);
-    max-height: 0;
-    opacity: 0;
-    transition:
-        max-height 0.45s ease,
-        opacity 0.3s ease;
-}*/
-
 .details-content {
     overflow: hidden;
     border-left: 4px solid var(--hintbox-news-accent);
@@ -298,7 +286,6 @@ body.scrolling-to-newspaper .section.black {
 }
 
 details[open] .details-content {
-    /*max-height: 80vh;*/
     opacity: 1;
 }
 
@@ -351,18 +338,6 @@ summary::marker {
     color: var(--hintbox-news-text);
 }
 
-/*
-.details-content {
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.45s ease, opacity 0.3s ease;
-}*/
-
-/*
-details[open] .details-content {
-    opacity: 1;
-}*/
-
 /* Hover feedback */
 .info-dropdown summary:hover {
     filter: brightness(1.05);
@@ -370,8 +345,8 @@ details[open] .details-content {
 
 /* Chevron animation */
 .info-dropdown .chevron {
-    width: 14px;
-    height: 14px;
+    width: var(--hintbox-shevron-size);
+    height: var(--hintbox-shevron-size);
     transition: transform 0.3s ease;
     opacity: 0.7;
 }
@@ -383,8 +358,8 @@ details[open] .chevron {
 
 /* Chevron icon */
 .chevron {
-    width: 14px;
-    height: 14px;
+    width: var(--hintbox-shevron-size);
+    height: var(--hintbox-shevron-size);
     transition: transform 0.3s ease, opacity 0.2s ease;
     opacity: 0.7;
     color: currentColor;
