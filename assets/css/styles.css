@@ -122,7 +122,7 @@ body.scrolling-to-newspaper .section.black {
 /* end ribbon hidden scroll down */
 
 .top-ribbon {
-    position: fixed;
+    position: sticky;/*fixed before, test to make it stay on top of the page*/
     top: 0;
     z-index: 1000;
 
@@ -225,6 +225,8 @@ body.scrolling-to-newspaper .section.black {
     width: 0;
     background: currentColor;
     transition: transform 0.4s ease, width 0.4s ease;
+    left: 50%;/*test*/
+    transform: translateX(-50%); /*test*/
 }
 
 /*---------------------*/
