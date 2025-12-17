@@ -150,7 +150,7 @@ transition: background-color 0.4s ease, color 0.4s ease;
 
 .top-ribbon a {
     text-decoration: none;
-    color: #222; /*TODO*/
+    color: #010998; /*TODO before #222*/
     font-family: var(--newspaper-font);
     font-size: calc(var(--font-size-base)*0.9*var(--font-scale)); 
     letter-spacing: 0.5px;
@@ -169,7 +169,7 @@ transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .top-ribbon.light a {
-    color: #222; /*TODO*/
+    color: #900505; /*TODO before #222*/
 }
 
 /* Dark (black section) */
@@ -260,11 +260,15 @@ transition: background-color 0.4s ease, color 0.4s ease;
 .font-menu-toggle {
     background: none;
     border: none;
-    color: currentColor;
+    color: var(--newspaper-color);
     font-size: 1.4rem;
     cursor: pointer;
     padding: 6px 10px;
     border-radius: 6px;
+}
+
+.font-menu-toggle.dark {
+    color: var(--black-color);
 }
 
 .font-menu-toggle:hover {
@@ -340,16 +344,6 @@ transition: background-color 0.4s ease, color 0.4s ease;
 .font-menu button:hover {
     filter: brightness(1.25);
 }
-
-/* Optional hover states */
-/*
-.font-menu button:hover {
-    background: rgba(0, 0, 0, 0.08);
-}
-
-.top-ribbon.dark .font-menu button:hover {
-    background: rgba(255, 255, 255, 0.15);
-}*/
 
 /*---------------*/
 /* Dropdown menu */
