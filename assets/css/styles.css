@@ -150,7 +150,7 @@ transition: background-color 0.4s ease, color 0.4s ease;
 
 .top-ribbon a {
     text-decoration: none;
-    color: #010998; /*TODO before #222*/
+    color: #222; /*TODO before #222*/
     font-family: var(--newspaper-font);
     font-size: calc(var(--font-size-base)*0.9*var(--font-scale)); 
     letter-spacing: 0.5px;
@@ -169,7 +169,7 @@ transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .top-ribbon.light a {
-    color: #900505; /*TODO before #222*/
+    color: #222; /*TODO before #222*/
 }
 
 /* Dark (black section) */
