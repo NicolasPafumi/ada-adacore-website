@@ -275,6 +275,7 @@ transition: background-color 0.4s ease, color 0.4s ease;
     background: rgba(255, 255, 255, 0.15);
 }
 
+
 /* dropdown menu */
 .font-menu {
     position: absolute;
@@ -324,6 +325,31 @@ transition: background-color 0.4s ease, color 0.4s ease;
 .top-ribbon.dark .font-menu button:hover {
     background: rgba(255, 255, 255, 0.15);
 }
+
+/* Default (newspaper / light section) */
+.font-menu button {
+    color: var(--newspaper-color);
+    transition: filter 0.2s ease;
+}
+
+/* Dark section */
+.top-ribbon.dark .font-menu button {
+    color: var(--black-color);
+}
+
+.font-menu button:hover {
+    filter: brightness(1.25);
+}
+
+/* Optional hover states */
+/*
+.font-menu button:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.top-ribbon.dark .font-menu button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}*/
 
 /*---------------*/
 /* Dropdown menu */
