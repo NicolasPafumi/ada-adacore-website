@@ -35,6 +35,10 @@ font-size: calc(var(--font-size-base) * 1.2 * var(--font-scale));
 font-size: calc(var(--font-size-base) * 1.1 * var(--font-scale));
 }
 
+.content h5 {
+    font-size: calc(var(--font-size-base)*0.7*var(--font-scale));
+}
+
 .content p {
 font-size: calc(var(--font-size-base) * 1 * var(--font-scale));
 }
