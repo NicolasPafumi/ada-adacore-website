@@ -53,7 +53,7 @@ font-size: calc(var(--font-size-base) * 2 * var(--font-scale));
 
 h1.title {
     font-size: calc(var(--font-size-base) * 4 * var(--font-scale));
-    font-family: "Walbaum-Fraktur", "KlaberFraktur", "DSWalbaumfraktur", "Chomsky", serif;
+    font-family: "Chomsky", "Walbaum-Fraktur", "KlaberFraktur", "DSWalbaumfraktur", serif;
     text-align: center;
 }
 
