@@ -17,6 +17,20 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "DSWalbaumfraktur";
+    src: url("../fonts/DSWalbaumfraktur.ttf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Walbaum-Fraktur";
+    src: url("../fonts/Walbaum-Fraktur.ttf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 img {
     max-width: 100%;
 }
@@ -39,7 +53,7 @@ font-size: calc(var(--font-size-base) * 2 * var(--font-scale));
 
 h1.title {
     font-size: calc(var(--font-size-base) * 4 * var(--font-scale));
-    font-family: "Walbaum-Fraktur", "Chomsky", serif;
+    font-family: "DSWalbaumfraktur.ttf", "Chomsky", "Walbaum-Fraktur", serif;
     text-align: center;
 }
 
