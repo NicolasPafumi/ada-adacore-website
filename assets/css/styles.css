@@ -102,6 +102,13 @@ color: var(--black-color);
     /* adjust with respect to margin sizes */
 }
 
+.section.black .content {
+    background: var(--black-bg);
+    /* white aroud */
+    padding: 40px;
+    /* adjust with respect to margin sizes */
+}
+
 body.scrolling-to-black .section.newspaper {
     background-color: var(--black-bg);
 }
