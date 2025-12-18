@@ -21,6 +21,7 @@ html {
 
 .content h1 {
 font-size: calc(var(--font-size-base) * 2 * var(--font-scale));
+font-family: 'Bokor', sans-serif;
 }
 
 .content h2 {
