@@ -574,7 +574,7 @@ summary::marker {
 .image-stack {
     position: relative;
     width: 100%;
-    height: 120vh;
+    height: auto;/*120vh*/
     /*aspect-ratio: 16/9;*/
     /* keeps proportion */
     overflow: hidden;
