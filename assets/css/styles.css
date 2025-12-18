@@ -10,6 +10,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Walbaum-Fraktur";
+    src: url("../fonts/Walbaum-Fraktur.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 img {
     max-width: 100%;
 }
@@ -32,7 +39,7 @@ font-size: calc(var(--font-size-base) * 2 * var(--font-scale));
 
 .content.title h1 {
     font-size: calc(var(--font-size-base) * 4 * var(--font-scale));
-    font-family: "Chomsky", serif;
+    font-family: "Walbaum-Fraktur", "Chomsky", serif;
 }
 
 .content h2 {
