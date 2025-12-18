@@ -52,7 +52,7 @@ font-size: calc(var(--font-size-base) * 2 * var(--font-scale));
 }
 
 h1.title {
-    font-size: calc(var(--font-size-base) * 6 * var(--font-scale));
+    font-size: calc(var(--font-size-base) * 5 * var(--font-scale));
     font-family: "Chomsky", "Walbaum-Fraktur", "KlaberFraktur", "DSWalbaumfraktur", serif;
     text-align: center;
     margin: 15px;
@@ -78,7 +78,7 @@ font-size: calc(var(--font-size-base) * 1.1 * var(--font-scale));
     font-size: calc(var(--font-size-base)*0.5*var(--font-scale));
 }
 
-.content p {
+.content p, .content li, .conten ul {
 font-size: calc(var(--font-size-base) * 1 * var(--font-scale));
 }
 
