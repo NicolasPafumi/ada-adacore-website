@@ -48,7 +48,7 @@ font-size: calc(var(--font-size-base) * 1 * var(--font-scale));
 }
 
 .content .date {
-    font-size: calc(var(--font-size-base) * var(--font-scale) * 0.5);
+    font-size: calc(var(--font-size-base) * var(--font-scale) * 0.8);
     text-align: right;
     font-style: italic;
     opacity: 0.75;
