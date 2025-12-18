@@ -84,10 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let lastScrollY = window.scrollY;
 
+
+    /*
     window.addEventListener("scroll", () => {
 
-        /* start ribbon hidden scroll down */
-        /*
         const currentScroll = window.scrollY;
     
         if (currentScroll > lastScrollY && currentScroll > 120) {
@@ -97,13 +97,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     
         lastScrollY = currentScroll;
-        */
-        /* end ribbon hidden scroll down */
 
         updateProgress(); // for progress bar
 
 
-    });
+    });*/
 
 
 
@@ -153,10 +151,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    function updateRibbonTheme() {
+        const ribbonRect = ribbon.getBoundingClientRect();
+        const probeY = ribbonRect.bottom + 1; // 1px below ribbon
+
+        let activeTheme = "light";
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+
+            if (rect.top <= probeY && rect.bottom >= probeY) {
+                activeTheme = section.dataset.theme;
+            }
+        });
+
+        ribbon.dataset.theme = activeTheme;
+    }
+
     window.addEventListener("scroll", updateRibbon);
     window.addEventListener("resize", updateRibbon);
-    updateRibbon();
+    /*updateRibbon();*/
+    updateRibbonTheme();/*new version that looks what's under*/
 });
+
 
 /////////////////////////////////////////////////////////
 // Change font size from ribbon
