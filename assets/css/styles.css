@@ -77,8 +77,13 @@ font-size: calc(var(--font-size-base) * 1.1 * var(--font-scale));
 .content h6 {
     font-size: calc(var(--font-size-base)*0.5*var(--font-scale));
 }
+
 .content p {
 font-size: calc(var(--font-size-base) * 1 * var(--font-scale));
+}
+
+.content li {
+    font-size: calc(var(--font-size-base) * 1 * var(--font-scale));
 }
 
 .content .date {
