@@ -47,10 +47,11 @@ font-size: calc(var(--font-size-base) * 1.1 * var(--font-scale));
 font-size: calc(var(--font-size-base) * 1 * var(--font-scale));
 }
 
-.date p {
+.date {
     font-size: calc(var(--font-size-base) * var(--font-scale) * 0.5);
     text-align: right;
-    margin-top: 5px;
+    font-style: italic;
+    opacity: 0.75;
 }
 
 /*----------------------------*/
@@ -109,9 +110,14 @@ color: var(--black-color);
     /* adjust with respect to margin sizes */
 }
 
+/*page diseappear on section transition*/
+body.scrolling-to-black .section.newspaper .content {
+    background: var(--black-bg);
+}
+
 body.scrolling-to-black .section.newspaper {
     background-color: var(--black-bg);
-    color: var(--black-bg);
+    color: var(--newspaper-bg);
 }
 
 body.scrolling-to-newspaper .section.black {
