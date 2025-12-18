@@ -28,7 +28,11 @@ html {
 
 .content h1 {
 font-size: calc(var(--font-size-base) * 2 * var(--font-scale));
-font-family: "Chomsky", serif;
+}
+
+.content.title h1 {
+    font-size: calc(var(--font-size-base) * 4 * var(--font-scale));
+    font-family: "Chomsky", serif;
 }
 
 .content h2 {
