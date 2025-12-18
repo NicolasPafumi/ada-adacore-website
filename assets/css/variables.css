@@ -17,7 +17,7 @@
         serif;
 
     /* ribbon on top*/
-    --ribbon-font-size: calc(--font-size-base*0.65* var(--font-scale));
+    --ribbon-font-size: calc(var(--font-size-base)*0.65* var(--font-scale));
 
     /* underline */
     --underline-color-newspaper: #111;
