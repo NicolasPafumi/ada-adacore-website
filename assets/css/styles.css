@@ -71,13 +71,6 @@ body {
     /* breathing space */
 }
 
-.research-box {
-    border: 2px solid #f5f5dc;   /* cream color */
-    padding: 15px;               /* space inside */
-    background-color: #ffffff;   /* white background */
-    border-radius: 0;          /* rectangle */
-    margin: 20px 0;              /* space up and down */
-}
 
 /* Newspaper section */
 .section.newspaper {
