@@ -40,7 +40,7 @@ font-size: calc(var(--font-size-base) * 1.1 * var(--font-scale));
 }
 
 .content h6 {
-    font-size: calc(var(--font-size-base)*0.2*var(--font-scale));
+    font-size: calc(var(--font-size-base)*0.4*var(--font-scale));
 }
 .content p {
 font-size: calc(var(--font-size-base) * 1 * var(--font-scale));
