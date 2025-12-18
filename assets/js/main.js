@@ -54,7 +54,7 @@ const blackSections = document.querySelectorAll('.section.black');
 /*
 const newsSections = document.querySelectorAll('.section.newspaper');
 */
-
+/*
 const observer_black = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -69,7 +69,7 @@ const observer_black = new IntersectionObserver(entries => {
     threshold: 0.1
 });
 
-
+*/
 blackSections.forEach(section => observer_black.observe(section));
 
 
