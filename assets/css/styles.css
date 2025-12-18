@@ -39,6 +39,9 @@ font-size: calc(var(--font-size-base) * 1.1 * var(--font-scale));
     font-size: calc(var(--font-size-base)*0.7*var(--font-scale));
 }
 
+.content h6 {
+    font-size: calc(var(--font-size-base)*0.5*var(--font-scale));
+}
 .content p {
 font-size: calc(var(--font-size-base) * 1 * var(--font-scale));
 }
@@ -72,6 +75,7 @@ body {
     padding: 40px 20px;
     /* breathing space */
 }
+
 
 /* Newspaper section */
 .section.newspaper {
