@@ -49,6 +49,7 @@ font-size: calc(var(--font-size-base) * 1 * var(--font-scale));
 .date {
     font-size: calc(var(--font-size-base) * var(--font-scale) * 0.5);
     text-align: right;
+    margin-top: 5px;
 }
 
 /*----------------------------*/
