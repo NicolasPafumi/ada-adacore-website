@@ -3,6 +3,13 @@
 /*---------------------------*/
 @import url("variables.css");
 
+@font-face {
+    font-family: "Chomsky";
+    src: url("assets/fonts/Chomsky.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 img {
     max-width: 100%;
 }
@@ -21,7 +28,7 @@ html {
 
 .content h1 {
 font-size: calc(var(--font-size-base) * 2 * var(--font-scale));
-font-family: 'Bokor', sans-serif;
+font-family: 'Chomsky', sans-serif;
 }
 
 .content h2 {
