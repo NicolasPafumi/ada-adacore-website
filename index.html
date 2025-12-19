@@ -75,7 +75,7 @@ layout: default
         <h2> Abstract </h2>
         <p>It is a well-known fact: presidential elections shake up the stock market every four years. 
             Investors react nervously to uncertainty, worry about potential policy changes, often amplifying even small market fluctuations. 
-            Understanding these dynamics can help anticipate market movements and hedge portfolios around election cycles —or 
+            Understanding these dynamics can help anticipate market movements and hedge portfolios around election cycles - 
             or at least give analysts an excuse to dive deep into charts and election data late into the night. More importantly, 
             market movements reveal how investors perceive candidates and their policy proposals.
             <br>
@@ -153,7 +153,7 @@ layout: default
 <section id="financials" class="section newspaper" data-theme="light">
     <div class="content">
 
-        <h2>Financials</h2>
+        <h2><strong>Financials</strong></h2>
 
         <h3>Returns and Log-Returns</h3>
 
@@ -173,12 +173,12 @@ layout: default
             </summary>
             <div class="details-content">
                 <p>
-                    To compute how much a stock earns we take the difference in value to the next period
-                    divided by value at the start of the period.
+                    To compute how much a stock earns we take the difference in value to the next period <em>V_f</em>
+                    divided by value at the start of the period <em>V_i</em>.
                 </p>
         
                 <div class="math-block">
-                    $$R = \frac{V_f - V_i}{V_i}$$
+                    $$ R = \frac{V_f - V_i}{V_i} $$
                 </div>
         
                 <p>
@@ -205,23 +205,14 @@ layout: default
             </summary>
         
             <div class="details-content">
-                <p>
-                    Here we explain in much more details
-                </p>
-        
-                <p>With a nice formula:</p>
         
                 <p class="math-block">
                     <!-- MathJax formula -->
-                    $$r_t = \ln\frac{V_t}{V_{t-1}}$$
-                </p>
-                <p>
-                    With
-                    \(x_1, x_2, \dots, x_n\) inline equation.
+                    $$r_t = \log\frac{V_t}{V_{t-1}}$$
                 </p>
             </div>
 
-            <p>Why go through the trouble? The magic property of log returns is **time additivity**: 
+            <p>Why go through the trouble? The magic property of log returns is <strong>time additivity<strong>: 
                 the log return over multiple days is just the sum of daily log returns. This makes it 
                 trivial to compute cumulative returns over a period. For example, if a stock gains 1% 
                 on day 1 and loses 1% on day 2, the cumulative log return is exactly zero—something that 
@@ -249,7 +240,7 @@ layout: default
             which we track here using the S&P 500 as the market reference. A beta above 1 means the stock tends to amplify market swings 
             (tech stocks, for example), while a beta below 1 means it’s more stable (utilities are classic examples).
             <br>
-            But some companies consistently outperform—or underperform—the market in ways that can’t be explained by beta alone. 
+            But some companies consistently outperform (or underperform) the market in ways that can’t be explained by beta alone. 
             That’s alpha: positive alpha means the stock does better than expected given its beta, negative alpha means it lags behind.
         </p>
 
@@ -268,8 +259,6 @@ layout: default
                     In practice, we model this with a simple linear regression:
                 </p>
         
-                <p>With a nice formula:</p>
-        
                 <p class="math-block">
                     <!-- MathJax formula -->
                     $$R_i = \alpha_i + \beta_i R_m + \epsilon_i$$
@@ -287,10 +276,14 @@ layout: default
         <h3>Estimators of Volatility</h3>
 
         <p>
-            Returns tend to be centered around 0 as prices oscillate around a trend. During the 2008 crisis, we observe an increase
-            in volatility, with more pronounced fluctuations. This pattern of high volatility could be indicative of what we expect
-            around election dates as well, although less pronounced. We can quantify this volatility using standard deviation of
-            returns over a rolling window. This estimate of volatility is referred to as historical volatility
+            Returns typically fluctuate around zero, as prices move up and down around a longer-term trend. During periods 
+            of stress - such as the 2008 financial crisis (see figure below) - these fluctuations become noticeably larger, 
+            reflecting a sharp increase in volatility. Observations from past crises offer a useful reference for the kinds 
+            of volatility we might anticipate during elections.
+            <br>
+            To move beyond visual impressions, we quantify this behavior using the standard deviation of returns over a rolling window. 
+            This measure provides an estimate of how volatile the market has been recently and is commonly referred to as historical 
+            volatility.
         </p>
 
         <!-- historical volatility -->
@@ -316,7 +309,7 @@ layout: default
                 </p>
                 <p>
                     With
-                    \(N\) the selected window, e.g. \(t\) representing a day, \( \bar{V} \) the average price for the
+                    \(N\) the size of the selected window, e.g. \(t\) representing a day, \( \bar{V} \) the average price for the
                     given window and
                     \(V_t\) the price on a given \(t\) (e.g. a day).
                 </p>
@@ -326,28 +319,27 @@ layout: default
         <iframe src="assets/graphs/Interactive_Volatility_21.html" class="graph-frame" scrolling="no" height="600"></iframe>
 
         <p>
-            Sectors typically follow the overall market trend, with increased volatility during events affecting the entire economy,
-            such as the 2008 financial crisis or the August 2011 market fall. However, this simple visualization hints that sectors
-            can exhibit different levels of volatility, responding to events that preferentially impact them. A good example is the
-            energy sector that showed above-market volatility from 2005 to 2007, as conflicts in the Middle East and other factors
-            influenced oil prices. Other sectors were largely unaffected during that period. Similarly, the years 2001-2003 saw
-            increased volatility in the technology sector following the burst of the dot-com bubble, while other sectors remained
-            relatively stable.
+            Sectors generally follow the overall market trend, with spikes in volatility during events that shake the entire economy, 
+            like the 2008 financial crisis or the market drop in August 2011. But a closer look reveals that not all sectors react 
+            equally, some are more sensitive to specific events. Take the energy sector, for example: between 2005 and 2007, it showed 
+            above the market volatility as Middle East conflicts and other factors drove oil prices up and down. Most other sectors barely 
+            flinched. Similarly, the technology sector experienced heightened volatility from 2001 to 2003 after the dot-com bubble burst, 
+            while other industries remained relatively stable.
         </p>
 
         <P>
-            This already supports our hypothesis that sector-specific analysis is important to capture the full impact of elections.
-            As candidates take different stances on issues like climate change, regulation of Big Tech or healthcare reform, sectors
-            will be differentially affected!
+            These patterns already hint at something important for our study: sector-specific analysis matters. Around elections,
+            different policy proposals - think climate change, Big Tech regulation, or healthcare reform - will impact sectors 
+            in very different ways.
         </P>
 
         <p>
-            while historical volatility is easy to compute and is typically used for long-term analysis and risk management, it has
-            its limitations. It needs a sufficiently large window size to provide reliable estimates, which can smooth out the
-            day-to-day fluctuations we aim to capture around election dates. Additionally, since it is only based on close prices,
-            it ignores intraday price movements. In the context of elections, market reactions can be swift and get resolved within
-            the same trading day. For these reasons, we use Parkinson's volatility estimator, which leverages high and low prices
-            within the trading day to provide a more responsive measure
+            Now, historical volatility is easy to compute and widely used for long-term analysis and risk management. But it comes with 
+            limitations: it requires a sufficiently large window to give reliable estimates, which can smooth over the short-term 
+            fluctuations we’re interested in around election dates. It also only considers close prices, ignoring intraday swings 
+            that can happen when markets react swiftly to news. For this reason, we turn to <strong>Parkinson’s volatility estimator</strong>, which 
+            leverages the day’s high and low prices to provide a more responsive measure - perfect for capturing those quick market moves 
+            around elections.
         </p>
 
         <!-- Parkinson Volatility -->
@@ -367,8 +359,6 @@ layout: default
                     accurate estimates with smaller values of \(N\), allowing to
                     capture short-term variation without sacrificing reliability.
                 </p>
-        
-                <p>Formula :</p>
         
                 <p class="math-block">
                     <!-- MathJax formula -->
