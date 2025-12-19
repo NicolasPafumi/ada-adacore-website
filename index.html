@@ -74,10 +74,9 @@ layout: default
 
         <h2> Abstract </h2>
         <p>It is a well-known fact: presidential elections shake up the stock market every four years. 
-            Investors react nervously to uncertainty, worry about potential policy changes, and generally behave 
-            as if their spreadsheets had feelings. Understanding these dynamics can help anticipate market movements and hedge
-            portfolios around election cycles —or 
-            at least give one something to do while nervously checking Dow charts at midnight. More importantly, 
+            Investors react nervously to uncertainty, worry about potential policy changes, often amplifying even small market fluctuations. 
+            Understanding these dynamics can help anticipate market movements and hedge portfolios around election cycles —or 
+            or at least give analysts an excuse to dive deep into charts and election data late into the night. More importantly, 
             market movements reveal how investors perceive candidates and their policy proposals.
             <br>
             In this post, we take a data-driven look at how presidential elections affect company performance and investor 
@@ -88,9 +87,6 @@ layout: default
             The goal is simple: to show how politics and markets “dance” together, based on data, while keeping the discussion 
             accessible. By analyzing past elections and looking ahead to the upcoming 2024 election, we hope to identify patterns 
             that explain when, why, and how the market gets nervous.
-            <br>
-            And the takeaway after all that analysis? Investing in stocks during elections is probably not worth the stress. 
-            Yep-that’s exactly why I’m writing this blog.
         </p>
 
         <h3>Research questions</h3>
@@ -111,7 +107,7 @@ layout: default
         </p>
          
 
-        <h3>Nasdaq who?</h3>
+        <h3> Nasdaq Insights </h3>
         <p>
             So, what exactly are we looking at when we say “Nasdaq”? Our main dataset is a rich collection of historical stock 
             prices for companies traded on the Nasdaq exchange, along with some ETFs thrown in for context. For those not familiar: 
@@ -131,12 +127,25 @@ layout: default
     <div class="content">
 
         <iframe src="assets/graphs/sectors.html" class="graph-frame" scrolling="no" height="600"></iframe>
+        
+        <h2 style="text-align: center;">Dataset Unwrapping</h2>
+        <p style="text-align: center;">The number of tickers in our dataset varies over time due to IPOs, 
+            delistings, and other corporate events. The graph below illustrates the overall date coverage, 
+            showing the number of active stocks and ETFs at each point in time. Notably, the first ETF 
+            in our dataset appears in 1993, corresponding to the inception of the S&P 500 ETF, while stocks 
+            span a longer historical period.
+        </p>
 
-        <iframe src="assets/graphs/Interactive_Coverage_Tickers.html" class="graph-frame" scrolling="no" height="600"></iframe>
+        <iframe src="assets/graphs/Interactive_Coverage_Tickers.html" class="graph-frame" scrolling="no" height="600" style="display: block; margin: 0 auto;"></iframe>
 
-        <p>graph nb of stocks per sector over time + click on graph to get description of what sector is</p>
+        <p style="text-align: center;">The following graph shows the date coverage of tickers broken down in 11 sectors, 
+            using the standardized international GICS classification. We observe that the number of active tickers generally 
+            increases over time. Notably, there is a sharp jump in March 1983, with multiple new listings. As no clear event 
+            such as an IPO boom or regulatory change explains this surge, it is likely due to a change in data collection methods 
+            or limitations in the data source. To ensure stable results, we therefore restrict our analysis to elections from 1984 onward.
+        </p>
 
-        <iframe src="assets/graphs/Interactive_Sector_Tickers.html" class="graph-frame" scrolling="no" height="600"></iframe>
+        <iframe src="assets/graphs/Interactive_Sector_Tickers.html" class="graph-frame" scrolling="no" height="600" style="display: block; margin: 0 auto;"></iframe>
 
     </div>
 </section>
@@ -148,7 +157,10 @@ layout: default
 
         <h3>Returns and log-returns</h3>
 
-        <p>financial description of returns, when they are used, what they represent</p>
+        <p>When we want to measure how a stock is performing, the first thing that comes to mind is: 
+            how much did it move today? In finance, this is captured by returns. At its simplest, 
+            the daily return of a stock is the relative change in price from one day to the next.
+        </p>
 
         <!--Returns-->
         <details class="collapsible info-dropdown">
@@ -170,12 +182,18 @@ layout: default
                 </div>
         
                 <p>
-                    Typically the period used is days and the value used is the adjusted close price.
+                    In practice, we usually use for value the adjusted close prices and for the period days. 
+                    Adjusted close prices account for corporate actions like stock splits, dividends, 
+                    and spin-offs, so they reflect the true economic value of holding the stock. This 
+                    gives us a simple, intuitive sense of performance: positive numbers mean gains, negative numbers mean losses.
                 </p>
             </div>
         </details>
 
-        <p>financial description of log returns, how they mitigate data in the tails, used for statistical tests, blabla</p>
+        <p>However, a commonly used alternative is the logarithmic return (or log return). Rather than measuring 
+            relative change directly, it is defined as the natural logarithm of the ratio of consecutive prices:
+            financial description of log returns, how they mitigate data in the tails, used for statistical tests, blabla
+        </p>
 
         <!--Log returns-->
         <details class="collapsible info-dropdown">
