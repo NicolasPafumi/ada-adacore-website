@@ -93,6 +93,18 @@ font-size: calc(var(--font-size-base) * 1 * var(--font-scale));
     opacity: 0.75;
 }
 
+/*-------*/
+/* graphs*/
+/*-------*/
+.graph-frame {
+    width: 100%;
+    height: 750px;
+    /* must be >= content height */
+    border: none;
+    display: block;
+    overflow: hidden;
+}
+
 /*----------------------------*/
 /* Section newspaper and black*/
 /*----------------------------*/
