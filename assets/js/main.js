@@ -252,3 +252,11 @@ document.getElementById('nasdaq-iframe').addEventListener('load', resizeIframe);
 // resize periodically if content changes dynamically
 setInterval(resizeIframe, 500);
 */
+
+////////////////////////////////////////
+// for window resizes
+/////////////////////////////////////////
+window.onresize = () => {
+    Plotly.Plots.resize(document.body);
+};
+
