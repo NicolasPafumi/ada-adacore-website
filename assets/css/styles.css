@@ -131,6 +131,9 @@ body {
     padding-top: 5px;
 }
 
+.section.black .content {
+    max-width: 90%;
+}
 
 /* Newspaper section */
 .section.newspaper {
