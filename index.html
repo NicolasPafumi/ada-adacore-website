@@ -155,7 +155,7 @@ layout: default
 
         <h2>Financials</h2>
 
-        <h3>Returns and log-returns</h3>
+        <h3>Returns and Log-Returns</h3>
 
         <p>When we want to measure how a stock is performing, the first thing that comes to mind is: 
             how much did it move today? In finance, this is captured by returns. At its simplest, 
@@ -191,8 +191,7 @@ layout: default
         </details>
 
         <p>However, a commonly used alternative is the logarithmic return (or log return). Rather than measuring 
-            relative change directly, it is defined as the natural logarithm of the ratio of consecutive prices:
-            financial description of log returns, how they mitigate data in the tails, used for statistical tests, blabla
+            relative change directly, it is defined as the natural logarithm of the ratio of consecutive prices.
         </p>
 
         <!--Log returns-->
@@ -202,7 +201,7 @@ layout: default
                     <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <span>INTRODUCE THE THING TO EXPALIN</span>
+                <span>Log-Returns</span>
             </summary>
         
             <div class="details-content">
@@ -214,19 +213,31 @@ layout: default
         
                 <p class="math-block">
                     <!-- MathJax formula -->
-                    $$1+ 1 \text{ is two}$$
+                    $$r_t = \ln\frac{V_t}{V_{t-1}}$$
                 </p>
                 <p>
                     With
                     \(x_1, x_2, \dots, x_n\) inline equation.
                 </p>
             </div>
+
+            <p>Why go through the trouble? The magic property of log returns is **time additivity**: 
+                the log return over multiple days is just the sum of daily log returns. This makes it 
+                trivial to compute cumulative returns over a period. For example, if a stock gains 1% 
+                on day 1 and loses 1% on day 2, the cumulative log return is exactly zero—something that 
+                doesn’t hold with regular returns.
+            </p>
+            
         </details>
 
         <h3>Kurtosis</h3>
 
         <p>
-            description of kurtosis, what it measures + different can barely be seen in histograms because lies in outliers
+            Kurtosis measures how much of the data lies in the tails of a distribution—essentially, how likely 
+            extreme events are. One additional advantage of using log returns is that they tend to reduce kurtosis,
+            smoothing out the “fat tails” often seen in standard returns. This makes the distribution closer to normal, 
+            which is particularly helpful for statistical analysis, modeling, and comparing sectors or stocks. The differences 
+            are subtle and usually invisible in histograms, as they appear mainly in rare, extreme price moves.
         </p>
 
         <iframe src="assets/graphs/Interactive_Daily_Returns_20.html" class="graph-frame" scrolling="no" height="600"></iframe>
@@ -234,11 +245,12 @@ layout: default
         <h3>Alpha and Beta</h3>
 
         <p>
-            intro to what alpha_beta is: In reality, some companies are more sensitive to market movements than others, they have a
-            higher beta. For example, technology stocks tend to have a beta greater than 1, they amplify market movements, while
-            utilities, a very stable sector, tend to have a beta less than 1. Similarly, some companies provide returns that cannot
-            simply be explained by market movements, they consistently outperform the market, they are said to have a positive
-            alpha.
+            Not all stocks move the same way when the market shifts. Beta measures how sensitive a stock is to overall market movements, 
+            which we track here using the S&P 500 as the market reference. A beta above 1 means the stock tends to amplify market swings 
+            (tech stocks, for example), while a beta below 1 means it’s more stable (utilities are classic examples).
+            <br>
+            But some companies consistently outperform—or underperform—the market in ways that can’t be explained by beta alone. 
+            That’s alpha: positive alpha means the stock does better than expected given its beta, negative alpha means it lags behind.
         </p>
 
         <!--Alpha and Beta-->
@@ -248,23 +260,24 @@ layout: default
                     <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <span>INTRODUCE THE THING TO EXPALIN</span>
+                <span>Alpha and Beta</span>
             </summary>
-        
+            
             <div class="details-content">
                 <p>
-                    Here we explain in much more details
+                    In practice, we model this with a simple linear regression:
                 </p>
         
                 <p>With a nice formula:</p>
         
                 <p class="math-block">
                     <!-- MathJax formula -->
-                    $$1+ 1 \text{ is two}$$
+                    $$R_i = \alpha_i + \beta_i R_m + \epsilon_i$$
                 </p>
                 <p>
-                    With
-                    \(x_1, x_2, \dots, x_n\) inline equation.
+                    Here, \(R_i\) is the stock return, \(R_m\) the market return, 
+                    \(\beta_i\) the market sensitivity, \(\alpha_i\) the extra return not 
+                    explained by the market, and \(\epsilon_i\) the residual, or abnormal return.
                 </p>
             </div>
         </details>
