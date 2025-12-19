@@ -238,6 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
 ///////////////////////////////////////////////////////////////
 // adapt size of nasdaq question graph
 /////////////////////////////////////////////////////////////
+/*
 function resizeIframe() {
     const iframe = document.getElementById('nasdaq-iframe');
     if (iframe && iframe.contentWindow) {
@@ -250,3 +251,4 @@ document.getElementById('nasdaq-iframe').addEventListener('load', resizeIframe);
 
 // resize periodically if content changes dynamically
 setInterval(resizeIframe, 500);
+*/
