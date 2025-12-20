@@ -544,44 +544,6 @@ layout: default
 
         <h3>Abnormal returns based event study</h3>
 
-        <p>
-            let us use abnormal returns to evaluate election impact. abnormal returns defined using alpha and beta, explain why:
-        </p>
-
-        <p>
-            By ignoring these factors, a naive model may misattribute as event-driven and abnormal returns that simply due to the
-            sector's historical characteristics. We thus account for the relationship between sector returns and market returns
-            using linear regression. The market model is defined as follows:
-        </p>
-
-        <p>
-            $$
-            R_{i,t} = \alpha_i + \beta_i R_{m,t} + \epsilon_{i,t}
-            $$
-        </p>
-
-        <p>
-            where \( \alpha_i \) is the stock's alpha, \( \beta_i \) is the stock's beta, and \( \epsilon_{i,t} \) is the return not
-            explained by the model, aka the abnormal return:
-        </p>
-
-        <p>
-            $$
-            AR_{i,t} = R_{i,t} - (\alpha_i + \beta_i R_{m,t})
-            $$
-        </p>
-
-        <p>
-            It is customary to estimate \( \alpha_i \) and \( \beta_i \) over a large window prior to the window of interest. In our
-            example, we will define a 252-day estimation window, corresponding to one trading year. We can then aggregate these
-            abnormal returns across our event window to obtain cumulative abnormal returns (CAR):
-        </p>
-
-        <p>
-            $$
-            CAR_{i,t} = \sum_{m \leq t} AR_{i,m}
-            $$
-        </p>
 
         <p>
             Let us use this method to analyze the impact of the 2016 presidential election on different sectors.
