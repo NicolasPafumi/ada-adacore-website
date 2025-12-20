@@ -173,8 +173,8 @@ layout: default
             </summary>
             <div class="details-content">
                 <p>
-                    To compute how much a stock earns we take the difference in value to the next period <em>V_f</em>
-                    divided by value at the start of the period <em>V_i</em>.
+                    To compute how much a stock earns we take the difference in value to the next period \(V_f\)
+                    divided by value at the start of the period \(V_i\).
                 </p>
         
                 <div class="math-block">
@@ -272,19 +272,72 @@ layout: default
         </details>
 
         <iframe src="assets/graphs/Interactive_AlphaBeta.html" class="graph-frame" scrolling="no" height="600"></iframe>
-
-        <h3>Estimators of Volatility</h3>
-
-        <p>
-            Returns typically fluctuate around zero, as prices move up and down around a longer-term trend. During periods 
-            of stress - such as the 2008 financial crisis (see figure below) - these fluctuations become noticeably larger, 
-            reflecting a sharp increase in volatility. Observations from past crises offer a useful reference for the kinds 
-            of volatility we might anticipate during elections.
-            <br>
-            To move beyond visual impressions, we quantify this behavior using the standard deviation of returns over a rolling window. 
-            This measure provides an estimate of how volatile the market has been recently and is commonly referred to as historical 
-            volatility.
+        
+        <!-- Abnormal Returns and Cumulative Abnormal Returns (CAR)-->
+        <h3>Abnormal Returns and Cumulative Abnormal Returns (CAR)</h3>
+        <p> 
+            Having defined alpha and beta, we can now isolate what truly interests us in an event-driven analysis: 
+            the part of returns that cannot be explained by general market movements. These unexplained deviations 
+            are what we refer to as <em>abnormal returns</em>, and they form the core building block of an event study.
         </p>
+
+        <!-- Abnormal Returns -->
+        <details class="collapsible info-dropdown">
+            <summary class="info-box">
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>Abnormal Returns</span>
+            </summary>
+        
+            <div class="details-content">
+                <p>
+                    Abnormal returns correspond to the residual term of the market model. Intuitively, they capture 
+                    how much a stock (or sector) moves beyond what would normally be expected given its exposure to 
+                    the market.
+                </p>
+        
+                <p class="math-block">
+                    $$AR_{i,t} = R_{i,t} - (\alpha_i + \beta_i R_{m,t})$$
+                </p>
+        
+                <p>
+                    A positive abnormal return indicates that the asset outperformed its expected return on that day, 
+                    while a negative value signals underperformance. In the context of elections, these deviations are 
+                    precisely what may reflect shifts in political expectations or policy uncertainty.
+                </p>
+            </div>
+        </details>
+
+        <!-- Cumulative Abnormal Returns -->
+        <details class="collapsible info-dropdown">
+            <summary class="info-box">
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>Cumulative Abnormal Returns (CAR)</span>
+            </summary>
+        
+            <div class="details-content">
+                <p>
+                    Market reactions to major events rarely unfold in a single trading day. To capture the total 
+                    impact over a window surrounding an event, we aggregate abnormal returns over time.
+                </p>
+        
+                <p class="math-block">
+                    $$\text{CAR}(t_1, t_2) = \sum_{t=t_1}^{t_2} AR_{i,t}$$
+                </p>
+        
+                <p>
+                    Cumulative abnormal returns allow us to assess whether an event leads to a persistent revaluation 
+                    of assets, rather than a short-lived fluctuation. This makes CAR a natural metric for comparing 
+                    the impact of elections across sectors.
+                </p>
+            </div>
+        </details>
+
 
         <!-- historical volatility -->
         <details class="collapsible info-dropdown">
@@ -443,7 +496,7 @@ layout: default
         </p>
 
         <p>
-            Unsurprisingly, this explains why a naive calculation—simply averaging all individual stock volatilities—consistently 
+            Unsurprisingly, this explains why a naive calculation, simply averaging all individual stock volatilities, consistently 
             overestimates the sector’s volatility, as shown on the line plots on the right. What’s somewhat surprising, though, is 
             that despite this overestimation, the naive approach still captures historical patterns over two decades and isn’t as noisy 
             as one might expect. Using the median instead of the mean slightly improves the estimate, but overestimation persists.
