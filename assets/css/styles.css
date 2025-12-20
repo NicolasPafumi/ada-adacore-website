@@ -145,7 +145,7 @@ body {
 
 .section.black .content {
     max-width: 90%;
-    align-content: center; /* test to align graph*/
+    align-items: center;
 }
 
 /* Newspaper section */
