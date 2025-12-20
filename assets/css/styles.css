@@ -86,6 +86,10 @@ font-size: calc(var(--font-size-base) * 1.1 * var(--font-scale));
 font-size: calc(var(--font-size-base) * 1 * var(--font-scale));
 }
 
+.section.black p {
+    max-width: 60%;
+}
+
 .content li {
     font-size: calc(var(--font-size-base) * 1 * var(--font-scale));
 }
