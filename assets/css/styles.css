@@ -125,9 +125,9 @@ body {
     /* your page width */
     margin: 0 auto;
     /* centres it */
-    padding: 40px 20px;
+    padding: 40px 40px;
     /* breathing space */
-    padding-top: 5px;
+    /*padding-top: 5px;*/
 }
 
 .section.black .content {
