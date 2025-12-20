@@ -528,22 +528,32 @@ layout: default
         <h2>Event study</h2>
 
         <p>
-            How does one determine how a specific event impacted the performance or volatility of a stock? Tools from event study
-            methodology help us answer such questions. Our study will go as follows:
+            Now that we’ve covered all the tools, we can finally dive into the exciting part: seeing how elections actually move 
+            the market. Here’s how we tackle it in our analysis:
         </p>
 
         <p>
-            - Define an event window around Election Day, the event of interest: we consider both pre- and post-election windows as
-            the dates of elections are known and changes in the market could even happen before as investors try to anticipate the
-            outcome or hedge their positions.
-            - Calculate realized returns or volatility over that window.
-            - Compare these values to expected returns and volatility: event studies differ by how they define these expected, or
-            normal, values. We will demonstrate two approaches.
-            - Aggregate results across different sectors and election cycles and determine statistical significance.
+            <b>Defining the Event Window</b>
+            The event at the center of our study is Election Day. To capture both anticipatory jitters and the immediate market reaction,
+            we look at a symmetric window spanning a few trading days before and after the vote. For this study, we focus on a 5-day 
+            window: short enough to isolate the election effect, long enough to see the market respond.
+            
+            <b>Measuring Returns and Volatility</b>
+            Within this window, we calculate the realized stock returns and volatility metrics. These numbers tell us what actually 
+            happened in the market, giving us a snapshot of the collective investor response.
+            
+            <b>Comparing to Expected Values</b>
+            The heart of an event study lies in defining “normal” behavior. Using models that account for market exposure and sector 
+            characteristics, we estimate expected returns and volatility. By comparing realized values to these expectations, we can 
+            quantify the abnormal performance directly associated with the event.
+            
+            <b>Aggregating and Testing Significance</b>
+            To see the bigger picture, we aggregate results across sectors and multiple election cycles. Statistical tests then help 
+            us decide whether the effects we observe are meaningful or just random noise. This allows us to infer whether elections 
+            consistently influence market behavior.
         </p>
 
         <h3>Abnormal returns based event study</h3>
-
 
         <p>
             Let us use this method to analyze the impact of the 2016 presidential election on different sectors.
