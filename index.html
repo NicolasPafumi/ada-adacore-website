@@ -212,7 +212,7 @@ layout: default
                 </p>
             </div>
 
-            <p>Why go through the trouble? The magic property of log returns is <strong>time additivity<strong>: 
+            <p>Why go through the trouble? The magic property of log returns is <b>time additivity</b>: 
                 the log return over multiple days is just the sum of daily log returns. This makes it 
                 trivial to compute cumulative returns over a period. For example, if a stock gains 1% 
                 on day 1 and loses 1% on day 2, the cumulative log return is exactly zero—something that 
@@ -337,7 +337,7 @@ layout: default
             Now, historical volatility is easy to compute and widely used for long-term analysis and risk management. But it comes with 
             limitations: it requires a sufficiently large window to give reliable estimates, which can smooth over the short-term 
             fluctuations we’re interested in around election dates. It also only considers close prices, ignoring intraday swings 
-            that can happen when markets react swiftly to news. For this reason, we turn to <strong>Parkinson’s volatility estimator</strong>, which 
+            that can happen when markets react swiftly to news. For this reason, we turn to <b>Parkinson’s volatility estimator</b>, which 
             leverages the day’s high and low prices to provide a more responsive measure - perfect for capturing those quick market moves 
             around elections.
         </p>
@@ -383,86 +383,75 @@ layout: default
 <section id="sectors" class="section newspaper" data-theme="light">
     <div class="content">
 
-        <h2>How do you describe the performance of an entire sector? Does it make sense to talk of sector?</h2>
+        <h2>Making Sense of Sectors</h2>
 
-        <h3>Does it make economic sense: correlations</h3>
-
-        <p>
-            financial definition of a sector: sharing risks. yahoo finance provides 11 sector denominations? Is it just our tendency
-            to categorize or is there really an economic reality of similar reactions within a sector? Is the distinction
-            economically sound? we selected and visualized corr.
-        </p>
+        <h3>When Sectors Correlate (and When They Don’t)</h3>
 
         <p>
-            [graph: correlation matrix over 20 years, and other events]
+            One useful way to understand how sectors behave is by looking at correlations. If the correlation between two sectors is 1,
+            they move in lockstep—what happens in one affects the other directly. A correlation of 0 means they are essentially independent, 
+            and a correlation of -1 implies they move in exactly opposite directions. By visualizing correlations across sectors over the past, 
+            and highlighting key events such as the 2008 financial crisis, the 2016 US election, and the 2020 Covid crisis, we can see how different
+            events influence these relationships.
         </p>
 
         <iframe src="assets/graphs/interactive_dashboard.html" class="graph-frame" scrolling="no" height="1400"></iframe>
 
         <p>
-            This analysis reveals that intra-sector correlations are consistently higher than inter-sector correlations as expected.
-            However, inter-sector correlations vary depending on the event. For example, during the 2008 financial Crisis, the
-            Consumer Defensive sector correlated strongly with Energy and Healthcare stocks. Events with broad economic impacts
-            introduce systemic risks that affect multiple sectors simultaneously, leading to higher correlations across the board.
-            The same holds true for the Covid-19 crash.
+            TOur analysis confirms what we might expect: companies within the same sector generally move together, showing consistently 
+            higher correlations than companies in different sectors. However, inter-sector correlations aren’t static—they shift depending 
+            on the event. Take the 2008 financial crisis, for example. Consumer Defensive stocks suddenly correlated strongly with Energy 
+            and Healthcare sectors, reflecting how systemic shocks ripple through the entire economy. A similar story unfolds during the Covid-19 crash.
         </p>
 
         <p>
-            Most interestingly, we see that the 2016 election had the effect of lowering correlations across sectors, even when
-            compared to a 20-year correlation baseline. The election seems to "uncouple" sectors from each other. This further
-            supports our hypothesis that elections lead to idiosyncratic responses across sectors, as candidates propose policies
-            that differentially impact various industries.
+            Interestingly, the 2016 election tells a different tale. Correlations across sectors actually decreased, even when compared 
+            to a 20-year baseline. In a sense, the election “uncoupled” sectors, highlighting how political events can trigger unique, 
+            sector-specific reactions depending on candidates’ policy positions. This finding reinforces our hypothesis that elections 
+            lead to idiosyncratic sector responses.
         </p>
 
-        <h3>If it does, how do you represent entire sector</h3>
+        <h3>Tracking Sector Performance with ETFs</h3>
 
         <p>
-            So far, we've used sector-specific ETFs as proxies for the performance and volatility of the entire sectors. This ETF
-            family, called Select Sector SPDRs, is a well-established way to track sector performance. [what they are used for, in
-            academia, to diversify portfolios] They each contain the companies of their respective sectors that appear in the S&P
-            500 index. Each company is weighted by its market capitalization, with around 50% of holding typically concentrated in
-            the top 10 companies. This is a better way to track sector volatility than averaging the volatility of all companies in
-            the sector for two reasons:
-        </p>
-
-        <p>
-            1. Large companies affect sector performance more than small companies. A non-weighted average would give equal
-            importance to all companies.
-            2. Small companies have higher volatility than big companies. This volatility may not be due to sector sentiment but
-            rather to the fact that small companies are traded in lower volumes and can be thus be affected by modest day-to-day
-            trades. This would artificially inflate sector volatility.
+            So how can we capture the performance and volatility of an entire sector? Throughout our analysis so far, we have 
+            relied on sector-specific ETFs as our main reference, and we will continue to do so for good reasons. Specifically, 
+            we use the Select Sector SPDR family, well-established ETFs that track the companies within each S&P 500 sector. Each ETF 
+            is market-cap weighted, with roughly half of the holdings concentrated in the top ten companies, ensuring that sector performance 
+            is driven by the companies that matter most.
         </p>
 
         <p>
-            Let us verify this by calculating volatility as an average of individual stock volatilities within each sector and
-            comparing it to the ETF volatility.
+            This approach has clear advantages over simply averaging the volatilities of all individual stocks in a sector. 
+            Large companies naturally have a greater impact on sector performance, so a naive average would dilute their influence. 
+            At the same time, smaller companies tend to be more volatile, often due to low trading volumes rather than true sector trends. 
+            Giving them equal weight would artificially inflate perceived sector volatility.
         </p>
 
         <p>
-            [graph of parkinson’s estimated in 2 ways]
+            To see this in practice, we compared sector volatility calculated as a simple average of individual stocks to the volatility of the corresponding ETF.
         </p>
 
         <img src="assets/img/placeholders/ph7.png">
 
         <p>
-            The histograms on the left show that on any specific day, the distribution of volatilities for companies within the same
-            sector is right-skewed. Most companies have volatilities clustered around a central value, but a few outliers exhibit
-            very high volatilities. This confirms our earlier assumption that small companies, more sensitive to day-to-day trading,
-            will skew the average. In the healthcare sector, for example, the outlier is TLGT (Teligent Inc.) reaching a volatility
-            0f 0.36. At the time of measurement, Teligent was a small pharmaceutical company with a market capitalization of only
-            $10 million.
+            The histograms on the left reveal an interesting pattern: on any given day, the distribution of volatilities within 
+            a sector is right-skewed. Most companies cluster around a central volatility value, but a handful of outliers spike much 
+            higher. This aligns with our earlier intuition that smaller companies, which are more sensitive to day-to-day trading, can 
+            disproportionately influence simple averages. In the healthcare sector, for example, TLGT (Teligent Inc.) stands out with a 
+            volatility of 0.36. At the time, it was a tiny pharmaceutical company with a market capitalization of just $10 million.
         </p>
 
         <p>
-            It is thus no surprise that our naive sector volatility calculation consistently overestimates sector volatility as
-            shown on the lineplots on the right. However, we are surprised to see that while the naive calculation is an
-            overestimation, it nonetheless reproduces closely historical patterns over two decades and is not as noisy as we
-            expected. Using the median instead of the mean to aggregate individual stock volatilities slightly improves the
-            estimate, but it still remains an overestimation.
+            Unsurprisingly, this explains why a naive calculation—simply averaging all individual stock volatilities—consistently 
+            overestimates the sector’s volatility, as shown on the line plots on the right. What’s somewhat surprising, though, is 
+            that despite this overestimation, the naive approach still captures historical patterns over two decades and isn’t as noisy 
+            as one might expect. Using the median instead of the mean slightly improves the estimate, but overestimation persists.
         </p>
 
         <p>
-            From now on, we will use sector ETFs to study sector variations for computation efficiency.
+            FFor all these reasons, we continue to rely on sector ETFs to study sector variations. They provide a more accurate, 
+            market-cap-weighted picture, and are also more computationally efficient for our analysis.
         </p>
 
     </div>
