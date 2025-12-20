@@ -112,6 +112,11 @@ font-size: calc(var(--font-size-base) * 1 * var(--font-scale));
     overflow: hidden;
 }
 
+iframe {
+    display: block;
+    margin: 0 auto;
+}
+
 /*----------------------------*/
 /* Section newspaper and black*/
 /*----------------------------*/
@@ -140,6 +145,7 @@ body {
 
 .section.black .content {
     max-width: 90%;
+    align-content: center; /* test to align graph*/
 }
 
 /* Newspaper section */
