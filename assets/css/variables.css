@@ -10,6 +10,7 @@
     /*--font-size: 24px; *//*12px*/
     --newspaper-color: black;
     --black-color: white;
+    --black-accent: rgb(255, 149, 0);
     --black-font: "Arial",
         sans-serif;
     --newspaper-font:"Times New Roman",
