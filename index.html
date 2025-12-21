@@ -226,20 +226,23 @@ layout: default
                 the log return over multiple days is just the sum of daily log returns. This makes it 
                 trivial to compute cumulative returns over a period. For example, if a stock gains 1% 
                 on day 1 and loses 1% on day 2, the cumulative log return is exactly zero—something that 
-                doesn’t hold with regular returns.
+                doesn’t hold with regular returns. Additionally log-returns have a distribution closer to 
+                the normal wheras the simple returns do not.
             </p>
-            <p><b>Kurtosis</b></p>
-             <p>
+        </details>
+
+        <p><b>Kurtosis</b></p>
+         <p>
             Kurtosis measures how much of the data lies in the tails of a distribution—essentially, how likely 
             extreme events are. One additional advantage of using log returns is that they tend to reduce kurtosis,
             smoothing out the “fat tails” often seen in standard returns. This makes the distribution closer to normal, 
             which is particularly helpful for statistical analysis, modeling, and comparing sectors or stocks. The differences 
             are subtle and usually invisible in histograms, as they appear mainly in rare, extreme price moves.
-             </p>
+        </p>
 
-             <iframe src="assets/graphs/Interactive_Daily_Returns_20.html" class="graph-frame" scrolling="no" height="600"></iframe>
-            
-        </details>
+            <iframe src="assets/graphs/Interactive_Daily_Returns_20.html" class="graph-frame" scrolling="no" height="600"></iframe>
+        
+
 
 
         <h3>Alpha and Beta</h3>
