@@ -73,36 +73,35 @@ layout: default
         </div>
 
         <h2> Abstract </h2>
-        <p>This week, we will be talking about how investors can exploit events to increase their profits. In particular, we will be discussing presidential elections, 
-            since it is well known that they shake up the stock market every four years. 
-            Investors react nervously to uncertainty, worry about potential policy changes, often amplifying even small market fluctuations. 
-            Understanding these dynamics can help anticipate market movements and hedge portfolios around election cycles - 
-            or at least give analysts an excuse to dive deep into charts and election data late into the night. More importantly, 
+        <p>This week, we’re diving into one of the few events that reliably make investors bite their nails every four years: presidential elections. 
+            Markets don’t like uncertainty, and when policies, regulations, and the general economic direction are up in the air, even small market moves can get amplified 
+            as investors adjust their bets.
+            Understanding these dynamics can help anticipate market movements and hedge portfolios around election cycles - or, for the data enthusiasts among us, 
+            serve as a perfectly legitimate excuse to spend late nights buried in charts and election data. More importantly, 
             market movements reveal how investors perceive candidates and their policy proposals.
             <br>
-            In this post, we take a data-driven look at how presidential elections affect company performance and investor 
-            behavior over time. Using historical stock market data, election results, and prediction market trends, 
-            we track how markets react as the likelihood of a candidate winning change. Particularly interesting is how 
-            different sectors-technology, energy, healthcare, finance-respond to the uncertainty and outcomes of election cycles.
+            In this post, we dig into the numbers to see how elections actually move the market. Rather than looking at individual stocks, 
+            we zoom out to the sector level - technology, energy, healthcare, financials, and more - and ask: do these sectors all react the same way, 
+            or does each chart its own course when the political winds shift?
+            We rely on historical stock data, election outcomes, and contextual details from multiple election cycles to explore these patterns. 
             <br>
-            The goal is simple: to show how politics and markets “dance” together, based on data, while keeping the discussion 
-            accessible. By analyzing past elections and looking ahead to the upcoming 2024 election, we hope to identify patterns 
-            that explain when, why, and how the market gets nervous.
+            to show how politics and markets “dance” together, with real data leading the steps. By looking across multiple election 
+            cycles, we hope to uncover patterns that explain when, why, and how markets get jittery, all while keeping the story readable 
+            (and maybe a little entertaining) for anyone curious about the intersection of elections and finance.
         </p>
 
         <h3>Research questions</h3>
         <p>
             <ul>
-            <li>Can we describe the behavior of an entire sector? </li>
-            <li>Do sectors show significant patterns in shared financial behavior, and are they affected differently?</li>
-            <li>Which sectors respond most strongly to presidential elections? </li>
-            <li>What characteristics of elections trigger increased market volatility? </li>
-            <li>Does the president’s party have differential effects on certain sectors? </li>
+            <li>Do different stock market sectors—such as Technology, Healthcare, or Financials—respond differently to presidential elections? </li>
+            <li>Are certain sectors systematically favored under Democratic or Republican administrations?</li>
+            <li>Do sector-level returns following elections exhibit consistent patterns, and if so, could these patterns plausibly be exploited? </li>
+            <li>Is market volatility higher before or after election results are announced, and does this effect differ across sectors?</li>
+            <li>How do the broader economic and political context of an election, as well as candidate-specific characteristics, shape market reactions?</li>
             </ul>
             <p>
-            To answer these questions, we
-            will use historical stock market data and publicly available election data. We will also use prediction market data as
-            proxy for the perceived probability of each candidate winning.
+            To address these questions, we rely on historical stock market data, sector-level ETFs, and publicly available election data. 
+            Our analysis combines descriptive statistics with regression-based event study methods to isolate election-related effects from broader market movements.
             </p>
 
 
@@ -118,11 +117,11 @@ layout: default
             companies react under market stress, election uncertainty, and all the drama that comes with four-year cycles. 
             <br>
             To make our data a bit more insightful, each ticker is annotated with its sector, letting us ask questions like: 
-            Does tech freak out more than energy when election season hits? Is healthcare the calm, stoic sibling in the family of market 
-            sectors? These sector labels are crucial for understanding sector-specific effects during elections.
+            Does tech freak out more than energy when election season hits? And does healthcare stay surprisingly steady compared to the rest?
+            These sector labels are crucial for understanding sector-specific effects during elections.
         </p>
             
-        <p>  Let's take a look at all this together on the Bloomberg Terminal!  </p>
+        <p>  Alright, time to roll up our sleeves and dive into the data on the Bloomberg Terminal!  </p>
 
     </div>
 </section>
@@ -220,24 +219,23 @@ layout: default
                 </p>
             </div>
 
-            <p>Why go through the trouble? The magic property of log returns is <b>time additivity</b>: 
+            <p>Why go through the trouble? The magic property of log returns is time additivity: 
                 the log return over multiple days is just the sum of daily log returns. This makes it 
                 trivial to compute cumulative returns over a period. For example, if a stock gains 1% 
                 on day 1 and loses 1% on day 2, the cumulative log return is exactly zero—something that 
                 doesn’t hold with regular returns.
             </p>
-            
-        </details>
-
-        <h3>Kurtosis</h3>
-
-        <p>
+            <p><b>Kurtosis</b></p>
+             <p>
             Kurtosis measures how much of the data lies in the tails of a distribution—essentially, how likely 
             extreme events are. One additional advantage of using log returns is that they tend to reduce kurtosis,
             smoothing out the “fat tails” often seen in standard returns. This makes the distribution closer to normal, 
             which is particularly helpful for statistical analysis, modeling, and comparing sectors or stocks. The differences 
             are subtle and usually invisible in histograms, as they appear mainly in rare, extreme price moves.
-        </p>
+             </p>
+            
+        </details>
+
 
         <iframe src="assets/graphs/Interactive_Daily_Returns_20.html" class="graph-frame" scrolling="no" height="600"></iframe>
 
