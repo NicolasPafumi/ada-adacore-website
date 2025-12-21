@@ -240,18 +240,18 @@ document.addEventListener("DOMContentLoaded", () => {
 // adapt size of nasdaq question graph
 /////////////////////////////////////////////////////////////
 /*
-function resizeIframe() {
+function resizeIframeTo(height) {
     const iframe = document.getElementById('nasdaq-iframe');
-    if (iframe && iframe.contentWindow) {
-        iframe.style.height = iframe.contentWindow.document.body.scrollHeight * 1.1 + 'px';
+    if (iframe) {
+        iframe.style.height = height + 'px';
     }
 }
 
-// Resize once after load
-document.getElementById('nasdaq-iframe').addEventListener('load', resizeIframe);
-
-// resize periodically if content changes dynamically
-setInterval(resizeIframe, 500);
+window.addEventListener("message", (event) => {
+    if (event.data?.type === "resize-iframe") {
+        resizeIframeTo(event.data.height);
+    }
+});
 */
 
 ////////////////////////////////////////
