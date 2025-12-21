@@ -557,34 +557,35 @@ layout: default
             the market. Here’s how we tackle it in our analysis:
         </p>
 
-        <ul>
+        <ol>
     <li>
-        <strong>Defining the Event Window:</strong>
+        <em>Defining the Event Window:</em>
         The event at the center of our study is Election Day. To capture both anticipatory jitters and the immediate market reaction,
-        we look at a symmetric window spanning a few trading days before and after the vote. For this study, we focus on a <b>5-day </b>
+        we look at a symmetric window spanning a few trading days before and after the vote. For this study, we focus on a <em>5-day</em>
         window: short enough to isolate the election effect, long enough to see the market respond.
     </li>
 
     <li>
-        <strong>Measuring Returns and Volatility</strong><br>
+        <em>Measuring Returns and Volatility:</em><br>
         Within this window, we calculate the realized stock returns and volatility metrics. These numbers tell us what actually 
         happened in the market, giving us a snapshot of the collective investor response.
     </li>
 
     <li>
-        <strong>Comparing to Expected Values</strong><br>
+        <em>Comparing to Expected Values:</em><br>
         The heart of an event study lies in defining “normal” behavior. Using models that account for market exposure and sector 
         characteristics, we estimate expected returns and volatility. By comparing realized values to these expectations, we can 
         quantify the abnormal performance directly associated with the event.
     </li>
 
     <li>
-        <strong>Aggregating and Testing Significance</strong><br>
+        <em>Aggregating and Testing Significance:</em><br>
         To see the bigger picture, we aggregate results across sectors and multiple election cycles. Statistical tests then help 
         us decide whether the effects we observe are meaningful or just random noise. This allows us to infer whether elections 
         consistently influence market behavior.
     </li>
-</ul>
+</ol>
+
 
         <h3>Abnormal returns based event study</h3>
 <!-- 
@@ -600,12 +601,12 @@ layout: default
         <img src="assets/img/placeholders/ph8.png"> -->
 
         <p>
-            Before we dive into the 2016 numbers, a quick refresher: we’re looking at abnormal returns—the part of a stock 
-            or sector’s performance that can’t be explained by general market moves—and their cumulative version, CAR, which sums
+            Before we dive into the 2016 numbers, a quick refresher: we’re looking at abnormal returns - the part of a stock 
+            or sector’s performance that can’t be explained by general market moves - and their cumulative version, CAR, which sums
             these deviations over a short window. Think of it as a way to spotlight which sectors are really reacting to the election, 
             rather than just following the market’s general mood. It’s a sharp lens for catching the market’s political volatility spike.
             With this framework in mind, let’s turn to the 2016 presidential election and see how sectors actually behaved, as illustrated 
-            in the figure below (you will have to click on Trumps picture of 2016).
+            in the figure below (just click on Trump’s 2016 image to explore).
 
         </p>
 
@@ -620,15 +621,35 @@ layout: default
             The industrial sector also enjoyed a boost, likely reflecting optimism around pro-American industrial policies. Pre-election 
             CARs for both Financials and Industrials were modest, showing that the real market reaction only kicked in once the results were clear. 
             Technology, in contrast, saw a decline of about 4% over the same window. At first glance, this might seem counterintuitive today, given Trump’s 
-            later relationships with tech leaders. But at the time, his campaign rhetoric was critical of big tech—pointing to outsourcing and 
-            antitrust concerns—so the market’s caution makes perfect sense. These contrasting movements highlight how sector-specific policies
+            later relationships with tech leaders. But at the time, his campaign rhetoric was critical of big tech, pointing to outsourcing and 
+            antitrust concerns, so the market’s caution makes perfect sense. These contrasting movements highlight how sector-specific policies
             and perceptions shape investor reactions in very different ways.
         </p>
 
+        <h2>&#10148; Statistical Tests</h2>
+
+        <p> 
+            To see whether presidential elections really shake up sector performance, we looked at average cumulative abnormal returns (CAAR) 
+            and ran 12 t-tests—one for each of the 6 sectors, separated by the winning party. To make the most of our limited data, we treated the 
+            top holdings of each sector ETF as independent observations, operating under the idea that it’s the sector, not any single company, that 
+            drives the election response. The results of this approach are summarized in the figure below.
+            </p>
+        
+        <p> [Statistical tests to show significance: little statistical tables, which sector is significant, dividing by Democrat-win
+            vs republican win or not]
+
+            </p>
+        
         <p>
-            Statistical tests to show significance: little statistical tables, which sector is significant, dividing by Democrat-win
-            vs republican win or not. <br>
-            Which companies and sectors are Democrat vs Republican focused
+            The Financial Services sector stands out, showing a significant positive post-election CAR whenever a Republican wins. 
+            The results are in line with the broader market expectation for this sector under a Republican administration. The Energy sector, 
+            on the other hand, posts positive CAR under Democrat victories, which might seem surprising given its reliance on oil and gas and the party’s 
+            pro-renewable energy stance. <br>
+            Looking closer at the 2020 Biden vs. Trump election offers some clarity. Most of the Energy sector’s abnormal return occurs on November 9, 
+            2020—the day Pfizer and BioNTech announced their COVID-19 vaccine was over 90% effective. After a tough year for oil and gas,
+            the sector benefited from renewed optimism about a post-pandemic recovery. This example also shows a limitation of event studies: 
+            even a narrow window around Election Day can be affected by other major news. So, was the positive return really due to a Democrat win, 
+            or just coincidental timing with the vaccine announcement? Sometimes markets follow their own rhythm.
         </p>
 
     </div>
