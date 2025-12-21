@@ -821,12 +821,7 @@ layout: default
 
         <p> The most interesting results come from the last three elections. They are characterised by a significant spike after the election. 
             The financial services sector shows the highest abnormal volatility. This investor panic typically resolves itself by the fifth day of 
-            trading after the election. Another interesting observation is volatility spikes on day 1 and day 2 then typically decreases on day 3, to finally spike again on day 4.
-            Diving deeper, we notice that US presidential elections are always held on a Tuesday, meaning that day 4 corresponds to the following Monday.
-            This spike suggests investors might be processing on Monday information that the President-elect has been making over the weekend. For example, they might have announced key cabinet members or policy stances.
-            Another theory is related to election certification. edia outlets like AP typically call the result on election night or the day after, leading to the spike in volatility on day 1. However, 
-            these results are not official as swing states still need to certify their results. 
-            States differ by when they certify results, but swing states certifications over the weekend could help seal the outcome and lead to renewed market reactions on Monday.
+            trading after the election. 
         </p>
 
     </div>
@@ -841,20 +836,26 @@ layout: default
 
         <p>As for the Abnormal Returns, it is essential to verify our Abnormal Volatility too. Are our observations just down to luck? Or are they statistically significant??</p>
         <p>
-            In order to do so, we will compute the mean of abnormal volatility across elections for each sector.
+            In order to do so, we will compute the mean of abnormal volatility for each day across elections.
         </p>
-        <p>[Figure of M s t Statistivc of abnormal volatility]</p>
-        <p>Our observations hold aggregated across sectors. Abnormal volatility spikes 
-            following the Election Day, but which past elections has a significatn CAV value? 
+
+        <iframe src="assets/graphs/Interactive_M_Statistic_Plot.html" class="graph-frame" scrolling="no" height="600"></iframe>
+        <p>Our observations hold when aggregated along all elections we study. An interesting observation is that volatility spikes on day 1 and day 2 then typically decreases on day 3, to finally spike again on day 4.
+            Diving deeper, we notice that US presidential elections are always held on a Tuesday, meaning that day 4 corresponds to the following Monday.
+            This spike suggests investors might be processing on Monday information that the President-elect has been making over the weekend. For example, they might have announced key cabinet members or policy stances.
+            Another theory is related to election certification. edia outlets like AP typically call the result on election night or the day after, leading to the spike in volatility on day 1. However, 
+            these results are not official as swing states still need to certify their results. 
+            States differ by when they certify results, but swing states certifications over the weekend could help seal the outcome and lead to renewed market reactions on Monday.
+            How about a hypothesis test? We aggregate this abnormal volatility again on pre- and post-election periods, then use the test described by Bialkowski et al. (2008).
         </p>
-        <p>[Figure of CAV pre post election for statistical level]</p>
+        
+        <p>[barplot]</p>
         <!--<iframe src="assets/graphs/by_sector_dashboard.html" class="graph-frame" scrolling="no" height="700"></iframe>-->
         <p>
             The results show that none of the pre-election tests indicate significant pre-election abnormal volatility. 
-            However, all sectors except Consumer Cyclical demonstrate significant abnormal volatility in the post-election period and in particular,
-            financial Services is the most affected sector.
+            However, all sectors except Consumer Cyclical demonstrate significant abnormal volatility in the post-election period.
         </p>
-        <p>This lead us to an importnat conclusion: spikes after elections are significant, meaning that the election event do have an impact on stock market!</p>
+        <p>This leads us to an important conclusion: it seems that it is the result of the election, and not its expectation, that drives the most volatility!</p>
     </div>
 </section>
 
