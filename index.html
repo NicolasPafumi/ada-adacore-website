@@ -73,7 +73,7 @@ layout: default
         </div>
 
         <h2> Abstract </h2>
-        <p>This week, we’re diving into one of the few events that reliably make investors bite their nails every four years: presidential elections. 
+        <p>This week, we are diving into one of the few events that reliably make investors bite their nails every four years: presidential elections. 
             Markets don’t like uncertainty, and when policies, regulations, and the general economic direction are up in the air, even small market moves can get amplified 
             as investors adjust their bets.
             Understanding these dynamics can help anticipate market movements and hedge portfolios around election cycles - or, for the data enthusiasts among us, 
@@ -85,7 +85,7 @@ layout: default
             or does each chart its own course when the political winds shift?
             We rely on historical stock data, election outcomes, and contextual details from multiple election cycles to explore these patterns. 
             <br>
-            to show how politics and markets “dance” together, with real data leading the steps. By looking across multiple election 
+            The goal is simple: to show how politics and markets “dance” together, with real data leading the steps. By looking across multiple election 
             cycles, we hope to uncover patterns that explain when, why, and how markets get jittery, all while keeping the story readable 
             (and maybe a little entertaining) for anyone curious about the intersection of elections and finance.
         </p>
@@ -93,7 +93,7 @@ layout: default
         <h3>Research questions</h3>
         <p>
             <ul>
-            <li>Do different stock market sectors—such as Technology, Healthcare, or Financials—respond differently to presidential elections? </li>
+            <li>Do different stock market sectors, such as Technology, Healthcare, or Financials, respond differently to presidential elections? </li>
             <li>Are certain sectors systematically favored under Democratic or Republican administrations?</li>
             <li>Do sector-level returns following elections exhibit consistent patterns, and if so, could these patterns plausibly be exploited? </li>
             <li>Is market volatility higher before or after election results are announced, and does this effect differ across sectors?</li>
@@ -136,18 +136,21 @@ layout: default
         <h2>Dataset Unwrapping</h2>
         <p>The number of tickers in our dataset varies over time due to Initial Public Offering (IPOs), 
             delistings, and other corporate events. An IPO indicates when a private company becomes public and a delisting when a company is removed from a stock exchange. 
-            The graph below illustrates the overall date coverage of our dataset, 
-            showing the number of active stocks and ETFs at each point in time. Notably, the first ETF 
-            in our dataset appears in 1993, corresponding to the inception of the S&P 500 ETF, while stocks 
-            span a longer historical period. The number of active tickers generally 
-            increases over time and there is a sharp jump in March 1983, with multiple new listings.
+            First ETF appears in 1993, corresponding to S&P 500 ETF inception. Stocks span a longer historical period. Active tickers generally increase over time, with a 
+            sharp jump in March 1983 reflecting multiple new listings. Graph below shows coverage of active stocks and ETFs by date.
         </p>
 
         <iframe src="assets/graphs/Interactive_Coverage_Tickers.html" class="graph-frame" scrolling="no" height="600" style="display: block; margin: 0 auto;"></iframe>
 
-        <p>The following graph shows the date coverage of tickers broken down in 11 sectors, 
-            using the standardized international GICS classification. It's interesting seeing which sectors have the more active 
-            tickers and that generally they all increased over time. 
+        <p> 
+            The S&P 500 is a stock market index tracking 500 of the largest publicly traded U.S. companies across major sectors including technology, healthcare, 
+            energy, and consumer goods. Because the index is market-cap weighted, the performance of larger companies has a greater impact, making the S&P 500 a widely 
+            used benchmark for assessing overall U.S. equity market performance.
+        </p>
+
+        
+        <p>Graph below shows date coverage of tickers across 11 sectors using the standardized GICS classification. Active tickers generally increase over time across 
+            all sectors. See the next graph for a dynamic view of sector ETF performance over time.
         </p>
 
         <iframe src="assets/graphs/Interactive_Sector_Tickers.html" class="graph-frame" scrolling="no" height="600" style="display: block; margin: 0 auto;"></iframe>
@@ -460,7 +463,7 @@ layout: default
 
         <p>
             One useful way to understand how sectors behave is by looking at correlations. If the correlation between two sectors is 1,
-            they move in lockstep—what happens in one affects the other directly. A correlation of 0 means they are essentially independent, 
+            they move in lockstep meaning: what happens in one affects the other directly. A correlation of 0 means they are essentially independent, 
             and a correlation of -1 implies they move in exactly opposite directions. By visualizing correlations across sectors over the past, 
             and highlighting key events such as the 2008 financial crisis, the 2016 US election, and the 2020 Covid crisis, we can see how different
             events influence these relationships.
@@ -468,9 +471,10 @@ layout: default
 
         <p>
             Our analysis confirms what we might expect: companies within the same sector generally move together, showing consistently 
-            higher correlations than companies in different sectors. However, inter-sector correlations aren’t static—they shift depending 
+            higher correlations than companies in different sectors. However, inter-sector correlations aren’t static, they shift depending 
             on the event. Take the 2008 financial crisis, for example. Consumer Defensive stocks suddenly correlated strongly with Energy 
             and Healthcare sectors, reflecting how systemic shocks ripple through the entire economy. A similar story unfolds during the Covid-19 crash.
+            These dynamics can be explored interactively in our dashboard below, where you can filter by sector and event to observe how correlations evolve over time.
         </p>
 
         <p>
@@ -555,20 +559,24 @@ layout: default
 
         <p>
             <b>Defining the Event Window</b>
+            <br>
             The event at the center of our study is Election Day. To capture both anticipatory jitters and the immediate market reaction,
             we look at a symmetric window spanning a few trading days before and after the vote. For this study, we focus on a 5-day 
             window: short enough to isolate the election effect, long enough to see the market respond.
-            
+            <br>
             <b>Measuring Returns and Volatility</b>
+            <br>
             Within this window, we calculate the realized stock returns and volatility metrics. These numbers tell us what actually 
             happened in the market, giving us a snapshot of the collective investor response.
-            
+            <br>
             <b>Comparing to Expected Values</b>
+            <br>
             The heart of an event study lies in defining “normal” behavior. Using models that account for market exposure and sector 
             characteristics, we estimate expected returns and volatility. By comparing realized values to these expectations, we can 
             quantify the abnormal performance directly associated with the event.
-            
+            <br>
             <b>Aggregating and Testing Significance</b>
+            <br>
             To see the bigger picture, we aggregate results across sectors and multiple election cycles. Statistical tests then help 
             us decide whether the effects we observe are meaningful or just random noise. This allows us to infer whether elections 
             consistently influence market behavior.
