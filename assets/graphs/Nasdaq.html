@@ -149,6 +149,26 @@
                 feedback.textContent = "Incorrect. Try again.";
             }
         }
+
+        function sendHeight() {
+                const height = document.body.scrollHeight;
+                parent.postMessage(
+                    { type: "resize-iframe", height },
+                    "*"
+                );
+            }
+
+            // Initial sizing
+            window.addEventListener("load", sendHeight);
+
+            // Resize after Plotly interactions
+            const plot = document.getElementById("plot");
+
+            plot.on('plotly_afterplot', sendHeight);
+            plot.on('plotly_relayout', sendHeight);
+            plot.on('plotly_resize', sendHeight);
+
     </script>
 </body>
 </html>
+
