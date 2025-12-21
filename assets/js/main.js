@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
 ///////////////////////////////////////////////////////////////
 // adapt size of nasdaq question graph
 /////////////////////////////////////////////////////////////
-
+/*
 function resizeIframeTo(height) {
     const iframe = document.getElementById('nasdaq-iframe');
     if (iframe) {
@@ -252,7 +252,7 @@ window.addEventListener("message", (event) => {
         resizeIframeTo(event.data.height);
     }
 });
-
+*/
 
 ////////////////////////////////////////
 // for window resizes
