@@ -87,7 +87,7 @@ font-size: calc(var(--font-size-base) * 1 * var(--font-scale));
 }
 
 .section.black p {
-    max-width: 60%;
+    max-width: 80%;
 }
 
 .content li {
@@ -144,7 +144,7 @@ body {
 }
 
 .section.black .content {
-    max-width: 90%;
+    max-width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
