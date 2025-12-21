@@ -90,7 +90,7 @@ layout: default
             (and maybe a little entertaining) for anyone curious about the intersection of elections and finance.
         </p>
 
-        <h3>Research questions</h3>
+        <h3>Research Questions</h3>
         <p>
             <ul>
             <li>Do different stock market sectors, such as Technology, Healthcare, or Financials, respond differently to presidential elections? </li>
@@ -367,7 +367,7 @@ layout: default
                     <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <span>Historical volatility</span>
+                <span>Historical Volatility</span>
             </summary>
             <div class="details-content">
                 <p>
@@ -387,25 +387,20 @@ layout: default
                     given window and
                     \(V_t\) the price on a given \(t\) (e.g. a day).
                 </p>
+                <iframe src="assets/graphs/Interactive_Volatility_21.html" class="graph-frame" scrolling="no" height="600"></iframe>
+
+                <p>
+                    Sectors generally follow the overall market trend, with spikes in volatility during events that shake the entire economy, 
+                    like the 2008 financial crisis or the market drop in August 2011. But a closer look reveals that not all sectors react 
+                    equally, some are more sensitive to specific events. Take the energy sector, for example: between 2005 and 2007, it showed 
+                    above the market volatility as Middle East conflicts and other factors drove oil prices up and down. Most other sectors barely 
+                    flinched. Similarly, the technology sector experienced heightened volatility from 2001 to 2003 after the dot-com bubble burst, 
+                    while other industries remained relatively stable.
+                </p>
             </div>
         </details>
 
-        <iframe src="assets/graphs/Interactive_Volatility_21.html" class="graph-frame" scrolling="no" height="600"></iframe>
 
-        <p>
-            Sectors generally follow the overall market trend, with spikes in volatility during events that shake the entire economy, 
-            like the 2008 financial crisis or the market drop in August 2011. But a closer look reveals that not all sectors react 
-            equally, some are more sensitive to specific events. Take the energy sector, for example: between 2005 and 2007, it showed 
-            above the market volatility as Middle East conflicts and other factors drove oil prices up and down. Most other sectors barely 
-            flinched. Similarly, the technology sector experienced heightened volatility from 2001 to 2003 after the dot-com bubble burst, 
-            while other industries remained relatively stable.
-        </p>
-
-        <P>
-            These patterns already hint at something important for our study: sector-specific analysis matters. Around elections,
-            different policy proposals - think climate change, Big Tech regulation, or healthcare reform - will impact sectors 
-            in very different ways.
-        </P>
 
         <p>
             Now, historical volatility is easy to compute and widely used for long-term analysis and risk management. But it comes with 
@@ -423,7 +418,7 @@ layout: default
                     <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <span>Parkinson volatility</span>
+                <span>Parkinson Volatility</span>
             </summary>
             <div class="details-content">
                 <p>
@@ -446,10 +441,85 @@ layout: default
                     from modeling
                     returns as a geometric Brownian motion.
                 </p>
+                <iframe src="assets/graphs/Interactive_Parkinson_Volatility.html" class="graph-frame" scrolling="no" height="600"></iframe>
             </div>
         </details>
 
-        <iframe src="assets/graphs/Interactive_Parkinson_Volatility.html" class="graph-frame" scrolling="no" height="600"></iframe>
+        <p>
+            While standard measures of volatility give us a sense of how much prices typically fluctuate, 
+            for our event study we are more interested in the unexpected spikes, i.e. the price movements that 
+            go beyond what the market normally predicts. This <b>abnormal volatility</b> lets us pinpoint how sectors 
+            respond to shocks like elections, helping us isolate and quantify their reactions over the event window.
+
+            
+        </p>
+
+        
+        <!-- Abnormal Volatility -->
+        <details class="collapsible info-dropdown">
+            <summary class="info-box">
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span>Abnormal volatility (based on GARCH Model)</span>
+            </summary>
+            <div class="details-content">
+                <p>
+                    To estimate expected volatility sector-wise, we use a Generalized Autoregressive Conditional Heteroskedasticity (GARCH(1,1))
+                    model. It is used to represent time-series with time-varying volatility. 
+                    This is essential in finance, where high-volatility days are typically followed by high-volatility days and calm periods are 
+                    followed by calm periods. The model separates normal market-driven volatility 
+                    from the abnormal volatility attributable to the election itself.
+                </p>
+        
+                <p class="math-block">
+                    <!-- MathJax formula -->
+                    $$R_{i,t} = \alpha_i + \beta_i R_{m,t} + \epsilon_{i,t},$$
+                    $$\epsilon_{i,t} \sim N(0, \sigma^2_{i,t}),$$
+                    $$\sigma^2_{i,t} = \omega + \alpha \epsilon_{i,t-1}^2 + \beta \sigma^2_{i,t-1}$$
+                </p>
+                <p>
+                    where <em>R<sub>i,t</sub></em> is the return of stock <em>i</em> at time <em>t</em>, and <em>R<sub>m,t</sub></em> is the market return (S&P 500).
+                </p>
+                <p>ven with this setup, calculating abnormal volatility is non-trivial. We follow Bialkowski et al. (2008), who provide a statistical framework for
+                    testing abnormal volatility—details are in their paper, and our code annotates the relevant equations.</p>
+            </div>
+        </details>
+        <!-- Cumulative Abnormal Volatility -->
+        <details class="collapsible info-dropdown">
+            <summary class="info-box">
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span>Cumulative Abnormal Volatility (CAV)</span>
+            </summary>
+            <div class="details-content">
+                <p>
+                    To capture the total impact of an event on sector volatility, we aggregate abnormal volatility over the event window. 
+                    This gives us the <em>Cumulative Abnormal Volatility</em>, or <em>CAV</em>, for each sector and election.
+                </p>
+        
+                <p class="math-block">
+                    $$CAV_{s,e}(t_1,t_2) = \sum_{t=t_1}^{t_2} AV_{s,e,t}$$
+                </p>
+        
+                <p>
+                    Here, <em>AV<sub>s,e,t</sub></em> represents the abnormal volatility of sector <em>s</em> for election year <em>e</em> at relative 
+                    time <em>t</em>. By summing over the chosen window from <em>t<sub>1</sub></em> to <em>t<sub>2</sub></em>, we assess how much 
+                    volatility deviates from expectations due to the election as a whole.
+                </p>
+        
+                <p>
+                    CAV allows us to compare the total event impact across sectors, providing a clear picture of which sectors experienced the 
+                    most pronounced volatility during election periods.
+                </p>
+            </div>
+        </details>
+
+        
+        
 
     </div>
 </section>
@@ -587,7 +657,7 @@ layout: default
 </ol>
 
 
-        <h3>Abnormal returns based event study</h3>
+        <h3>Abnormal Returns based Event Study</h3>
 <!-- 
         <p>
             Let us use this method to analyze the impact of the 2016 presidential election on different sectors.
@@ -660,6 +730,10 @@ layout: default
 
         <h>Sector-Level Market Response to Elections: Abnormal Returns</h>
         <iframe src="assets/graphs/presidential_dashboard.html" class="graph-frame" scrolling="no" height="600"></iframe>
+        <p>
+        </p>
+        <p>
+        </p>
         
         <p> 
             Abnormal returns and cumulative abnormal returns (CAR) for all U.S. presidential elections from 2000 to today. 
@@ -693,18 +767,33 @@ layout: default
 <section id="volatility-event-study" class="section newspaper" data-theme="light">
     <div class="content">
 
-        <h3>Abnormal Volatility based event study</h3>
+        <h3>Abnormal Volatility based Event Study</h3>
 
         <p>
-            description maths
+            In this section, we turn our attention from returns to volatility, asking: how much does a presidential 
+            election shake up sector-level risk? Using a GARCH model and a standardization procedure, we calculate abnormal v
+            olatility for each sector over a 5-day window surrounding each election. These are denoted as <em>AV</em><sub>sector, 
+                year, t</sub>, representing the abnormal volatility of a given sector at a relative time <em>t</em> 
+            from the election. For instance, <em>AV</em><sub>Tech, 2016, +5</sub> measures the abnormal volatility of the 
+            technology sector five trading days after the 2016 election. Intuitively, these values show the multiplicative 
+            effect of the event on volatility: an abnormal volatility of 1.5 indicates that realized volatility was 50% highe
+            r than expected during that window. This metric allows us to quantify sector-specific turbulence triggered by elections, 
+            complementing the abnormal returns analysis from earlier
         </p>
 
         <p>
-            meme graphe que presidential dashboard (tete des president) but with volatility
-            statistical tests
+            [meme graphe que presidential dashboard (tete des president) but with volatility
+            statistical tests]
         </p>
 
-        <iframe src="assets/graphs/by_sector_dashboard.html" class="graph-frame" scrolling="no" height="700"></iframe>
+        <p> Election results clearly rattle the markets, and we can see it in the spike of abnormal volatility across nearly 
+            every sector. Financial Services consistently take the lead, showing the largest jolts as investors digest the news.
+            Interestingly, this panic usually settles within about five trading days post-election.</p>
+
+        <h2>&#10148; Statistical Tests</h2>
+
+        <p>[Figure of CAV pre post election for statistical level]</p>
+        <!--<iframe src="assets/graphs/by_sector_dashboard.html" class="graph-frame" scrolling="no" height="700"></iframe>-->
 
     </div>
 </section>
