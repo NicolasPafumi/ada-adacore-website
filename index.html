@@ -536,26 +536,15 @@ layout: default
 
         <p>
             One useful way to understand how sectors behave is by looking at correlations. If the correlation between two sectors is 1,
-            they move in lockstep meaning: what happens in one affects the other directly. A correlation of 0 means they are essentially independent, 
+            means that they behave similarly, for example if one increases, the other one will increase in the same way. A correlation of 0 means they are essentially independent, 
             and a correlation of -1 implies they move in exactly opposite directions. By visualizing correlations across sectors over the past, 
             and highlighting key events such as the 2008 financial crisis, the 2016 US election, and the 2020 Covid crisis, we can see how different
             events influence these relationships.
         </p>
 
-        <p>
-            Our analysis confirms what we might expect: companies within the same sector generally move together, showing consistently 
-            higher correlations than companies in different sectors. However, inter-sector correlations aren’t static, they shift depending 
-            on the event. Take the 2008 financial crisis, for example. Consumer Defensive stocks suddenly correlated strongly with Energy 
-            and Healthcare sectors, reflecting how systemic shocks ripple through the entire economy. A similar story unfolds during the Covid-19 crash.
-            These dynamics can be explored interactively in our dashboard below, where you can filter by sector and event to observe how correlations evolve over time.
-        </p>
+        <p>Let's see how this look like on the terminal !</p>
 
-        <p>
-            Interestingly, the 2016 election tells a different tale. Correlations across sectors actually decreased, even when compared 
-            to a 20-year baseline. In a sense, the election “uncoupled” sectors, highlighting how political events can trigger unique, 
-            sector-specific reactions depending on candidates’ policy positions. This finding reinforces our hypothesis that elections 
-            lead to idiosyncratic sector responses.
-        </p>
+
 
     </div>
 </section>
@@ -567,6 +556,19 @@ layout: default
         <iframe src="assets/graphs/interactive_dashboard.html" class="graph-frame" scrolling="no" height="1400"></iframe>
 
     </div>
+
+        <p>Our analysis confirms what we might expect: companies within the same sector generally move together, showing consistently 
+            higher correlations than companies in different sectors. However, inter-sector correlations aren’t static, they shift depending 
+            on the event. Take the 2008 financial crisis, for example. Consumer Defensive stocks suddenly correlated strongly with Energy 
+            and Healthcare sectors, reflecting how systemic shocks ripple through the entire economy. A similar story unfolds during the Covid-19 crash.
+            These dynamics can be explored interactively in our dashboard below, where you can filter by sector and event to observe how correlations evolve over time.</p>
+
+        <p>
+        The most interesting aspect is the 2016 election. In fact correlations across sectors actually decreased, even when compared 
+            to a 20-year baseline. In a sense, the election “uncoupled” sectors, demonstrating that political events can trigger unique, 
+            sector-specific reactions depending on the policies of the candidates. This finding 
+            supports our hypothesis that elections lead to responses that are specific to 
+            individual sectors.</p>
 
 </section>
 
