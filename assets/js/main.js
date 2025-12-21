@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function updateRibbon() {
+        updateProgress()
         let currentSection = null;
         let darkMode = false;
 
@@ -172,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updateRibbon);
     /*updateRibbon();*/
     updateRibbonTheme();/*new version that looks what's under*/
-    updateProgress()
 });
 
 
