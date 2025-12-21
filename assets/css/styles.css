@@ -674,7 +674,7 @@ summary::marker {
     position: relative;
     width: 100%;
     height: auto;/*120vh*/
-    /*aspect-ratio: 16/9;*/
+    aspect-ratio: 16/9;
     /* keeps proportion */
     overflow: hidden;
 }
