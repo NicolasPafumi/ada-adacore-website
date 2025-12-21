@@ -502,9 +502,6 @@ layout: default
             </div>
         </details>
 
-        
-        
-
     </div>
 </section>
 
@@ -691,7 +688,11 @@ layout: default
         <p>
         </p>
         <p>
-            Here you can see how one sector reacts across different elections and the respective cumulative abnormal returns.
+            The reaction of each sector across different elections and the respective cumulative abnormal returns can be seen on the following graph :
+        </p>
+
+        <p>
+            The graph below displays the reaction of each sector to elections ranging from 2000 to 2023, with their cumulative abnormal returns.
         </p>
         
         <iframe src="assets/graphs/by_sector_dashboard.html" class="graph-frame" scrolling="no" height="700"></iframe>
@@ -701,29 +702,30 @@ layout: default
         
         
         <p>
-            Here we can visualizae pre- and post-election cumulative abnormal returns of most impacted sectors of 2016 election. </p>
+            Here we can visualizae pre- and post-election cumulative abnormal returns of most impacted sectors of 2016 election.
+        </p>
             
         <p>The most impacted sector is the financial one, with a significant abnormal return of 0.088 over 20 days. 
             Observing the CAR around the election allow us to see the financial sector jumping right off the chart. Over the five-day window, 
             it clocked in an impressive 8.8% cumulative abnormal return. Most of the action 
             happened in the first two days post-election, as the market digested the shock.
-
         </p>
 
         <p>
             Similarly , the  industrial sector also saw positive abnormal returns, likely due to Trump's 
-            pro-american industrial policies. </p>
-        <p>Funnily enough, pre-election CAR was small for both Financial 
+            pro-american industrial policies.
+        </p>
+        <p>
+            Funnily enough, pre-election CAR was small for both Financial 
             Services and Industrials. Those of us who followed the 2016 election remember that Hillary Clinton 
             was initially predicted to win the election before Trump's electoral victory surprised many. On the 
             other hand, the Technonolgy sector saw a negative impact of -4% over the 5 days. This might be 
             surprising now given President Trump's close ties current tech CEOs. However, at the time, President 
             Trump held a different stance, openly criticizing big tech companies during his campaign for outsourcing
             jobs and engaging in antitrust practices.
-        
         </p>
 
-        <p>Here you can see a clustered bubble view of individual stock reaction immediately after U.S presidential elections.</p>
+        <p>Now you can enjoy a clustered bubble view of individual stock reaction immediately after U.S presidential elections.</p>
 
         <iframe src="assets/graphs/aggregate_sector_party_bubbles.html" class="graph-frame" scrolling="no" height="850"></iframe>
 
@@ -747,15 +749,15 @@ layout: default
 
         <h2>&#10148; Statistical Tests of Abnormal Returns</h2>
 
-        <p> 
+        <p>
             This was really fun and interesting, but we have to make sure that our results are statistically significant and they are not observed only by chance!
-            
-            </p>
-        <p>To see whether presidential elections really shake up sector performance, we will use a cross-sectional test for cumulative averaged abnormal returns (CAAR).  
+        </p>
+        <p>
+            To see whether presidential elections really shake up sector performance, we will use a cross-sectional test for cumulative averaged abnormal returns (CAAR).  
             In particular we test wheter the average post-election CAR for a sector is significantly different from zero. However, aggregatinig all elections together
             could make us miss some important patterns and weakinig ours tests. Thus, we will take into consideration CAR based on the winning party and we will correct the 
             the significance level by the number of tests. 
-            </p>
+        </p>
 
         <p> [Statistical tests to show significance: little statistical tables, which sector is significant, dividing by Democrat-win
             vs republican win or not]
@@ -788,13 +790,16 @@ layout: default
             But what if elections periods of high uncertainty not only impact performance but also volatility?
             It would be reasonable to assume that election uncertainty creates panic in the market, pushing investorsto trade more
             frequently to hedge their positions. It's possible to capture this by focusing on volatility instead of returns.
-            </p>
-        <p> In this section we will use a Generalized Autoregressive Conditional Heterosledasticity (GARCH)
+        </p>
+
+        <p>
+            In this section we will use a Generalized Autoregressive Conditional Heteroskedasticity (GARCH)
             model to estimate expected volatility sector-wisely.
             A GARCH model is used to represent time-series with time-varying volatility. This is essential in finance, 
             where high-volatility days are typically followed by high-volatility days and calm periods are followed by calm periods.
         </p>
-                <!-- Abnormal Volatility -->
+
+        <!-- Abnormal Volatility -->
         <details class="collapsible info-dropdown">
             <summary class="info-box">
                 <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
@@ -815,11 +820,17 @@ layout: default
                     $$\sigma^2_{i,t} = \omega + \alpha \epsilon_{i,t-1}^2 + \beta \sigma^2_{i,t-1}$$
                 </p>
                 <p>
-                    <em>R<sub>i,t</sub></em> : the return of stock <em>i</em> at time <em>t</em></p>
-                    <p><em>R<sub>m,t</sub></em> : the market return (S&P 500)</p>
-                    <p><em>H><sub>i,t</sub></em> : the conditional variance of stock <em>i</em> at time <em>t</em>
+                    \( R_{i,t} \)> : the return of stock \( i \) at time \( t \)
                 </p>
-                
+                <p>\( R_{m,t} \) : the market return (S&P 500)
+                </p>
+                <p>
+                    \( \epsilon_{i,t} \) : The error term, normally distributed
+                </p>
+                <p>
+                    <em>H><sub>i,t</sub></em> : the conditional variance of stock <em>i</em> at time <em>t</em>
+                </p>
+
             </div>
             <p>Even having defined such a model, it is not 
                 trivial to calculate abnormal volatility. Bialkowski et al. (2008)
