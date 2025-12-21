@@ -791,15 +791,11 @@ layout: default
                     <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <span>Abnormal volatility (based on GARCH Model)</span>
+                <span>GARCH model</span>
             </summary>
             <div class="details-content">
                 <p>
-                    To estimate expected volatility sector-wise, we use a Generalized Autoregressive Conditional Heteroskedasticity (GARCH(1,1))
-                    model. It is used to represent time-series with time-varying volatility. 
-                    This is essential in finance, where high-volatility days are typically followed by high-volatility days and calm periods are 
-                    followed by calm periods. The model separates normal market-driven volatility 
-                    from the abnormal volatility attributable to the election itself.
+                    Here the returns of GARCH model:
                 </p>
         
                 <p class="math-block">
@@ -809,11 +805,16 @@ layout: default
                     $$\sigma^2_{i,t} = \omega + \alpha \epsilon_{i,t-1}^2 + \beta \sigma^2_{i,t-1}$$
                 </p>
                 <p>
-                    where <em>R<sub>i,t</sub></em> is the return of stock <em>i</em> at time <em>t</em>, and <em>R<sub>m,t</sub></em> is the market return (S&P 500).
+                    <em>R<sub>i,t</sub></em> : the return of stock <em>i</em> at time <em>t</em>
+                    <em>R<sub>m,t</sub></em> : the market return (S&P 500)
+                    <em>H><sub>i,t</sub></em> : the conditional variance of stock <em>i</em> at time <em>t</em>
                 </p>
-                <p>ven with this setup, calculating abnormal volatility is non-trivial. We follow Bialkowski et al. (2008), who provide a statistical framework for
-                    testing abnormal volatility—details are in their paper, and our code annotates the relevant equations.</p>
+                
             </div>
+            <p>Even having defined such a model, it is not 
+                trivial to calculate abnormal volatility. [Bialkowski et al. (2008)](https://www.sciencedirect.com/science/article/pii/S0378426607004219) 
+                discuss a method uniquely suited for our case, laying the statistical 
+                foundation for performing hypothesis tests on abnormal volatility. </p>
         </details>
 
         <p>
