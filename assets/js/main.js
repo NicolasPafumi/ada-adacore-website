@@ -172,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updateRibbon);
     /*updateRibbon();*/
     updateRibbonTheme();/*new version that looks what's under*/
+    updateProgress()
 });
 
 
