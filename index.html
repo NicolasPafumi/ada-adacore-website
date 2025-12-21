@@ -866,19 +866,37 @@ layout: default
         <h2>Linear Regression on Election Characteristics</h2>
 
         <p>
-            which election characteristics impact volatility
+            So far, we have found ways to aggregate behaviour of sectors around different elections and test for statistical significance. However, this assumes that all elections are the same, or in the case of our second abnormal returns test, that they only differ by winning party. 
+            In reality, every election takes place within an economic and geopolitical contex that can raise the stakes for the outcome.
+            In this last section, we use regression analysis to figure out what characteristics of elections make investors more nervous!
+            We look at many different features, whether the party changes, the margin in the popular vote, how high were geopolitical tensions, how polarized was the country, etc. We also include the relative day as an independent variable.
+            <br>
+            In good data science fashion, we first explore correlations between our independent variables and exclude those features that are too correlated with each other.
+    
+        </p>
+        <iframe src="assets/graphs/Interactive_Election_Characteristics.html" class="graph-frame" scrolling="no" height="600"></iframe>
+        <p>
+            The boxplot on the left shows that a high correlation between winning party and the margin in the popular vote across the 7 elections we study.
+            Democrats tend to win with a higher popular vote margin. For this reason, we exclude the margin in the popular vote from our regression.
+            We would also argue that winning party would more likely to be cause of elevated volatility than margin of victory itself if an effect were to be found!
+            Similarly, the graph on the right shows a slight correlation between geopolitical tensions and polarization within the country, as measured by the amount of collaboration
+            between bipartisan congress members. However, a further look at our dataset shows that these two values have just been increasing over the years, leading to the observed correlation.
+            We exclude polarization from our regression but we keep in mind that any effect we see from geopolitical tensions might be confounded by polarization, or just by the passage of time.
         </p>
 
-        <p>placeholder text</p>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p>placeholder text</p>
+
+        <p>
+            As we expect differnt dynamics for pre- and post-election volatility, we created two different regressions. In the pre-election model, economic backdrop was the main
+            modualtor of volatility. During recessions, investors might be relying on new candidates to adopt strong policies to pull the economy out of the downturn. This raises the stakes and increases volatility. 
+            As for the post-election period, many variables prove to be significant.
+        </p>
+        <iframe src="assets/graphs/Interactive_Regression_Barplot.html" class="graph-frame" scrolling="no" height="600"></iframe>
+        <p>
+            Across elections, relative day is the most important determinant of volatility. Volatility is significantly higher on days 1, 2 and 4 but not on day 3, as we discussed earlier through the Monday effect.
+            Other than relative day, Other than relative day, the biggest determinants of post-election volatility are party change and international tensions. A change in party means a change in policy direction. Investors need to reassess their positions and hedge accordingly. As for international tensions, the results of the election could steer the country's foreign policy. 
+            For example, in 2004, the Iraq war was a major point of contention in the election, with Democratic candidate John Kerry amassing support in the Left around his anti-war stance. In that context, the election's outcome also determined the future of the war, raising the stakes.
+        </p>
 
     </div>
 </section>
