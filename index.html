@@ -750,25 +750,31 @@ layout: default
             
             </p>
         <p>To see whether presidential elections really shake up sector performance, we will use a cross-sectional test for cumulative averaged abnormal returns (CAAR).  
-            In particular we test wheter the average post-election CAR for a sector is significantly different from zero. 
-            This test allow us to consider each election to be an independent sample of post-election CAR for the same sector.
+            In particular we test wheter the average post-election CAR for a sector is significantly different from zero. However, aggregatinig all elections together
+            could make us miss some important patterns and weakinig ours tests. Thus, we will take into consideration CAR based on the winning party and we will correct the 
+            the significance level by the number of tests. 
             </p>
-        
+
         <p> [Statistical tests to show significance: little statistical tables, which sector is significant, dividing by Democrat-win
             vs republican win or not]
 
             </p>
         
         <p>
-            The Financial Services sector stands out, showing a significant positive post-election CAR whenever a Republican wins. 
-            The results are in line with the broader market expectation for this sector under a Republican administration. The Energy sector, 
-            on the other hand, posts positive CAR under Democrat victories, which might seem surprising given its reliance on oil and gas and the party’s 
-            pro-renewable energy stance. <br>
-            Looking closer at our dashboard for the 2020 Biden vs. Trump election offers some clarity. Most of the Energy sector’s abnormal return occurs on November 9, 
-            2020—the day Pfizer and BioNTech announced their COVID-19 vaccine was over 90% effective. After a tough year for oil and gas,
-            the sector benefited from renewed optimism about a post-pandemic recovery. This example also shows a limitation of event studies: 
-            even a narrow window around Election Day can be affected by other major news. So, was the positive return really due to a Democrat win, 
-            or just coincidental timing with the vaccine announcement? Sometimes markets follow their own rhythm.
+            The Financial Services sector shows significant positive post-election CAR when a Republican 
+            wins. This is consistent with the pro-business stance of the Republican party, and its lesser 
+            tendency to regulate big banks and its promises of lower corporate taxes.
+            Our results show us one significant sector under the sdjusted level when Democrat wins: Energy. This seems counterintuitive since Energy ETF
+            is heavily weighted towards oil and gas companies. One would expect to be negatively impacted by a Democrat win, given their pro-revewable energy stance.
+            However, if we use our dashboard to look more closely we would see that most of energy sector's abnormal return is driven by the fourth trading day post election which corresponds
+            to Monday November 9, 2020. On that same day Pfizer and BioNtech announced that their COVID-19 vaccine candidate waysover 90% effective in preventing COVID-19 infections!
+            This breakthrough particularly benefitted energy stocks with an anticipated return to normal life and a demand for oil and gas! 
+
+        </p>
+        <p>
+            This highlights the limitations of our event study, especially when the number of studied events is small, as is the case here with elections. 
+            Even using a small window around Election Day, other events can affect stocks and thus confound our analysis. 
+            Is the energy sector's positive abnormal return really due to Democrat wins? Or did we just get unlucky? It's hard to say.
         </p>
 
         <h3>Abnormal Volatility based Event Study</h3>
