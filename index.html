@@ -467,37 +467,7 @@ layout: default
         </p>
 
         
-        <!-- Abnormal Volatility -->
-        <details class="collapsible info-dropdown">
-            <summary class="info-box">
-                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-                <span>Abnormal volatility (based on GARCH Model)</span>
-            </summary>
-            <div class="details-content">
-                <p>
-                    To estimate expected volatility sector-wise, we use a Generalized Autoregressive Conditional Heteroskedasticity (GARCH(1,1))
-                    model. It is used to represent time-series with time-varying volatility. 
-                    This is essential in finance, where high-volatility days are typically followed by high-volatility days and calm periods are 
-                    followed by calm periods. The model separates normal market-driven volatility 
-                    from the abnormal volatility attributable to the election itself.
-                </p>
-        
-                <p class="math-block">
-                    <!-- MathJax formula -->
-                    $$R_{i,t} = \alpha_i + \beta_i R_{m,t} + \epsilon_{i,t},$$
-                    $$\epsilon_{i,t} \sim N(0, \sigma^2_{i,t}),$$
-                    $$\sigma^2_{i,t} = \omega + \alpha \epsilon_{i,t-1}^2 + \beta \sigma^2_{i,t-1}$$
-                </p>
-                <p>
-                    where <em>R<sub>i,t</sub></em> is the return of stock <em>i</em> at time <em>t</em>, and <em>R<sub>m,t</sub></em> is the market return (S&P 500).
-                </p>
-                <p>ven with this setup, calculating abnormal volatility is non-trivial. We follow Bialkowski et al. (2008), who provide a statistical framework for
-                    testing abnormal volatility—details are in their paper, and our code annotates the relevant equations.</p>
-            </div>
-        </details>
+
         <!-- Cumulative Abnormal Volatility -->
         <details class="collapsible info-dropdown">
             <summary class="info-box">
@@ -804,15 +774,52 @@ layout: default
         <h3>Abnormal Volatility based Event Study</h3>
 
         <p>
-            In this section, we turn our attention from returns to volatility, asking: how much does a presidential 
-            election shake up sector-level risk? Using a GARCH model and a standardization procedure, we calculate abnormal v
-            olatility for each sector over a 5-day window surrounding each election. These are denoted as <em>AV</em><sub>sector, 
-                year, t</sub>, representing the abnormal volatility of a given sector at a relative time <em>t</em> 
-            from the election. For instance, <em>AV</em><sub>Tech, 2016, +5</sub> measures the abnormal volatility of the 
-            technology sector five trading days after the 2016 election. Intuitively, these values show the multiplicative 
-            effect of the event on volatility: an abnormal volatility of 1.5 indicates that realized volatility was 50% highe
-            r than expected during that window. This metric allows us to quantify sector-specific turbulence triggered by elections, 
-            complementing the abnormal returns analysis from earlier
+            So far, we have measured abnormal performance, specifically if one election's outcome favors specific sectors.
+            But what if elections periods of high uncertainty not only impact performance but also volatility?
+            It would be reasonable to assume that election uncertainty creates panic in the market, pushing investorsto trade more
+            frequently to hedge their positions. It's possible to capture this by focusing on volatility instead of returns.
+            </p>
+        <p> In this section we will use a Generalized Autoregressive Conditional Heterosledasticity (GARCH)
+            model to estimate expected volatility sector-wisely.
+            A GARCH model is used to represent time-series with time-varying volatility. This is essential in finance, 
+            where high-volatility days are typically followed by high-volatility days and calm periods are followed by calm periods.
+        </p>
+                <!-- Abnormal Volatility -->
+        <details class="collapsible info-dropdown">
+            <summary class="info-box">
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span>Abnormal volatility (based on GARCH Model)</span>
+            </summary>
+            <div class="details-content">
+                <p>
+                    To estimate expected volatility sector-wise, we use a Generalized Autoregressive Conditional Heteroskedasticity (GARCH(1,1))
+                    model. It is used to represent time-series with time-varying volatility. 
+                    This is essential in finance, where high-volatility days are typically followed by high-volatility days and calm periods are 
+                    followed by calm periods. The model separates normal market-driven volatility 
+                    from the abnormal volatility attributable to the election itself.
+                </p>
+        
+                <p class="math-block">
+                    <!-- MathJax formula -->
+                    $$R_{i,t} = \alpha_i + \beta_i R_{m,t} + \epsilon_{i,t},$$
+                    $$\epsilon_{i,t} \sim N(0, \sigma^2_{i,t}),$$
+                    $$\sigma^2_{i,t} = \omega + \alpha \epsilon_{i,t-1}^2 + \beta \sigma^2_{i,t-1}$$
+                </p>
+                <p>
+                    where <em>R<sub>i,t</sub></em> is the return of stock <em>i</em> at time <em>t</em>, and <em>R<sub>m,t</sub></em> is the market return (S&P 500).
+                </p>
+                <p>ven with this setup, calculating abnormal volatility is non-trivial. We follow Bialkowski et al. (2008), who provide a statistical framework for
+                    testing abnormal volatility—details are in their paper, and our code annotates the relevant equations.</p>
+            </div>
+        </details>
+
+        <p>
+            For example, the Biden VS Trump election of 2020 happened in a context of high market volatility due to the COVID-19 
+            pandemic. We thus expect high volatility around that election anyway and should be wary of 
+            attributing all of it to the election itself!
         </p>
 
         <iframe src="assets/graphs/presidential_dashboard_volatility.html" class="graph-frame" scrolling="no" height="600"></iframe>
