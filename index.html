@@ -362,10 +362,10 @@ layout: default
         
                 <p>
                     Returns typically fluctuate around zero, as prices move up and down around a longer-term trend. During periods 
-                    of stress - such as the 2008 financial crisis (see figure below) - these fluctuations become noticeably larger, 
+                    of stress, such as the 2008 financial crisis (see figure below), these fluctuations become noticeably larger, 
                     reflecting a sharp increase in volatility. Observations from past crises offer a useful reference for the kinds 
                     of volatility we might anticipate during elections.
-                    <br>
+                    <br><br>
                     To move beyond visual impressions, we quantify this behavior using the standard deviation of returns over a rolling window. 
                     This measure provides an estimate of how volatile the market has been recently and is commonly referred to as historical 
                     volatility.
@@ -397,22 +397,20 @@ layout: default
                     given window and
                     \(V_t\) the price on a given \(t\) (e.g. a day).
                 </p>
-                <iframe src="assets/graphs/Interactive_Volatility_21.html" class="graph-frame" scrolling="no" height="600"></iframe>
 
-                <p>
-                    Sectors generally follow the overall market trend, with spikes in volatility during events that shake the entire economy, 
-                    like the 2008 financial crisis or the market drop in August 2011. But a closer look reveals that not all sectors react 
-                    equally, some are more sensitive to specific events. Take the energy sector, for example: between 2005 and 2007, it showed 
-                    above the market volatility as Middle East conflicts and other factors drove oil prices up and down. Most other sectors barely 
-                    flinched. Similarly, the technology sector experienced heightened volatility from 2001 to 2003 after the dot-com bubble burst, 
-                    while other industries remained relatively stable.
-                </p>
             </div>
         </details>
 
-
+        <iframe src="assets/graphs/Interactive_Volatility_21.html" class="graph-frame" scrolling="no" height="600"></iframe>
 
         <p>
+            Sectors generally follow the overall market trend, with spikes in volatility during events that shake the entire economy, 
+            like the 2008 financial crisis or the market drop in August 2011. But a closer look reveals that not all sectors react 
+            equally, some are more sensitive to specific events. Take the energy sector, for example: between 2005 and 2007, it showed 
+            above the market volatility as conflicts in the Middle East and other factors drove oil prices up and down. Most other sectors barely 
+            flinched. Similarly, the technology sector experienced heightened volatility from 2001 to 2003 after the dot-com bubble burst, 
+            while other industries remained relatively stable.
+            <br><br>
             Now, historical volatility is easy to compute and widely used for long-term analysis and risk management. But it comes with 
             limitations: it requires a sufficiently large window to give reliable estimates, which can smooth over the short-term 
             fluctuations we’re interested in around election dates. It also only considers close prices, ignoring intraday swings 
@@ -460,8 +458,6 @@ layout: default
             for our event study we are more interested in the unexpected spikes, i.e. the price movements that 
             go beyond what the market normally predicts. This <b>abnormal volatility</b> lets us pinpoint how sectors 
             respond to shocks like elections, helping us isolate and quantify their reactions over the event window.
-
-            
         </p>
 
         
@@ -516,7 +512,10 @@ layout: default
             events influence these relationships.
         </p>
 
-        <p>These dynamics can be explored interactively in the dashboard below, where you can filter by sector and event to observe how correlations evolve over time.</p>
+        <p>
+            These dynamics can be explored interactively in the dashboard below, where you can filter by event to observe how correlations evolve over time. 
+            Companies from the same sector share the same color palette, making it easier to identify sector-specific patterns.
+        </p>
 
 
 
