@@ -513,6 +513,11 @@ details[open]::details-content {
     block-size: auto;
 }
 
+.section.black details[open]::details-content {
+    align-items: center;
+    text-align: center;
+}
+
 .section.black .details-content {
   color: var(--hintbox-dark-text);
 }
