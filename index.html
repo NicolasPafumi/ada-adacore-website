@@ -325,7 +325,8 @@ layout: default
                 <p>
                     A positive abnormal return indicates that the asset outperformed its expected return on that day, 
                     while a negative value signals underperformance. In the context of elections, these deviations are 
-                    precisely what may reflect shifts in political expectations or policy uncertainty.
+                    precisely what may reflect shifts in political expectations or policy uncertainty. 
+                    Note that \(\alpha_i\) and \(\beta_i\) are typically estimated over a calibration window directly prior to the event window.
                 </p>
             </div>
         </details>
@@ -458,41 +459,9 @@ layout: default
             for our event study we are more interested in the unexpected spikes, i.e. the price movements that 
             go beyond what the market normally predicts. This <b>abnormal volatility</b> lets us pinpoint how sectors 
             respond to shocks like elections, helping us isolate and quantify their reactions over the event window.
+            We could use out Parkinson's estimator described previously over a calibration window to straightforwardly define expected volatility. However,
+            to increase the power of our analyses, we opt for a more sophisticated model-based approach that we describe further down the line.
         </p>
-
-        
-
-        <!-- Cumulative Abnormal Volatility -->
-        <details class="collapsible info-dropdown">
-            <summary class="info-box">
-                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-                <span>Cumulative Abnormal Volatility (CAV)</span>
-            </summary>
-            <div class="details-content">
-                <p>
-                    To capture the total impact of an event on sector volatility, we aggregate abnormal volatility over the event window. 
-                    This gives us the <em>Cumulative Abnormal Volatility</em>, or <em>CAV</em>, for each sector and election.
-                </p>
-        
-                <p class="math-block">
-                    $$CAV_{s,e}(t_1,t_2) = \sum_{t=t_1}^{t_2} AV_{s,e,t}$$
-                </p>
-        
-                <p>
-                    Here, <em>AV<sub>s,e,t</sub></em> represents the abnormal volatility of sector <em>s</em> for election year <em>e</em> at relative 
-                    time <em>t</em>. By summing over the chosen window from <em>t<sub>1</sub></em> to <em>t<sub>2</sub></em>, we assess how much 
-                    volatility deviates from expectations due to the election as a whole.
-                </p>
-        
-                <p>
-                    CAV allows us to compare the total event impact across sectors, providing a clear picture of which sectors experienced the 
-                    most pronounced volatility during election periods.
-                </p>
-            </div>
-        </details>
 
     </div>
 </section>
@@ -808,13 +777,14 @@ layout: default
                 <p class="math-block">
                     <!-- MathJax formula -->
                     $$R_{i,t} = \alpha_i + \beta_i R_{m,t} + \epsilon_{i,t},$$
-                    $$\epsilon_{i,t} \sim N(0, \sigma^2_{i,t}),$$
-                    $$\sigma^2_{i,t} = \omega + \alpha \epsilon_{i,t-1}^2 + \beta \sigma^2_{i,t-1}$$
+                    $$\epsilon_{i,t} \sim N(0, H_{i,t}),$$
+                    $$H_{i,t} = \omega + \alpha \epsilon_{i,t-1}^2 + \beta H_{i,t-1}$$
                 </p>
                 <p>
-                    \( R_{i,t} \)> : the return of stock \( i \) at time \( t \)
+                    \( R_{i,t} \) : the return of stock \( i \) at time \( t \)
                 </p>
-                <p>\( R_{m,t} \) : the market return (S&P 500)
+                <p>
+                    \( R_{m,t} \) : the market return (S&P 500)
                 </p>
                 <p>
                     \( \epsilon_{i,t} \) : The error term, normally distributed
@@ -822,16 +792,19 @@ layout: default
                 <p>
                     <em>H<sub>i,t</sub></em> : the conditional variance of stock <em>i</em> at time <em>t</em>
                 </p>
+                <p>
+                    In simple terms, the GARCH model lets the variance at day \( t \) to change over time. It also allows it to depend on the past variance.
+                </p>
 
             </div>
             <p>Even having defined such a model, it is not 
                 trivial to calculate abnormal volatility. Bialkowski et al. (2008)
                 discuss a method uniquely suited for our case, laying the statistical 
-                foundation for performing hypothesis tests on abnormal volatility. </p>
+                foundation for performing hypothesis tests on abnormal volatility. We spare you all the details, though a more thorough description can be found on our repo.</p>
         </details>
 
         <p>
-            For example, the Biden VS Trump election of 2020 happened in a context of high market volatility due to the COVID-19 
+            For example, the Biden vs Trump election of 2020 happened in a context of high market volatility due to the COVID-19 
             pandemic. We thus expect high volatility around that election anyway and should be wary of 
             attributing all of it to the election itself!
         </p>
@@ -848,7 +821,12 @@ layout: default
 
         <p> The most interesting results come from the last three elections. They are characterised by a significant spike after the election. 
             The financial services sector shows the highest abnormal volatility. This investor panic typically resolves itself by the fifth day of 
-            trading after the election.
+            trading after the election. Another interesting observation is volatility spikes on day 1 and day 2 then typically decreases on day 3, to finally spike again on day 4.
+            Diving deeper, we notice that US presidential elections are always held on a Tuesday, meaning that day 4 corresponds to the following Monday.
+            This spike suggests investors might be processing on Monday information that the President-elect has been making over the weekend. For example, they might have announced key cabinet members or policy stances.
+            Another theory is related to election certification. edia outlets like AP typically call the result on election night or the day after, leading to the spike in volatility on day 1. However, 
+            these results are not official as swing states still need to certify their results. 
+            States differ by when they certify results, but swing states certifications over the weekend could help seal the outcome and lead to renewed market reactions on Monday.
         </p>
 
     </div>
