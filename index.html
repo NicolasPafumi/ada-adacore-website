@@ -73,36 +73,35 @@ layout: default
         </div>
 
         <h2> Abstract </h2>
-        <p>This week, we will be talking about how investors can exploit events to increase their profits. In particular, we will be discussing presidential elections, 
-            since it is well known that they shake up the stock market every four years. 
-            Investors react nervously to uncertainty, worry about potential policy changes, often amplifying even small market fluctuations. 
-            Understanding these dynamics can help anticipate market movements and hedge portfolios around election cycles - 
-            or at least give analysts an excuse to dive deep into charts and election data late into the night. More importantly, 
+        <p>This week, we are diving into one of the few events that reliably make investors bite their nails every four years: presidential elections. 
+            Markets don’t like uncertainty, and when policies, regulations, and the general economic direction are up in the air, even small market moves can get amplified 
+            as investors adjust their bets.
+            Understanding these dynamics can help anticipate market movements and hedge portfolios around election cycles - or, for the data enthusiasts among us, 
+            serve as a perfectly legitimate excuse to spend late nights buried in charts and election data. More importantly, 
             market movements reveal how investors perceive candidates and their policy proposals.
             <br>
-            In this post, we take a data-driven look at how presidential elections affect company performance and investor 
-            behavior over time. Using historical stock market data, election results, and prediction market trends, 
-            we track how markets react as the likelihood of a candidate winning change. Particularly interesting is how 
-            different sectors-technology, energy, healthcare, finance-respond to the uncertainty and outcomes of election cycles.
+            In this post, we dig into the numbers to see how elections actually move the market. Rather than looking at individual stocks, 
+            we zoom out to the sector level - technology, energy, healthcare, financials, and more - and ask: do these sectors all react the same way, 
+            or does each chart its own course when the political winds shift?
+            We rely on historical stock data, election outcomes, and contextual details from multiple election cycles to explore these patterns. 
             <br>
-            The goal is simple: to show how politics and markets “dance” together, based on data, while keeping the discussion 
-            accessible. By analyzing past elections and looking ahead to the upcoming 2024 election, we hope to identify patterns 
-            that explain when, why, and how the market gets nervous.
+            The goal is simple: to show how politics and markets “dance” together, with real data leading the steps. By looking across multiple election 
+            cycles, we hope to uncover patterns that explain when, why, and how markets get jittery, all while keeping the story readable 
+            (and maybe a little entertaining) for anyone curious about the intersection of elections and finance.
         </p>
 
-        <h3>Research questions</h3>
+        <h3>Research Questions</h3>
         <p>
             <ul>
-            <li>Can we describe the behavior of an entire sector? </li>
-            <li>Do sectors show significant patterns in shared financial behavior, and are they affected differently?</li>
-            <li>Which sectors respond most strongly to presidential elections? </li>
-            <li>What characteristics of elections trigger increased market volatility? </li>
-            <li>Does the president’s party have differential effects on certain sectors? </li>
+            <li>Do different stock market sectors, such as Technology, Healthcare, or Financials, respond differently to presidential elections? </li>
+            <li>Are certain sectors systematically favored under Democratic or Republican administrations?</li>
+            <li>Do sector-level returns following elections exhibit consistent patterns, and if so, could these patterns plausibly be exploited? </li>
+            <li>Is market volatility higher before or after election results are announced, and does this effect differ across sectors?</li>
+            <li>How do the broader economic and political context of an election, as well as candidate-specific characteristics, shape market reactions?</li>
             </ul>
             <p>
-            To answer these questions, we
-            will use historical stock market data and publicly available election data. We will also use prediction market data as
-            proxy for the perceived probability of each candidate winning.
+            To address these questions, we rely on historical stock market data, sector-level ETFs, and publicly available election data. 
+            Our analysis combines descriptive statistics with regression-based event study methods to isolate election-related effects from broader market movements.
             </p>
 
 
@@ -118,11 +117,11 @@ layout: default
             companies react under market stress, election uncertainty, and all the drama that comes with four-year cycles. 
             <br>
             To make our data a bit more insightful, each ticker is annotated with its sector, letting us ask questions like: 
-            Does tech freak out more than energy when election season hits? Is healthcare the calm, stoic sibling in the family of market 
-            sectors? These sector labels are crucial for understanding sector-specific effects during elections.
+            Does tech freak out more than energy when election season hits? And does healthcare stay surprisingly steady compared to the rest?
+            These sector labels are crucial for understanding sector-specific effects during elections.
         </p>
             
-        <p>  Let's take a look at all this together on the Bloomberg Terminal!  </p>
+        <p>  Alright, time to roll up our sleeves and dive into the data on the Bloomberg Terminal!  </p>
 
     </div>
 </section>
@@ -137,18 +136,21 @@ layout: default
         <h2>Dataset Unwrapping</h2>
         <p>The number of tickers in our dataset varies over time due to Initial Public Offering (IPOs), 
             delistings, and other corporate events. An IPO indicates when a private company becomes public and a delisting when a company is removed from a stock exchange. 
-            The graph below illustrates the overall date coverage of our dataset, 
-            showing the number of active stocks and ETFs at each point in time. Notably, the first ETF 
-            in our dataset appears in 1993, corresponding to the inception of the S&P 500 ETF, while stocks 
-            span a longer historical period. The number of active tickers generally 
-            increases over time and there is a sharp jump in March 1983, with multiple new listings.
+            First ETF appears in 1993, corresponding to S&P 500 ETF inception. Stocks span a longer historical period. Active tickers generally increase over time, with a 
+            sharp jump in March 1983 reflecting multiple new listings. Graph below shows coverage of active stocks and ETFs by date.
         </p>
 
         <iframe src="assets/graphs/Interactive_Coverage_Tickers.html" class="graph-frame" scrolling="no" height="600" style="display: block; margin: 0 auto;"></iframe>
 
-        <p>The following graph shows the date coverage of tickers broken down in 11 sectors, 
-            using the standardized international GICS classification. It's interesting seeing which sectors have the more active 
-            tickers and that generally they all increased over time. 
+        <p style="color: #B22222;">
+            The S&P 500 is a stock market index tracking 500 of the largest publicly traded U.S. companies across major sectors including technology, healthcare, 
+            energy, and consumer goods. Because the index is market-cap weighted, the performance of larger companies has a greater impact, making the S&P 500 a widely 
+            used benchmark for assessing overall U.S. equity market performance.
+        </p>
+
+        
+        <p>Graph below shows date coverage of tickers across 11 sectors using the standardized GICS classification. Active tickers generally increase over time across 
+            all sectors. See the next graph for a dynamic view of sector ETF performance over time.
         </p>
 
         <iframe src="assets/graphs/Interactive_Sector_Tickers_black.html" class="graph-frame" scrolling="no" height="600" style="display: block; margin: 0 auto;"></iframe>
@@ -220,26 +222,25 @@ layout: default
                 </p>
             </div>
 
-            <p>Why go through the trouble? The magic property of log returns is <b>time additivity</b>: 
+            <p>Why go through the trouble? The magic property of log returns is time additivity: 
                 the log return over multiple days is just the sum of daily log returns. This makes it 
                 trivial to compute cumulative returns over a period. For example, if a stock gains 1% 
                 on day 1 and loses 1% on day 2, the cumulative log return is exactly zero—something that 
                 doesn’t hold with regular returns.
             </p>
-            
-        </details>
-
-        <h3>Kurtosis</h3>
-
-        <p>
+            <p><b>Kurtosis</b></p>
+             <p>
             Kurtosis measures how much of the data lies in the tails of a distribution—essentially, how likely 
             extreme events are. One additional advantage of using log returns is that they tend to reduce kurtosis,
             smoothing out the “fat tails” often seen in standard returns. This makes the distribution closer to normal, 
             which is particularly helpful for statistical analysis, modeling, and comparing sectors or stocks. The differences 
             are subtle and usually invisible in histograms, as they appear mainly in rare, extreme price moves.
-        </p>
+             </p>
 
-        <iframe src="assets/graphs/Interactive_Daily_Returns_20.html" class="graph-frame" scrolling="no" height="600"></iframe>
+             <iframe src="assets/graphs/Interactive_Daily_Returns_20.html" class="graph-frame" scrolling="no" height="600"></iframe>
+            
+        </details>
+
 
         <h3>Alpha and Beta</h3>
 
@@ -366,7 +367,7 @@ layout: default
                     <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <span>Historical volatility</span>
+                <span>Historical Volatility</span>
             </summary>
             <div class="details-content">
                 <p>
@@ -386,25 +387,20 @@ layout: default
                     given window and
                     \(V_t\) the price on a given \(t\) (e.g. a day).
                 </p>
+                <iframe src="assets/graphs/Interactive_Volatility_21.html" class="graph-frame" scrolling="no" height="600"></iframe>
+
+                <p>
+                    Sectors generally follow the overall market trend, with spikes in volatility during events that shake the entire economy, 
+                    like the 2008 financial crisis or the market drop in August 2011. But a closer look reveals that not all sectors react 
+                    equally, some are more sensitive to specific events. Take the energy sector, for example: between 2005 and 2007, it showed 
+                    above the market volatility as Middle East conflicts and other factors drove oil prices up and down. Most other sectors barely 
+                    flinched. Similarly, the technology sector experienced heightened volatility from 2001 to 2003 after the dot-com bubble burst, 
+                    while other industries remained relatively stable.
+                </p>
             </div>
         </details>
 
-        <iframe src="assets/graphs/Interactive_Volatility_21.html" class="graph-frame" scrolling="no" height="600"></iframe>
 
-        <p>
-            Sectors generally follow the overall market trend, with spikes in volatility during events that shake the entire economy, 
-            like the 2008 financial crisis or the market drop in August 2011. But a closer look reveals that not all sectors react 
-            equally, some are more sensitive to specific events. Take the energy sector, for example: between 2005 and 2007, it showed 
-            above the market volatility as Middle East conflicts and other factors drove oil prices up and down. Most other sectors barely 
-            flinched. Similarly, the technology sector experienced heightened volatility from 2001 to 2003 after the dot-com bubble burst, 
-            while other industries remained relatively stable.
-        </p>
-
-        <P>
-            These patterns already hint at something important for our study: sector-specific analysis matters. Around elections,
-            different policy proposals - think climate change, Big Tech regulation, or healthcare reform - will impact sectors 
-            in very different ways.
-        </P>
 
         <p>
             Now, historical volatility is easy to compute and widely used for long-term analysis and risk management. But it comes with 
@@ -422,7 +418,7 @@ layout: default
                     <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <span>Parkinson volatility</span>
+                <span>Parkinson Volatility</span>
             </summary>
             <div class="details-content">
                 <p>
@@ -445,10 +441,85 @@ layout: default
                     from modeling
                     returns as a geometric Brownian motion.
                 </p>
+                <iframe src="assets/graphs/Interactive_Parkinson_Volatility.html" class="graph-frame" scrolling="no" height="600"></iframe>
             </div>
         </details>
 
-        <iframe src="assets/graphs/Interactive_Parkinson_Volatility.html" class="graph-frame" scrolling="no" height="600"></iframe>
+        <p>
+            While standard measures of volatility give us a sense of how much prices typically fluctuate, 
+            for our event study we are more interested in the unexpected spikes, i.e. the price movements that 
+            go beyond what the market normally predicts. This <b>abnormal volatility</b> lets us pinpoint how sectors 
+            respond to shocks like elections, helping us isolate and quantify their reactions over the event window.
+
+            
+        </p>
+
+        
+        <!-- Abnormal Volatility -->
+        <details class="collapsible info-dropdown">
+            <summary class="info-box">
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span>Abnormal volatility (based on GARCH Model)</span>
+            </summary>
+            <div class="details-content">
+                <p>
+                    To estimate expected volatility sector-wise, we use a Generalized Autoregressive Conditional Heteroskedasticity (GARCH(1,1))
+                    model. It is used to represent time-series with time-varying volatility. 
+                    This is essential in finance, where high-volatility days are typically followed by high-volatility days and calm periods are 
+                    followed by calm periods. The model separates normal market-driven volatility 
+                    from the abnormal volatility attributable to the election itself.
+                </p>
+        
+                <p class="math-block">
+                    <!-- MathJax formula -->
+                    $$R_{i,t} = \alpha_i + \beta_i R_{m,t} + \epsilon_{i,t},$$
+                    $$\epsilon_{i,t} \sim N(0, \sigma^2_{i,t}),$$
+                    $$\sigma^2_{i,t} = \omega + \alpha \epsilon_{i,t-1}^2 + \beta \sigma^2_{i,t-1}$$
+                </p>
+                <p>
+                    where <em>R<sub>i,t</sub></em> is the return of stock <em>i</em> at time <em>t</em>, and <em>R<sub>m,t</sub></em> is the market return (S&P 500).
+                </p>
+                <p>ven with this setup, calculating abnormal volatility is non-trivial. We follow Bialkowski et al. (2008), who provide a statistical framework for
+                    testing abnormal volatility—details are in their paper, and our code annotates the relevant equations.</p>
+            </div>
+        </details>
+        <!-- Cumulative Abnormal Volatility -->
+        <details class="collapsible info-dropdown">
+            <summary class="info-box">
+                <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span>Cumulative Abnormal Volatility (CAV)</span>
+            </summary>
+            <div class="details-content">
+                <p>
+                    To capture the total impact of an event on sector volatility, we aggregate abnormal volatility over the event window. 
+                    This gives us the <em>Cumulative Abnormal Volatility</em>, or <em>CAV</em>, for each sector and election.
+                </p>
+        
+                <p class="math-block">
+                    $$CAV_{s,e}(t_1,t_2) = \sum_{t=t_1}^{t_2} AV_{s,e,t}$$
+                </p>
+        
+                <p>
+                    Here, <em>AV<sub>s,e,t</sub></em> represents the abnormal volatility of sector <em>s</em> for election year <em>e</em> at relative 
+                    time <em>t</em>. By summing over the chosen window from <em>t<sub>1</sub></em> to <em>t<sub>2</sub></em>, we assess how much 
+                    volatility deviates from expectations due to the election as a whole.
+                </p>
+        
+                <p>
+                    CAV allows us to compare the total event impact across sectors, providing a clear picture of which sectors experienced the 
+                    most pronounced volatility during election periods.
+                </p>
+            </div>
+        </details>
+
+        
+        
 
     </div>
 </section>
@@ -462,7 +533,7 @@ layout: default
 
         <p>
             One useful way to understand how sectors behave is by looking at correlations. If the correlation between two sectors is 1,
-            they move in lockstep—what happens in one affects the other directly. A correlation of 0 means they are essentially independent, 
+            they move in lockstep meaning: what happens in one affects the other directly. A correlation of 0 means they are essentially independent, 
             and a correlation of -1 implies they move in exactly opposite directions. By visualizing correlations across sectors over the past, 
             and highlighting key events such as the 2008 financial crisis, the 2016 US election, and the 2020 Covid crisis, we can see how different
             events influence these relationships.
@@ -470,9 +541,10 @@ layout: default
 
         <p>
             Our analysis confirms what we might expect: companies within the same sector generally move together, showing consistently 
-            higher correlations than companies in different sectors. However, inter-sector correlations aren’t static—they shift depending 
+            higher correlations than companies in different sectors. However, inter-sector correlations aren’t static, they shift depending 
             on the event. Take the 2008 financial crisis, for example. Consumer Defensive stocks suddenly correlated strongly with Energy 
             and Healthcare sectors, reflecting how systemic shocks ripple through the entire economy. A similar story unfolds during the Covid-19 crash.
+            These dynamics can be explored interactively in our dashboard below, where you can filter by sector and event to observe how correlations evolve over time.
         </p>
 
         <p>
@@ -551,33 +623,42 @@ layout: default
         <h2>Event study</h2>
 
         <p>
-            Now that we’ve covered all the tools, we can finally dive into the exciting part: seeing how elections actually move 
+            Now that we have covered all the tools, we can finally dive into the exciting part: seeing how elections actually move 
             the market. Here’s how we tackle it in our analysis:
         </p>
 
-        <p>
-            <b>Defining the Event Window</b>
-            The event at the center of our study is Election Day. To capture both anticipatory jitters and the immediate market reaction,
-            we look at a symmetric window spanning a few trading days before and after the vote. For this study, we focus on a 5-day 
-            window: short enough to isolate the election effect, long enough to see the market respond.
-            
-            <b>Measuring Returns and Volatility</b>
-            Within this window, we calculate the realized stock returns and volatility metrics. These numbers tell us what actually 
-            happened in the market, giving us a snapshot of the collective investor response.
-            
-            <b>Comparing to Expected Values</b>
-            The heart of an event study lies in defining “normal” behavior. Using models that account for market exposure and sector 
-            characteristics, we estimate expected returns and volatility. By comparing realized values to these expectations, we can 
-            quantify the abnormal performance directly associated with the event.
-            
-            <b>Aggregating and Testing Significance</b>
-            To see the bigger picture, we aggregate results across sectors and multiple election cycles. Statistical tests then help 
-            us decide whether the effects we observe are meaningful or just random noise. This allows us to infer whether elections 
-            consistently influence market behavior.
-        </p>
+        <ol>
+    <li>
+        <em>Defining the Event Window</em><br>
+        The event at the center of our study is Election Day. To capture both anticipatory jitters and the immediate market reaction,
+        we look at a symmetric window spanning a few trading days before and after the vote. For this study, we focus on a <em>5-day</em>
+        window: short enough to isolate the election effect, long enough to see the market respond.
+    </li>
+            <p></p>
+    <li>
+        <em>Measuring Returns and Volatility</em><br>
+        Within this window, we calculate the realized stock returns and volatility metrics. These numbers tell us what actually 
+        happened in the market, giving us a snapshot of the collective investor response.
+    </li>
+            <p></p>
+    <li>
+        <em>Comparing to Expected Values</em><br>
+        The heart of an event study lies in defining “normal” behavior. Using models that account for market exposure and sector 
+        characteristics, we estimate expected returns and volatility. By comparing realized values to these expectations, we can 
+        quantify the abnormal performance directly associated with the event.
+    </li>
+            <p></p>
+    <li>
+        <em>Aggregating and Testing Significance</em><br>
+        To see the bigger picture, we aggregate results across sectors and multiple election cycles. Statistical tests then help 
+        us decide whether the effects we observe are meaningful or just random noise. This allows us to infer whether elections 
+        consistently influence market behavior.
+    </li>
+</ol>
 
-        <h3>Abnormal returns based event study</h3>
 
+        <h3>Abnormal Returns based Event Study</h3>
+<!-- 
         <p>
             Let us use this method to analyze the impact of the 2016 presidential election on different sectors.
         </p>
@@ -587,31 +668,58 @@ layout: default
             lineplot, right for CAR barplot]
         </p>
 
-        <img src="assets/img/placeholders/ph8.png">
+        <img src="assets/img/placeholders/ph8.png"> -->
 
         <p>
-            Look at 2016 for example:<br>
-            Visualizing pre- and post-election cumulative abnormal returns shows the sector most impacted by results of the 2016
-            presidential election is the energy sector, with a significant cumulative abnormal return of 0.06 over 20 days, crushing
-            other sectors. This is consistent with the pro-fossil fuel of the elected Trump administration, as well as the
-            expectations of climate deregulation. The lineplot also illustrates a jump in abnormal returns the day of the election,
-            as the winner was announced.
+            Before we dive into the 2016 numbers, a quick refresher: we’re looking at abnormal returns - the part of a stock 
+            or sector’s performance that can’t be explained by general market moves - and their cumulative version, CAR, which sums
+            these deviations over a short window. Think of it as a way to spotlight which sectors are really reacting to the election, 
+            rather than just following the market’s general mood. It’s a sharp lens for catching the market’s political volatility spike.
+            With this framework in mind, let’s turn to the 2016 presidential election and see how sectors actually behaved, as illustrated 
+            in the figure below (just click on Trump’s 2016 image to explore).
+
         </p>
 
         <p>
-            Funnily enough, pre-election CAR was negative for the energy sector. Those of us who followed the 2016 election remember
-            that Hillary Clinton, the more environmentally conscious candidate, was initially predicted to win the election before
-            Trump's electoral victory surprised many. This headline from the Wall Street Journal perfectly captures the market
-            sentiment that led to the energy sector's soar.
+            Visualizing the CAR around the election, the financial sector jumps right off the chart. Over the five-day window, 
+            it clocked in an impressive 8.8% cumulative abnormal return, leaving all other sectors in the dust. Most of the action 
+            happened in the first two days post-election, as the market digested the shock and started pricing in deregulation promises for big banks.
+
         </p>
 
         <p>
-            Statistical tests to show significance: little statistical tables, which sector is significant, dividing by Democrat-win
-            vs republican win or not.
+            The industrial sector also enjoyed a boost, likely reflecting optimism around pro-American industrial policies. Pre-election 
+            CARs for both Financials and Industrials were modest, showing that the real market reaction only kicked in once the results were clear. 
+            Technology, in contrast, saw a decline of about 4% over the same window. At first glance, this might seem counterintuitive today, given Trump’s 
+            later relationships with tech leaders. But at the time, his campaign rhetoric was critical of big tech, pointing to outsourcing and 
+            antitrust concerns, so the market’s caution makes perfect sense. These contrasting movements highlight how sector-specific policies
+            and perceptions shape investor reactions in very different ways.
         </p>
 
+        <h2>&#10148; Statistical Tests</h2>
+
+        <p> 
+            To see whether presidential elections really shake up sector performance, we looked at average cumulative abnormal returns (CAAR) 
+            and ran 12 t-tests—one for each of the 6 sectors, separated by the winning party. To make the most of our limited data, we treated the 
+            top holdings of each sector ETF as independent observations, operating under the idea that it’s the sector, not any single company, that 
+            drives the election response. The results of this approach are summarized in the figure below.
+            </p>
+        
+        <p> [Statistical tests to show significance: little statistical tables, which sector is significant, dividing by Democrat-win
+            vs republican win or not]
+
+            </p>
+        
         <p>
-            Which companies and sectors are Democrat vs Republican focused
+            The Financial Services sector stands out, showing a significant positive post-election CAR whenever a Republican wins. 
+            The results are in line with the broader market expectation for this sector under a Republican administration. The Energy sector, 
+            on the other hand, posts positive CAR under Democrat victories, which might seem surprising given its reliance on oil and gas and the party’s 
+            pro-renewable energy stance. <br>
+            Looking closer at our dashboard for the 2020 Biden vs. Trump election offers some clarity. Most of the Energy sector’s abnormal return occurs on November 9, 
+            2020—the day Pfizer and BioNTech announced their COVID-19 vaccine was over 90% effective. After a tough year for oil and gas,
+            the sector benefited from renewed optimism about a post-pandemic recovery. This example also shows a limitation of event studies: 
+            even a narrow window around Election Day can be affected by other major news. So, was the positive return really due to a Democrat win, 
+            or just coincidental timing with the vaccine announcement? Sometimes markets follow their own rhythm.
         </p>
 
     </div>
@@ -620,15 +728,38 @@ layout: default
 <section id="sectors-impact" class="section black" data-theme="dark">
     <div class="content">
 
+        <h>Sector-Level Market Response to Elections: Abnormal Returns</h>
+        <iframe src="assets/graphs/presidential_dashboard.html" class="graph-frame" scrolling="no" height="600"></iframe>
+        <p>
+        </p>
+        <p>
+        </p>
+        
+        <p> 
+            Abnormal returns and cumulative abnormal returns (CAR) for all U.S. presidential elections from 2000 to today. 
+            Pre- and post-election windows show sector-level deviations from expected market performance, highlighting
+            immediate market reactions around election dates.
+        </p>
         <iframe src="assets/graphs/by_sector_dashboard.html" class="graph-frame" scrolling="no" height="700"></iframe>
 
+        <p>
+        </p>
+        
         <p>
             commentaires: look at energy, always goes up after republican win
         </p>
 
+        <p> Clustered bubble view of individual stock reactions immediately following U.S. presidential elections. 
+            Each bubble represents a constituent stock, grouped by sector, with size reflecting the magnitude of the market response. 
+            Unlike aggregate bar summaries, this layout retains cross-sectional detail while making sector-level patterns visible. 
+            The chart shows that election responses are rarely uniform: dispersion within sectors is common, with firms reacting at 
+            different intensities. In certain elections, however, clear volatility clusters emerge, most notably Financials in 2016 and 
+            Consumer Cyclicals in 2008, where broadly enlarged bubbles indicate a sector-wide repricing driven by shared policy 
+            expectations and heightened uncertainty.
+        </p>
+
         <iframe src="assets/graphs/aggregate_sector_party_bubbles.html" class="graph-frame" scrolling="no" height="850"></iframe>
 
-        <iframe src="assets/graphs/presidential_dashboard.html" class="graph-frame" scrolling="no" height="600"></iframe>
 
     </div>
 </section>
@@ -636,18 +767,33 @@ layout: default
 <section id="volatility-event-study" class="section newspaper" data-theme="light">
     <div class="content">
 
-        <h3>Abnormal Volatility based event study</h3>
+        <h3>Abnormal Volatility based Event Study</h3>
 
         <p>
-            description maths
+            In this section, we turn our attention from returns to volatility, asking: how much does a presidential 
+            election shake up sector-level risk? Using a GARCH model and a standardization procedure, we calculate abnormal v
+            olatility for each sector over a 5-day window surrounding each election. These are denoted as <em>AV</em><sub>sector, 
+                year, t</sub>, representing the abnormal volatility of a given sector at a relative time <em>t</em> 
+            from the election. For instance, <em>AV</em><sub>Tech, 2016, +5</sub> measures the abnormal volatility of the 
+            technology sector five trading days after the 2016 election. Intuitively, these values show the multiplicative 
+            effect of the event on volatility: an abnormal volatility of 1.5 indicates that realized volatility was 50% highe
+            r than expected during that window. This metric allows us to quantify sector-specific turbulence triggered by elections, 
+            complementing the abnormal returns analysis from earlier
         </p>
 
         <p>
-            meme graphe que presidential dashboard (tete des president) but with volatility
-            statistical tests
+            [meme graphe que presidential dashboard (tete des president) but with volatility
+            statistical tests]
         </p>
 
-        <iframe src="assets/graphs/by_sector_dashboard.html" class="graph-frame" scrolling="no" height="700"></iframe>
+        <p> Election results clearly rattle the markets, and we can see it in the spike of abnormal volatility across nearly 
+            every sector. Financial Services consistently take the lead, showing the largest jolts as investors digest the news.
+            Interestingly, this panic usually settles within about five trading days post-election.</p>
+
+        <h2>&#10148; Statistical Tests</h2>
+
+        <p>[Figure of CAV pre post election for statistical level]</p>
+        <!--<iframe src="assets/graphs/by_sector_dashboard.html" class="graph-frame" scrolling="no" height="700"></iframe>-->
 
     </div>
 </section>
