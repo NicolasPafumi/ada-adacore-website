@@ -475,6 +475,15 @@ transition: background-color 0.4s ease, color 0.4s ease;
     border-left: 4px solid var(--hintbox-dark-accent);
 }
 
+/* try correct info boxes for dark sections*/
+.section.black .info-dropdown,
+.section.black .details-box {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
 /*smooth animation*/
 .collapsible summary {
     display: flex;
@@ -511,11 +520,6 @@ details::details-content {
 details[open]::details-content {
     opacity: 1;
     block-size: auto;
-}
-
-.section.black details[open]::details-content {
-    align-items: center;
-    text-align: center;
 }
 
 .section.black .details-content {
